@@ -3137,7 +3137,7 @@ var Search = function Search(_ref6) {
   var wrapperRef = (0, react_1.useRef)(null);
   useOutsideAlerter(wrapperRef); // if (active) {
 
-  var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 991px)");
+  var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 900px)");
   var isMini = (0, useMediaQuery_1["default"])("(max-width: 500px)");
   console.log(isMini);
   return react_1["default"].createElement("div", {
@@ -3180,8 +3180,9 @@ var MobileNav = (0, styled_components_1["default"])(MNav)(_templateObject5 || (_
   var active = _ref8.active;
   return active ? "10000px" : 0;
 }, function (_ref9) {
-  var active = _ref9.active;
-  return active ? "91vh" : 0;
+  var active = _ref9.active,
+      tall = _ref9.tall;
+  return active ? tall ? "82vh" : "77vh" : 0;
 }, function (_ref10) {
   var active = _ref10.active;
   return active ? "translateY(0px) translateX(0px);" : "translateY(-800px) translateX(0px)";
@@ -3218,8 +3219,9 @@ var Toggle = (0, styled_components_1["default"])(NavToggle)(_templateObject7 || 
 });
 
 var Header = function Header() {
-  var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 991px)");
+  var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 900px)");
   var isMiniMobile = (0, useMediaQuery_1["default"])("(max-width: 500px)");
+  var isTall = (0, useMediaQuery_1["default"])("(min-height: 800px");
 
   var _ref18 = (0, react_1.useState)(false),
       _ref19 = _slicedToArray(_ref18, 2),
@@ -3255,7 +3257,8 @@ var Header = function Header() {
     },
     active: toggleActive
   }))))), !isDesktop && react_1["default"].createElement(MobileNav, {
-    active: toggleActive
+    active: toggleActive,
+    tall: isTall
   }), react_1["default"].createElement(SSearch, {
     active: searchActive,
     func: setSearchActive
