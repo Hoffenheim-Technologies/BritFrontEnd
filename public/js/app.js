@@ -2899,7 +2899,7 @@ var n,e=(n=__webpack_require__(/*! nprogress */ "./node_modules/nprogress/nprogr
 "use strict";
 
 
-var _templateObject, _templateObject2;
+var _templateObject, _templateObject2, _templateObject3;
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -2912,7 +2912,7 @@ var __importDefault = this && this.__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.SecondaryButton = exports.PrimaryButton = void 0;
+exports.TertiaryButton = exports.SecondaryButton = exports.PrimaryButton = void 0;
 
 var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
@@ -2925,36 +2925,80 @@ var Button = function Button(_ref) {
       disabled = _ref.disabled;
   return react_1["default"].createElement("button", {
     onClick: onClick,
-    className: className,
+    className: className + " reveal",
     disabled: disabled
   }, children);
 };
 
-var PrimaryButton = (0, styled_components_1["default"])(Button)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    padding: 18px 26px;\n    width: ", ";\n    border-radius: 10px;\n    font-size: 16px;\n    margin: 0 0 0 10px;\n    background-color: ", ";\n    color: ", ";\n    cursor: pointer;\n    line-height: 1;\n    &:hover {\n        transform: scale(0.9);\n        background-color: ", ";\n    }\n    transition: all 0.3s ease;\n"])), function (_ref2) {
-  var width = _ref2.width;
-  return width;
+var PrimaryButton = (0, styled_components_1["default"])(Button)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    padding: ", ";\n    width: ", ";\n    border-radius: 10px;\n    font-size: ", ";\n    font-weight: ", ";\n    margin: ", ";\n    background-color: ", ";\n    color: ", ";\n    transform: ", ";\n    cursor: pointer;\n    opacity: ", ";\n    line-height: 1;\n    &:hover {\n        transform: scale(0.9);\n        background-color: ", ";\n    }\n    &.active {\n        transform: translateY(0);\n        opacity: 1;\n    }\n    transition: transform 0.6s ease, background-color 0.6s ease,\n        opacity 0.3s ease;\n"])), function (_ref2) {
+  var padding = _ref2.padding;
+  return padding ? padding : "20px 40px";
 }, function (_ref3) {
-  var theme = _ref3.theme;
-  return theme.primaryColor;
+  var width = _ref3.width;
+  return width;
 }, function (_ref4) {
-  var theme = _ref4.theme;
-  return theme.primaryTextColor;
+  var fontSize = _ref4.fontSize;
+  return fontSize ? fontSize : "18px";
 }, function (_ref5) {
-  var theme = _ref5.theme;
+  var fontWeight = _ref5.fontWeight;
+  return fontWeight ? fontWeight : "600";
+}, function (_ref6) {
+  var margin = _ref6.margin;
+  return margin !== "" ? margin : "0 0 0 10px";
+}, function (_ref7) {
+  var theme = _ref7.theme;
+  return theme.primaryColor;
+}, function (_ref8) {
+  var theme = _ref8.theme;
+  return theme.primaryTextColor;
+}, function (_ref9) {
+  var transform = _ref9.transform;
+  return transform ? "" : "translateY(100px)";
+}, function (_ref10) {
+  var transform = _ref10.transform;
+  return transform ? 1 : 0;
+}, function (_ref11) {
+  var theme = _ref11.theme;
   return theme.secondaryColor;
 });
 exports.PrimaryButton = PrimaryButton;
-var SecondaryButton = (0, styled_components_1["default"])(Button)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    padding: 20px 40px;\n    border-radius: 10px;\n    font-size: 20px;\n    line-height: 0.75em;\n    background-color: ", ";\n    color: ", ";\n    cursor: pointer;\n    width: ", ";\n"])), function (_ref6) {
-  var theme = _ref6.theme;
+var SecondaryButton = (0, styled_components_1["default"])(Button)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    padding: 20px 40px;\n    border-radius: 10px;\n    font-size: 20px;\n    line-height: 0.75em;\n    background-color: ", ";\n    color: ", ";\n    cursor: pointer;\n    width: ", ";\n"])), function (_ref12) {
+  var theme = _ref12.theme;
   return theme.secondaryColor;
-}, function (_ref7) {
-  var theme = _ref7.theme;
+}, function (_ref13) {
+  var theme = _ref13.theme;
   return theme.primaryTextColor;
-}, function (_ref8) {
-  var width = _ref8.width;
+}, function (_ref14) {
+  var width = _ref14.width;
   return width;
 });
 exports.SecondaryButton = SecondaryButton;
+var TertiaryButton = (0, styled_components_1["default"])(Button)(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    padding: ", ";\n    width: ", ";\n    border-radius: 10px;\n    font-size: ", ";\n    font-weight: ", ";\n    margin: ", ";\n    background-color: #fff;\n    color: #000;\n    cursor: pointer;\n    line-height: 1;\n    transform: ", ";\n    opacity: ", ";\n    &:hover {\n        transform: scale(0.9);\n        background-color: ", ";\n        color: #fff;\n    }\n    &.active {\n        transform: translateY(0);\n        opacity: 1;\n    }\n    transition: transform 0.6s ease, background-color 0.6s ease,\n        opacity 0.4s ease, color 0.3s ease;\n    box-shadow: 0 2px 12px 0 rgb(20 20 43 / 7%);\n"])), function (_ref15) {
+  var padding = _ref15.padding;
+  return padding ? padding : "20px 40px";
+}, function (_ref16) {
+  var width = _ref16.width;
+  return width;
+}, function (_ref17) {
+  var fontSize = _ref17.fontSize;
+  return fontSize ? fontSize : "18px";
+}, function (_ref18) {
+  var fontWeight = _ref18.fontWeight;
+  return fontWeight ? fontWeight : "600";
+}, function (_ref19) {
+  var margin = _ref19.margin;
+  return margin !== "" ? margin : "0 0 0 20px";
+}, function (_ref20) {
+  var transform = _ref20.transform;
+  return transform ? "" : "translateY(100px)";
+}, function (_ref21) {
+  var transform = _ref21.transform;
+  return transform ? 1 : 0;
+}, function (_ref22) {
+  var theme = _ref22.theme;
+  return theme.secondaryColor;
+});
+exports.TertiaryButton = TertiaryButton;
 
 /***/ }),
 
@@ -3053,6 +3097,8 @@ var Input_1 = __webpack_require__(/*! ./Input */ "./resources/js/Components/Inpu
 
 var Container_2 = __webpack_require__(/*! ../shared/Container */ "./resources/js/shared/Container.tsx");
 
+var inertia_1 = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+
 var useMediaQuery_1 = __importDefault(__webpack_require__(/*! ../hooks/useMediaQuery */ "./resources/js/hooks/useMediaQuery.tsx"));
 
 var Logo = function Logo(_ref) {
@@ -3106,7 +3152,7 @@ var Head = function Head(_ref4) {
   }, children);
 };
 
-var SHead = (0, styled_components_1["default"])(Head)(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    z-index: 1;\n    padding: 32px 0;\n    background-color: #fff;\n    svg {\n        height: 24px;\n        cursor: pointer;\n        &:hover {\n            color: ", ";\n            transform: scale(1.3);\n        }\n        transition: all 0.3s ease;\n    }\n"])), function (_ref5) {
+var SHead = (0, styled_components_1["default"])(Head)(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    padding: 32px 0;\n    background-color: #fff;\n    svg {\n        height: 24px;\n        cursor: pointer;\n        &:hover {\n            color: ", ";\n            transform: scale(1.3);\n        }\n        transition: all 0.3s ease;\n    }\n"])), function (_ref5) {
   var theme = _ref5.theme;
   return theme.secondaryColor;
 });
@@ -3209,11 +3255,12 @@ var NavToggle = function NavToggle(_ref15) {
       onClick = _ref15.onClick;
   return react_1["default"].createElement(Buttons_1.PrimaryButton, {
     onClick: onClick,
-    className: className
+    className: className,
+    transform: true
   }, react_1["default"].createElement("div", null, react_1["default"].createElement("span", null), react_1["default"].createElement("span", null), react_1["default"].createElement("span", null)));
 };
 
-var Toggle = (0, styled_components_1["default"])(NavToggle)(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n    padding: 18px;\n    div {\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        width: 20px;\n        min-height: 16px;\n        justify-content: space-between;\n    }\n    span {\n        width: 100%;\n        max-height: 2px;\n        min-height: 2px;\n        padding: 0px;\n        background-color: #fff;\n        opacity: ", ";\n        transform-style: preserve-3d;\n        transition: transform 0.6s ease, opacity 0.7s ease-out;\n        &:first-of-type {\n            opacity: 1;\n            transform: ", ";\n        }\n        &:last-of-type {\n            opacity: 1;\n            transform: ", ";\n        }\n    }\n"])), function (_ref16) {
+var Toggle = (0, styled_components_1["default"])(NavToggle)(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n    padding: 18px;\n    margin-left: 10px;\n    div {\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        width: 20px;\n        min-height: 16px;\n        justify-content: space-between;\n    }\n    span {\n        width: 100%;\n        max-height: 2px;\n        min-height: 2px;\n        padding: 0px;\n        background-color: #fff;\n        opacity: ", ";\n        transform-style: preserve-3d;\n        transition: transform 0.6s ease, opacity 0.7s ease-out;\n        &:first-of-type {\n            opacity: 1;\n            transform: ", ";\n        }\n        &:last-of-type {\n            opacity: 1;\n            transform: ", ";\n        }\n    }\n"])), function (_ref16) {
   var active = _ref16.active;
   return active ? 0 : 1;
 }, function (_ref17) {
@@ -3239,7 +3286,11 @@ var Header = function Header() {
       toggleActive = _ref22[0],
       setToggleActive = _ref22[1];
 
+  inertia_1.Inertia.on("navigate", function () {
+    return setToggleActive(false);
+  });
   return react_1["default"].createElement(Container_1["default"], {
+    zIndex: 2,
     position: "sticky"
   }, react_1["default"].createElement(SHead, null, react_1["default"].createElement("nav", null, react_1["default"].createElement(Flex_1.Flex, {
     direction: "row",
@@ -3257,7 +3308,13 @@ var Header = function Header() {
     onClick: function onClick() {
       return setSearchActive(true);
     }
-  }), !isMiniMobile && react_1["default"].createElement(Buttons_1.PrimaryButton, null, "Post a Property"), !isDesktop && react_1["default"].createElement(Toggle, {
+  }), !isMiniMobile && react_1["default"].createElement(Buttons_1.PrimaryButton, {
+    padding: "18px 26px",
+    fontSize: "16px",
+    fontWeight: 400,
+    transform: true,
+    margin: "0 0 0 10px"
+  }, "Post a Property"), !isDesktop && react_1["default"].createElement(Toggle, {
     onClick: function onClick() {
       return setToggleActive(!toggleActive);
     },
@@ -3361,6 +3418,8 @@ var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/r
 
 var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 
+var inertia_1 = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+
 var styled_components_1 = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 
 var theme_1 = __webpack_require__(/*! ../theme */ "./resources/js/theme.ts");
@@ -3369,9 +3428,27 @@ var Header_1 = __importDefault(__webpack_require__(/*! ../Components/Header */ "
 
 var createGlobalStyles_1 = __importDefault(__webpack_require__(/*! ../createGlobalStyles */ "./resources/js/createGlobalStyles.ts"));
 
+var reveal = function reveal() {
+  var reveals = document.querySelectorAll(".reveal");
+
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 120;
+
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
+  }
+};
+
 var Layout = function Layout(_ref) {
   var children = _ref.children,
       title = _ref.title;
+  window.addEventListener("scroll", reveal);
+  inertia_1.Inertia.on("navigate", reveal);
   return react_1["default"].createElement(react_1["default"].Fragment, null, react_1["default"].createElement(inertia_react_1.Head, {
     title: title ? title : "Admin"
   }), react_1["default"].createElement(styled_components_1.ThemeProvider, {
@@ -3385,6 +3462,50 @@ var Layout = function Layout(_ref) {
 };
 
 exports["default"] = Layout;
+
+/***/ }),
+
+/***/ "./resources/js/Pages/About.tsx":
+/*!**************************************!*\
+  !*** ./resources/js/Pages/About.tsx ***!
+  \**************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var Layout_1 = __importDefault(__webpack_require__(/*! ../Layouts/Layout */ "./resources/js/Layouts/Layout.tsx"));
+
+var Container_1 = __webpack_require__(/*! ../shared/Container */ "./resources/js/shared/Container.tsx");
+
+var Text_1 = __webpack_require__(/*! ../shared/Text */ "./resources/js/shared/Text.tsx");
+
+var About = function About() {
+  return react_1["default"].createElement(react_1["default"].Fragment, null, react_1["default"].createElement(Container_1.SmallContainer, null, react_1["default"].createElement(Text_1.BoldContent, {
+    align: "center"
+  }, "About Page")));
+};
+
+About.layout = function (page) {
+  return react_1["default"].createElement(Layout_1["default"], {
+    children: page,
+    title: "About"
+  });
+};
+
+exports["default"] = About;
 
 /***/ }),
 
@@ -3409,16 +3530,37 @@ Object.defineProperty(exports, "__esModule", ({
 
 var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
+var Buttons_1 = __webpack_require__(/*! ../Components/Buttons */ "./resources/js/Components/Buttons.tsx");
+
+var useMediaQuery_1 = __importDefault(__webpack_require__(/*! ../hooks/useMediaQuery */ "./resources/js/hooks/useMediaQuery.tsx"));
+
 var Layout_1 = __importDefault(__webpack_require__(/*! ../Layouts/Layout */ "./resources/js/Layouts/Layout.tsx"));
 
 var Container_1 = __webpack_require__(/*! ../shared/Container */ "./resources/js/shared/Container.tsx");
 
+var Flex_1 = __webpack_require__(/*! ../shared/Flex */ "./resources/js/shared/Flex.tsx");
+
 var Text_1 = __webpack_require__(/*! ../shared/Text */ "./resources/js/shared/Text.tsx");
 
 var Home = function Home() {
+  var isMiniMobile = (0, useMediaQuery_1["default"])("(max-width: 500px)");
   return react_1["default"].createElement(react_1["default"].Fragment, null, react_1["default"].createElement(Container_1.SmallContainer, null, react_1["default"].createElement(Text_1.BoldContent, {
     align: "center"
-  }, "Your Dream Home is a Click Away")));
+  }, "Your Dream Home is a Click Away"), react_1["default"].createElement(Text_1.Subtitle, {
+    align: "center"
+  }, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat modi officia, fugit hic rem qui iure quaerat omnis"), react_1["default"].createElement(Flex_1.Flex, {
+    justify: "center",
+    direction: isMiniMobile ? "column" : "row",
+    align: "center",
+    width: isMiniMobile ? "100%" : "",
+    gap: isMiniMobile ? "10px" : ""
+  }, react_1["default"].createElement(Buttons_1.PrimaryButton, {
+    margin: isMiniMobile ? 0 : "",
+    width: isMiniMobile ? "100%" : ""
+  }, "Browse Properties"), react_1["default"].createElement(Buttons_1.TertiaryButton, {
+    margin: isMiniMobile ? 0 : "",
+    width: isMiniMobile ? "100%" : ""
+  }, "Talk to an Agent"))));
 };
 
 Home.layout = function (page) {
@@ -3451,7 +3593,7 @@ Object.defineProperty(exports, "__esModule", ({
 
 var styled_components_1 = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 
-var GlobalStyle = (0, styled_components_1.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Regular.otf') format(\"opentype\");\n        font-weight: 400;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Light.otf') format(\"opentype\");\n        font-weight: 300;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Thin.otf') format(\"opentype\");\n        font-weight: 200;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Ultralight.otf') format(\"opentype\");\n        font-weight: 100;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('fonts/SF/SF-Pro-Display-Bold.otf') format(\"opentype\");\n        font-weight: 700;\n    }\n    body {\n        margin: 0;\n        display: block;\n    }\n    * {\n        font-family: 'SF Pro', sans-serif;\n        font-weight: 400;\n        font-size: 16px;\n    }\n    ul {\n        margin: 0;\n        padding: 0;\n        list-style: none;\n    }\n    a {\n        text-decoration: none;\n        color: black;\n    }\n    button {\n        border: 0;\n    }\n"])));
+var GlobalStyle = (0, styled_components_1.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Regular.otf') format(\"opentype\");\n        font-weight: 400;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Light.otf') format(\"opentype\");\n        font-weight: 300;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Thin.otf') format(\"opentype\");\n        font-weight: 200;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Ultralight.otf') format(\"opentype\");\n        font-weight: 100;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('fonts/SF/SF-Pro-Display-Bold.otf') format(\"opentype\");\n        font-weight: 700;\n    }\n    body {\n        margin: 0;\n        display: block;\n    }\n    * {\n        font-family: 'SF Pro', sans-serif;\n        font-weight: 400;\n        font-size: 16px;\n        margin: 0;\n        padding: 0;\n        box-sizing: border-box;\n    }\n    ul {\n        list-style: none;\n    }\n    a {\n        text-decoration: none;\n        color: black;\n    }\n    button {\n        border: 0;\n    }\n"])));
 exports["default"] = GlobalStyle;
 
 /***/ }),
@@ -3549,9 +3691,12 @@ var Div = function Div(_ref) {
 };
 
 exports.Div = Div;
-var Container = (0, styled_components_1["default"])(exports.Div)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    position: ", ";\n    top: 0;\n    max-width: 1318px;\n    margin-right: auto;\n    margin-left: auto;\n    padding-right: 24px;\n    padding-left: 24px;\n"])), function (_ref2) {
+var Container = (0, styled_components_1["default"])(exports.Div)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    position: ", ";\n    top: 0;\n    max-width: 1318px;\n    margin-right: auto;\n    margin-left: auto;\n    padding-right: 24px;\n    padding-left: 24px;\n    z-index: ", ";\n"])), function (_ref2) {
   var position = _ref2.position;
   return position;
+}, function (_ref3) {
+  var zIndex = _ref3.zIndex;
+  return zIndex;
 });
 exports.SmallContainer = (0, styled_components_1["default"])(exports.Div)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    max-width: 580px;\n    margin-right: auto;\n    margin-left: auto;\n    padding-right: 24px;\n    padding-left: 24px;\n"])));
 exports["default"] = Container;
@@ -3593,13 +3738,14 @@ var Div = function Div(_ref) {
       align = _ref.align,
       direction = _ref.direction,
       children = _ref.children,
+      gap = _ref.gap,
       className = _ref.className;
   return react_1["default"].createElement("div", {
     className: className
   }, children);
 };
 
-var Flex = (0, styled_components_1["default"])(Div)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    display: flex;\n    width: ", ";\n    height: ", ";\n    justify-content: ", ";\n    align-items: ", ";\n    flex-direction: ", ";\n"])), function (props) {
+var Flex = (0, styled_components_1["default"])(Div)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    display: flex;\n    width: ", ";\n    height: ", ";\n    justify-content: ", ";\n    align-items: ", ";\n    flex-direction: ", ";\n    gap: ", ";\n"])), function (props) {
   return props.width ? props.width : "100%";
 }, function (props) {
   return props.height ? props.height : "auto";
@@ -3609,6 +3755,9 @@ var Flex = (0, styled_components_1["default"])(Div)(_templateObject || (_templat
   return props.align ? props.align : "flex-start";
 }, function (props) {
   return props.direction ? props.direction : "row";
+}, function (_ref2) {
+  var gap = _ref2.gap;
+  return gap;
 });
 exports.Flex = Flex;
 
@@ -3623,7 +3772,7 @@ exports.Flex = Flex;
 "use strict";
 
 
-var _templateObject;
+var _templateObject, _templateObject2;
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -3636,7 +3785,7 @@ var __importDefault = this && this.__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.BoldContent = void 0;
+exports.Subtitle = exports.BoldContent = void 0;
 
 var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
@@ -3646,15 +3795,28 @@ var H1 = function H1(_ref) {
   var className = _ref.className,
       children = _ref.children;
   return react_1["default"].createElement("p", {
-    className: className
+    className: className + " reveal"
   }, children);
 };
 
-var BoldContent = (0, styled_components_1["default"])(H1)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    font-size: 48px;\n    font-weight: 700;\n    text-align: ", ";\n"])), function (_ref2) {
-  var align = _ref2.align;
+var P = function P(_ref2) {
+  var className = _ref2.className,
+      children = _ref2.children;
+  return react_1["default"].createElement("p", {
+    className: className + " reveal"
+  }, children);
+};
+
+var BoldContent = (0, styled_components_1["default"])(H1)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    margin-bottom: 10px;\n    font-size: 48px;\n    font-weight: 700;\n    text-align: ", ";\n    position: relative;\n    transform: translateY(20px);\n    opacity: 0;\n    transition: all 1s ease;\n    &.active {\n        transform: translateY(0);\n        opacity: 1;\n    }\n"])), function (_ref3) {
+  var align = _ref3.align;
   return align;
 });
 exports.BoldContent = BoldContent;
+var Subtitle = (0, styled_components_1["default"])(P)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    text-align: ", ";\n    font-size: 18px;\n    font-weight: 500;\n    line-height: 1.667em;\n    margin-bottom: 40px;\n    color: #8d8d91;\n    position: relative;\n    transform: translateY(100px);\n    opacity: 0;\n    transition: all 0.8s ease 0.2s;\n    &.active {\n        transform: translateY(0);\n        opacity: 1;\n    }\n"])), function (_ref4) {
+  var align = _ref4.align;
+  return align;
+});
+exports.Subtitle = Subtitle;
 
 /***/ }),
 
@@ -3683,28 +3845,6 @@ exports.darkTheme = {
   primaryColor: "#fff",
   secondaryColor: "#cacaca"
 };
-
-/***/ }),
-
-/***/ "./resources/js/Pages/Homes.jsx":
-/*!**************************************!*\
-  !*** ./resources/js/Pages/Homes.jsx ***!
-  \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-
-var Home = function Home() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, "Home Page");
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
 
 /***/ }),
 
@@ -39124,10 +39264,10 @@ function v(){return(v=Object.assign||function(e){for(var t=1;t<arguments.length;
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./About": "./resources/js/Pages/About.tsx",
+	"./About.tsx": "./resources/js/Pages/About.tsx",
 	"./Home": "./resources/js/Pages/Home.tsx",
-	"./Home.tsx": "./resources/js/Pages/Home.tsx",
-	"./Homes": "./resources/js/Pages/Homes.jsx",
-	"./Homes.jsx": "./resources/js/Pages/Homes.jsx"
+	"./Home.tsx": "./resources/js/Pages/Home.tsx"
 };
 
 

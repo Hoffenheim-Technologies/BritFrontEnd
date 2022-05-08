@@ -8,6 +8,7 @@ interface Props {
     align?: string;
     direction?: string;
     children?: React.ReactNode;
+    gap?: string;
     className?: string;
 }
 
@@ -18,6 +19,7 @@ const Div = ({
     align,
     direction,
     children,
+    gap,
     className,
 }: Props) => <div className={className}>{children}</div>;
 const Flex = styled(Div)`
@@ -28,6 +30,7 @@ const Flex = styled(Div)`
         props.justify ? props.justify : "flex-start"};
     align-items: ${(props) => (props.align ? props.align : "flex-start")};
     flex-direction: ${(props) => (props.direction ? props.direction : "row")};
+    gap: ${({ gap }) => gap};
 `;
 
 export { Flex };

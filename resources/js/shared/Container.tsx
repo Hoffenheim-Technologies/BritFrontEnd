@@ -5,6 +5,7 @@ interface Props {
     className?: string;
     position?: string;
     children: React.ReactNode;
+    zIndex?: number;
 }
 export const Div = ({ className, children }: Props) => (
     <div className={className}>{children}</div>
@@ -18,6 +19,7 @@ const Container = styled(Div)`
     margin-left: auto;
     padding-right: 24px;
     padding-left: 24px;
+    z-index: ${({ zIndex }) => zIndex};
 `;
 
 export const SmallContainer = styled(Div)`

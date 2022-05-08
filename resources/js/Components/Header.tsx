@@ -15,6 +15,7 @@ import { logoSrc } from "../assets";
 import { SearchIcon } from "@heroicons/react/outline";
 import { SInput } from "./Input";
 import { Div } from "../shared/Container";
+import { Inertia } from "@inertiajs/inertia";
 import useMediaQuery from "../hooks/useMediaQuery";
 
 const Logo: React.FC<{ className?: string }> = ({ className }) => (
@@ -72,7 +73,6 @@ const Head: React.FC<{ className?: string; children: React.ReactNode }> = ({
 }) => <header className={className}>{children}</header>;
 
 const SHead = styled(Head)`
-    z-index: 1;
     padding: 32px 0;
     background-color: #fff;
     svg {
@@ -249,7 +249,7 @@ const NavToggle: React.FC<{
     active?: boolean;
     onClick?: MouseEventHandler<Element>;
 }> = ({ className, onClick }) => (
-    <PrimaryButton onClick={onClick} className={className}>
+    <PrimaryButton onClick={onClick} className={className} transform={true}>
         <div>
             <span></span>
             <span></span>
@@ -260,6 +260,7 @@ const NavToggle: React.FC<{
 
 const Toggle = styled(NavToggle)`
     padding: 18px;
+    margin-left: 10px;
     div {
         display: flex;
         flex-direction: column;
@@ -299,8 +300,9 @@ const Header: React.FC = () => {
     const isTall = useMediaQuery("(min-height: 800px");
     const [searchActive, setSearchActive] = useState(false);
     const [toggleActive, setToggleActive] = useState(false);
+    Inertia.on("navigate", () => setToggleActive(false));
     return (
-        <Container position="sticky">
+        <Container zIndex={2} position="sticky">
             <SHead>
                 <nav>
                     <Flex
@@ -327,7 +329,15 @@ const Header: React.FC = () => {
                                 onClick={() => setSearchActive(true)}
                             />
                             {!isMiniMobile && (
-                                <PrimaryButton>Post a Property</PrimaryButton>
+                                <PrimaryButton
+                                    padding="18px 26px"
+                                    fontSize="16px"
+                                    fontWeight={400}
+                                    transform={true}
+                                    margin={"0 0 0 10px"}
+                                >
+                                    Post a Property
+                                </PrimaryButton>
                             )}
                             {!isDesktop && (
                                 <Toggle
