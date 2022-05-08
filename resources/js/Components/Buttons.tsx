@@ -37,6 +37,7 @@ const SecondaryButton = styled(Button)`
     background-color: ${({ theme }) => theme.secondaryColor};
     color: ${({ theme }) => theme.primaryTextColor};
     cursor: pointer;
+    width: ${({ width }) => width};
 `;
 
 export { PrimaryButton, SecondaryButton };

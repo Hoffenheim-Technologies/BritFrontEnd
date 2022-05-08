@@ -2942,12 +2942,15 @@ var PrimaryButton = (0, styled_components_1["default"])(Button)(_templateObject 
   return theme.secondaryColor;
 });
 exports.PrimaryButton = PrimaryButton;
-var SecondaryButton = (0, styled_components_1["default"])(Button)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    padding: 20px 40px;\n    border-radius: 10px;\n    font-size: 20px;\n    line-height: 0.75em;\n    background-color: ", ";\n    color: ", ";\n    cursor: pointer;\n"])), function (_ref6) {
+var SecondaryButton = (0, styled_components_1["default"])(Button)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    padding: 20px 40px;\n    border-radius: 10px;\n    font-size: 20px;\n    line-height: 0.75em;\n    background-color: ", ";\n    color: ", ";\n    cursor: pointer;\n    width: ", ";\n"])), function (_ref6) {
   var theme = _ref6.theme;
   return theme.secondaryColor;
 }, function (_ref7) {
   var theme = _ref7.theme;
   return theme.primaryTextColor;
+}, function (_ref8) {
+  var width = _ref8.width;
+  return width;
 });
 exports.SecondaryButton = SecondaryButton;
 
@@ -3134,20 +3137,26 @@ var Search = function Search(_ref6) {
   var wrapperRef = (0, react_1.useRef)(null);
   useOutsideAlerter(wrapperRef); // if (active) {
 
+  var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 991px)");
+  var isMini = (0, useMediaQuery_1["default"])("(max-width: 500px)");
+  console.log(isMini);
   return react_1["default"].createElement("div", {
     ref: wrapperRef
   }, react_1["default"].createElement(SearchBar, {
     className: className
   }, react_1["default"].createElement("form", null, react_1["default"].createElement(Flex_1.Flex, {
+    direction: isMini ? "column" : "row",
     align: "center"
   }, react_1["default"].createElement(Input_1.SInput, {
     type: "search",
     maxLength: 256,
     placeholder: "Search for properties",
     required: true,
-    width: "500px",
-    margin: "0 20px 0 0"
-  }), react_1["default"].createElement(Buttons_1.SecondaryButton, null, "Search"))))); // } else {
+    width: !isMini ? isDesktop ? "500px" : "calc(100vw - 200px)" : "500px",
+    margin: isMini ? "15px 0" : "0 20px 0 0"
+  }), react_1["default"].createElement(Buttons_1.SecondaryButton, {
+    width: isMini ? "100%" : ""
+  }, "Search"))))); // } else {
   //     return <></>;
   // }
 };
@@ -3172,7 +3181,7 @@ var MobileNav = (0, styled_components_1["default"])(MNav)(_templateObject5 || (_
   return active ? "10000px" : 0;
 }, function (_ref9) {
   var active = _ref9.active;
-  return active ? "80vh" : 0;
+  return active ? "91vh" : 0;
 }, function (_ref10) {
   var active = _ref10.active;
   return active ? "translateY(0px) translateX(0px);" : "translateY(-800px) translateX(0px)";
@@ -3301,7 +3310,7 @@ var Input = function Input(_ref) {
 };
 
 exports.Input = Input;
-var SInput = (0, styled_components_1["default"])(Input)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    width: ", ";\n    margin: ", ";\n    padding: 8px 12px;\n    height: 3em;\n    font-size: 20px;\n    color: #222223;\n    line-height: calc(10 / 7);\n    border-radius: 12px;\n    border: 1px solid #cccccc;\n    background-color: ", ";\n\n    &:focus,\n    &:hover {\n        outline: 1px solid ", ";\n    }\n"])), function (_ref2) {
+var SInput = (0, styled_components_1["default"])(Input)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    width: ", ";\n    max-width: min(80vw, 450px);\n    margin: ", ";\n    padding: 8px 12px;\n    height: 3em;\n    font-size: 20px;\n    color: #222223;\n    line-height: calc(10 / 7);\n    border-radius: 12px;\n    border: 1px solid #cccccc;\n    background-color: ", ";\n\n    &:focus,\n    &:hover {\n        outline: 1px solid ", ";\n    }\n"])), function (_ref2) {
   var width = _ref2.width;
   return width ? width : "100%";
 }, function (_ref3) {

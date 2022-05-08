@@ -117,20 +117,32 @@ const Search: React.FC<{
     const wrapperRef = useRef(null);
     useOutsideAlerter(wrapperRef);
     // if (active) {
+    const isDesktop = useMediaQuery("(min-width: 991px)");
+    const isMini = useMediaQuery("(max-width: 500px)");
+
+    console.log(isMini);
     return (
         <div ref={wrapperRef}>
             <SearchBar className={className}>
                 <form>
-                    <Flex align="center">
+                    <Flex direction={isMini ? "column" : "row"} align="center">
                         <SInput
                             type="search"
                             maxLength={256}
                             placeholder="Search for properties"
                             required={true}
-                            width={"500px"}
-                            margin={"0 20px 0 0"}
+                            width={
+                                !isMini
+                                    ? isDesktop
+                                        ? "500px"
+                                        : "calc(100vw - 200px)"
+                                    : "500px"
+                            }
+                            margin={isMini ? "15px 0" : "0 20px 0 0"}
                         />
-                        <SecondaryButton>Search</SecondaryButton>
+                        <SecondaryButton width={isMini ? "100%" : ""}>
+                            Search
+                        </SecondaryButton>
                     </Flex>
                 </form>
             </SearchBar>
@@ -174,7 +186,7 @@ const MobileNav = styled(MNav)`
 
     nav {
         background-color: rgba(255, 255, 255, 0.99);
-        height: ${({ active }) => (active ? "80vh" : 0)};
+        height: ${({ active }) => (active ? "91vh" : 0)};
         overflow: auto;
         padding: 50px 0 20px 0;
         box-shadow: 0 4px 10px 0 rgb(8 15 52 / 6%);

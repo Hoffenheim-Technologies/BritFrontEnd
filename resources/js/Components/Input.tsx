@@ -21,6 +21,7 @@ const Input: React.FC<{
 
 const SInput = styled(Input)`
     width: ${({ width }) => (width ? width : "100%")};
+    max-width: min(80vw, 450px);
     margin: ${({ margin }) => (margin ? margin : 0)};
     padding: 8px 12px;
     height: 3em;
