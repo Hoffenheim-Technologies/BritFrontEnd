@@ -5,6 +5,7 @@ const Button: React.FC<{
     className?: string;
     children?: React.ReactNode;
     onClick?: React.MouseEventHandler;
+    width?: string;
 }> = ({ className, children, onClick }) => (
     <button onClick={onClick} className={className}>
         {children}
@@ -12,12 +13,15 @@ const Button: React.FC<{
 );
 
 const PrimaryButton = styled(Button)`
-    padding: 16px 24px;
+    padding: 18px 26px;
+    width: ${({ width }) => width};
     border-radius: 10px;
     font-size: 16px;
+    margin: 0 0 0 10px;
     background-color: ${({ theme }) => theme.primaryColor};
     color: ${({ theme }) => theme.primaryTextColor};
     cursor: pointer;
+    line-height: 1;
     &:hover {
         transform: scale(0.9);
         background-color: ${({ theme }) => theme.secondaryColor};

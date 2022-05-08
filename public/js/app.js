@@ -2928,22 +2928,25 @@ var Button = function Button(_ref) {
   }, children);
 };
 
-var PrimaryButton = (0, styled_components_1["default"])(Button)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    padding: 16px 24px;\n    border-radius: 10px;\n    font-size: 16px;\n    background-color: ", ";\n    color: ", ";\n    cursor: pointer;\n    &:hover {\n        transform: scale(0.9);\n        background-color: ", ";\n    }\n    transition: all 0.3s ease;\n"])), function (_ref2) {
-  var theme = _ref2.theme;
-  return theme.primaryColor;
+var PrimaryButton = (0, styled_components_1["default"])(Button)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    padding: 18px 26px;\n    width: ", ";\n    border-radius: 10px;\n    font-size: 16px;\n    margin: 0 0 0 10px;\n    background-color: ", ";\n    color: ", ";\n    cursor: pointer;\n    line-height: 1;\n    &:hover {\n        transform: scale(0.9);\n        background-color: ", ";\n    }\n    transition: all 0.3s ease;\n"])), function (_ref2) {
+  var width = _ref2.width;
+  return width;
 }, function (_ref3) {
   var theme = _ref3.theme;
-  return theme.primaryTextColor;
+  return theme.primaryColor;
 }, function (_ref4) {
   var theme = _ref4.theme;
+  return theme.primaryTextColor;
+}, function (_ref5) {
+  var theme = _ref5.theme;
   return theme.secondaryColor;
 });
 exports.PrimaryButton = PrimaryButton;
-var SecondaryButton = (0, styled_components_1["default"])(Button)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    padding: 20px 40px;\n    border-radius: 10px;\n    font-size: 20px;\n    line-height: 0.75em;\n    background-color: ", ";\n    color: ", ";\n    cursor: pointer;\n"])), function (_ref5) {
-  var theme = _ref5.theme;
-  return theme.secondaryColor;
-}, function (_ref6) {
+var SecondaryButton = (0, styled_components_1["default"])(Button)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    padding: 20px 40px;\n    border-radius: 10px;\n    font-size: 20px;\n    line-height: 0.75em;\n    background-color: ", ";\n    color: ", ";\n    cursor: pointer;\n"])), function (_ref6) {
   var theme = _ref6.theme;
+  return theme.secondaryColor;
+}, function (_ref7) {
+  var theme = _ref7.theme;
   return theme.primaryTextColor;
 });
 exports.SecondaryButton = SecondaryButton;
@@ -2959,7 +2962,7 @@ exports.SecondaryButton = SecondaryButton;
 "use strict";
 
 
-var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5;
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7;
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
@@ -3045,6 +3048,8 @@ var Input_1 = __webpack_require__(/*! ./Input */ "./resources/js/Components/Inpu
 
 var Container_2 = __webpack_require__(/*! ../shared/Container */ "./resources/js/shared/Container.tsx");
 
+var useMediaQuery_1 = __importDefault(__webpack_require__(/*! ../hooks/useMediaQuery */ "./resources/js/hooks/useMediaQuery.tsx"));
+
 var Logo = function Logo(_ref) {
   var className = _ref.className;
   return react_1["default"].createElement(react_image_1.Img, {
@@ -3096,7 +3101,7 @@ var Head = function Head(_ref4) {
   }, children);
 };
 
-var SHead = (0, styled_components_1["default"])(Head)(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    z-index: 1;\n    padding: 32px 0;\n    background-color: #fff;\n    svg {\n        height: 24px;\n        margin-right: 10px;\n        cursor: pointer;\n        &:hover {\n            color: ", ";\n            transform: scale(1.3);\n        }\n        transition: all 0.3s ease;\n    }\n"])), function (_ref5) {
+var SHead = (0, styled_components_1["default"])(Head)(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    z-index: 1;\n    padding: 32px 0;\n    background-color: #fff;\n    svg {\n        height: 24px;\n        cursor: pointer;\n        &:hover {\n            color: ", ";\n            transform: scale(1.3);\n        }\n        transition: all 0.3s ease;\n    }\n"])), function (_ref5) {
   var theme = _ref5.theme;
   return theme.secondaryColor;
 });
@@ -3147,19 +3152,75 @@ var Search = function Search(_ref6) {
   // }
 };
 
-var SSearch = (0, styled_components_1["default"])(Search)(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    position: absolute;\n    top: 130px;\n    left: 50%;\n    transform: translateX(-50%)\n        ", ";\n    background-color: #fff;\n    opacity: ", ";\n\n    transition: all 0.6s ease-in-out;\n"])), function (_ref7) {
-  var active = _ref7.active;
-  return active ? "translateY(0)" : "translateY(10px)";
-}, function (_ref8) {
+var MNav = function MNav(_ref7) {
+  var className = _ref7.className;
+  return react_1["default"].createElement("div", {
+    className: className
+  }, react_1["default"].createElement("nav", null, react_1["default"].createElement("ul", null, routes.map(function (route, index) {
+    return react_1["default"].createElement("li", {
+      key: index
+    }, react_1["default"].createElement(inertia_react_1.Link, {
+      href: route.path
+    }, route.route));
+  }), react_1["default"].createElement("li", null, react_1["default"].createElement(Buttons_1.PrimaryButton, {
+    width: "100%"
+  }, "Post a Property")))));
+};
+
+var MobileNav = (0, styled_components_1["default"])(MNav)(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    height: ", ";\n    overflow: hidden;\n    position: absolute;\n    top: 100%;\n    left: 0;\n    right: 0;\n    width: 100%;\n    transition: all 0.6s ease;\n\n    nav {\n        background-color: rgba(255, 255, 255, 0.99);\n        height: ", ";\n        overflow: auto;\n        padding: 50px 0 20px 0;\n        box-shadow: 0 4px 10px 0 rgb(8 15 52 / 6%);\n\n        transform: ", ";\n        opacity: ", ";\n\n        transition: all 0.6s ease;\n    }\n\n    ul {\n        height: 100%;\n        margin-right: 24px;\n        margin-left: 24px;\n        display: flex;\n        flex-direction: column;\n        justify-content: flex-start;\n        align-items: stretch;\n    }\n    li {\n        padding: 12px 0;\n    }\n    li:last-of-type {\n        display: flex;\n        margin-top: auto;\n        padding-top: 60px;\n        padding-bottom: 40px;\n    }\n    a {\n        font-size: 28px;\n        line-height: 1.111em;\n        font-weight: 500;\n    }\n"])), function (_ref8) {
   var active = _ref8.active;
+  return active ? "10000px" : 0;
+}, function (_ref9) {
+  var active = _ref9.active;
+  return active ? "80vh" : 0;
+}, function (_ref10) {
+  var active = _ref10.active;
+  return active ? "translateY(0px) translateX(0px);" : "translateY(-800px) translateX(0px)";
+}, function (_ref11) {
+  var active = _ref11.active;
+  return active ? 1 : 0;
+});
+var SSearch = (0, styled_components_1["default"])(Search)(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n    position: absolute;\n    top: 130px;\n    left: 50%;\n    transform: translateX(-50%)\n        ", ";\n    background-color: #fff;\n    opacity: ", ";\n\n    transition: all 0.6s ease-in-out;\n"])), function (_ref12) {
+  var active = _ref12.active;
+  return active ? "translateY(0)" : "translateY(10px)";
+}, function (_ref13) {
+  var active = _ref13.active;
   return active ? 1 : 0;
 });
 
+var NavToggle = function NavToggle(_ref14) {
+  var className = _ref14.className,
+      onClick = _ref14.onClick;
+  return react_1["default"].createElement(Buttons_1.PrimaryButton, {
+    onClick: onClick,
+    className: className
+  }, react_1["default"].createElement("div", null, react_1["default"].createElement("span", null), react_1["default"].createElement("span", null), react_1["default"].createElement("span", null)));
+};
+
+var Toggle = (0, styled_components_1["default"])(NavToggle)(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n    padding: 18px;\n    div {\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        width: 20px;\n        min-height: 16px;\n        justify-content: space-between;\n    }\n    span {\n        width: 100%;\n        max-height: 2px;\n        min-height: 2px;\n        padding: 0px;\n        background-color: #fff;\n        opacity: ", ";\n        transform-style: preserve-3d;\n        transition: transform 0.6s ease, opacity 0.7s ease-out;\n        &:first-of-type {\n            opacity: 1;\n            transform: ", ";\n        }\n        &:last-of-type {\n            opacity: 1;\n            transform: ", ";\n        }\n    }\n"])), function (_ref15) {
+  var active = _ref15.active;
+  return active ? 0 : 1;
+}, function (_ref16) {
+  var active = _ref16.active;
+  return active ? "translate3d(0px, 7px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(140deg) skew(0deg, 0deg)" : "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)";
+}, function (_ref17) {
+  var active = _ref17.active;
+  return active ? "translate3d(0px, -7px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(40deg) skew(0deg, 0deg);" : "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)";
+});
+
 var Header = function Header() {
-  var _ref9 = (0, react_1.useState)(false),
-      _ref10 = _slicedToArray(_ref9, 2),
-      searchActive = _ref10[0],
-      setSearchActive = _ref10[1];
+  var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 991px)");
+  var isMiniMobile = (0, useMediaQuery_1["default"])("(max-width: 500px)");
+
+  var _ref18 = (0, react_1.useState)(false),
+      _ref19 = _slicedToArray(_ref18, 2),
+      searchActive = _ref19[0],
+      setSearchActive = _ref19[1];
+
+  var _ref20 = (0, react_1.useState)(false),
+      _ref21 = _slicedToArray(_ref20, 2),
+      toggleActive = _ref21[0],
+      setToggleActive = _ref21[1];
 
   return react_1["default"].createElement(Container_1["default"], {
     position: "sticky"
@@ -3171,7 +3232,7 @@ var Header = function Header() {
     href: "/"
   }, react_1["default"].createElement(react_1.Suspense, {
     fallback: "logo"
-  }, react_1["default"].createElement(SLogo, null)))), react_1["default"].createElement("div", null, react_1["default"].createElement(SNav, null)), react_1["default"].createElement(Flex_1.Flex, {
+  }, react_1["default"].createElement(SLogo, null)))), isDesktop && react_1["default"].createElement("div", null, react_1["default"].createElement(SNav, null)), react_1["default"].createElement(Flex_1.Flex, {
     align: "center",
     width: "fit-content"
   }, react_1["default"].createElement(outline_1.SearchIcon, {
@@ -3179,7 +3240,14 @@ var Header = function Header() {
     onClick: function onClick() {
       return setSearchActive(true);
     }
-  }), react_1["default"].createElement(Buttons_1.PrimaryButton, null, "Post a Property"))))), react_1["default"].createElement(SSearch, {
+  }), !isMiniMobile && react_1["default"].createElement(Buttons_1.PrimaryButton, null, "Post a Property"), !isDesktop && react_1["default"].createElement(Toggle, {
+    onClick: function onClick() {
+      return setToggleActive(!toggleActive);
+    },
+    active: toggleActive
+  }))))), !isDesktop && react_1["default"].createElement(MobileNav, {
+    active: toggleActive
+  }), react_1["default"].createElement(SSearch, {
     active: searchActive,
     func: setSearchActive
   }));
@@ -3365,6 +3433,62 @@ var styled_components_1 = __webpack_require__(/*! styled-components */ "./node_m
 
 var GlobalStyle = (0, styled_components_1.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Regular.otf') format(\"opentype\");\n        font-weight: 400;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Light.otf') format(\"opentype\");\n        font-weight: 300;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Thin.otf') format(\"opentype\");\n        font-weight: 200;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Ultralight.otf') format(\"opentype\");\n        font-weight: 100;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('fonts/SF/SF-Pro-Display-Bold.otf') format(\"opentype\");\n        font-weight: 700;\n    }\n    body {\n        margin: 0;\n        display: block;\n    }\n    * {\n        font-family: 'SF Pro', sans-serif;\n        font-weight: 400;\n        font-size: 16px;\n    }\n    ul {\n        margin: 0;\n        padding: 0;\n        list-style: none;\n    }\n    a {\n        text-decoration: none;\n        color: black;\n    }\n    button {\n        border: 0;\n    }\n"])));
 exports["default"] = GlobalStyle;
+
+/***/ }),
+
+/***/ "./resources/js/hooks/useMediaQuery.tsx":
+/*!**********************************************!*\
+  !*** ./resources/js/hooks/useMediaQuery.tsx ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var react_1 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var useMediaQuery = function useMediaQuery(query) {
+  var _ref = (0, react_1.useState)(false),
+      _ref2 = _slicedToArray(_ref, 2),
+      matches = _ref2[0],
+      setMatches = _ref2[1];
+
+  (0, react_1.useEffect)(function () {
+    var media = window.matchMedia(query);
+
+    if (media.matches !== matches) {
+      setMatches(media.matches);
+    }
+
+    var listener = function listener() {
+      return setMatches(media.matches);
+    };
+
+    window.addEventListener("resize", listener);
+    return function () {
+      return window.removeEventListener("resize", listener);
+    };
+  }, [matches, query]);
+  return matches;
+};
+
+exports["default"] = useMediaQuery;
 
 /***/ }),
 

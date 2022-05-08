@@ -1,4 +1,10 @@
-import React, { useEffect, useState, useRef, Suspense } from "react";
+import React, {
+    useEffect,
+    useState,
+    useRef,
+    Suspense,
+    MouseEventHandler,
+} from "react";
 import styled from "styled-components";
 import { Flex } from "../shared/Flex";
 import Container from "../shared/Container";
@@ -9,6 +15,7 @@ import { logoSrc } from "../assets";
 import { SearchIcon } from "@heroicons/react/outline";
 import { SInput } from "./Input";
 import { Div } from "../shared/Container";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 const Logo: React.FC<{ className?: string }> = ({ className }) => (
     <Img className={className} src={"/assets/logo.webp"} alt="logo" />
@@ -70,7 +77,6 @@ const SHead = styled(Head)`
     background-color: #fff;
     svg {
         height: 24px;
-        margin-right: 10px;
         cursor: pointer;
         &:hover {
             color: ${({ theme }) => theme.secondaryColor};
@@ -135,6 +141,78 @@ const Search: React.FC<{
     // }
 };
 
+const MNav: React.FC<{ className?: string; active: boolean }> = ({
+    className,
+}) => (
+    <div className={className}>
+        <nav>
+            <ul>
+                {routes.map((route, index) => (
+                    <li key={index}>
+                        <Link href={route.path}>{route.route}</Link>
+                    </li>
+                ))}
+                <li>
+                    <PrimaryButton width={"100%"}>
+                        Post a Property
+                    </PrimaryButton>
+                </li>
+            </ul>
+        </nav>
+    </div>
+);
+
+const MobileNav = styled(MNav)`
+    height: ${({ active }) => (active ? "10000px" : 0)};
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    transition: all 0.6s ease;
+
+    nav {
+        background-color: rgba(255, 255, 255, 0.99);
+        height: ${({ active }) => (active ? "80vh" : 0)};
+        overflow: auto;
+        padding: 50px 0 20px 0;
+        box-shadow: 0 4px 10px 0 rgb(8 15 52 / 6%);
+
+        transform: ${({ active }) =>
+            active
+                ? "translateY(0px) translateX(0px);"
+                : "translateY(-800px) translateX(0px)"};
+        opacity: ${({ active }) => (active ? 1 : 0)};
+
+        transition: all 0.6s ease;
+    }
+
+    ul {
+        height: 100%;
+        margin-right: 24px;
+        margin-left: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+    }
+    li {
+        padding: 12px 0;
+    }
+    li:last-of-type {
+        display: flex;
+        margin-top: auto;
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+    a {
+        font-size: 28px;
+        line-height: 1.111em;
+        font-weight: 500;
+    }
+`;
+
 const SSearch = styled(Search)`
     position: absolute;
     top: 130px;
@@ -146,8 +224,61 @@ const SSearch = styled(Search)`
 
     transition: all 0.6s ease-in-out;
 `;
+
+const NavToggle: React.FC<{
+    className?: string;
+    active?: boolean;
+    onClick?: MouseEventHandler<Element>;
+}> = ({ className, onClick }) => (
+    <PrimaryButton onClick={onClick} className={className}>
+        <div>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </PrimaryButton>
+);
+
+const Toggle = styled(NavToggle)`
+    padding: 18px;
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 20px;
+        min-height: 16px;
+        justify-content: space-between;
+    }
+    span {
+        width: 100%;
+        max-height: 2px;
+        min-height: 2px;
+        padding: 0px;
+        background-color: #fff;
+        opacity: ${({ active }) => (active ? 0 : 1)};
+        transform-style: preserve-3d;
+        transition: transform 0.6s ease, opacity 0.7s ease-out;
+        &:first-of-type {
+            opacity: 1;
+            transform: ${({ active }) =>
+                active
+                    ? "translate3d(0px, 7px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(140deg) skew(0deg, 0deg)"
+                    : "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"};
+        }
+        &:last-of-type {
+            opacity: 1;
+            transform: ${({ active }) =>
+                active
+                    ? "translate3d(0px, -7px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(40deg) skew(0deg, 0deg);"
+                    : "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"};
+        }
+    }
+`;
 const Header: React.FC = () => {
+    const isDesktop = useMediaQuery("(min-width: 991px)");
+    const isMiniMobile = useMediaQuery("(max-width: 500px)");
     const [searchActive, setSearchActive] = useState(false);
+    const [toggleActive, setToggleActive] = useState(false);
     return (
         <Container position="sticky">
             <SHead>
@@ -165,19 +296,32 @@ const Header: React.FC = () => {
                             </Link>
                         </div>
 
-                        <div>
-                            <SNav />
-                        </div>
+                        {isDesktop && (
+                            <div>
+                                <SNav />
+                            </div>
+                        )}
                         <Flex align="center" width="fit-content">
                             <SearchIcon
                                 className="search"
                                 onClick={() => setSearchActive(true)}
                             />
-                            <PrimaryButton>Post a Property</PrimaryButton>
+                            {!isMiniMobile && (
+                                <PrimaryButton>Post a Property</PrimaryButton>
+                            )}
+                            {!isDesktop && (
+                                <Toggle
+                                    onClick={() =>
+                                        setToggleActive(!toggleActive)
+                                    }
+                                    active={toggleActive}
+                                />
+                            )}
                         </Flex>
                     </Flex>
                 </nav>
             </SHead>
+            {!isDesktop && <MobileNav active={toggleActive} />}
             {<SSearch active={searchActive} func={setSearchActive} />}
         </Container>
     );
