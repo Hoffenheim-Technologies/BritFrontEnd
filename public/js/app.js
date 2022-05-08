@@ -3176,7 +3176,7 @@ var MNav = function MNav(_ref7) {
   }, "Post a Property")))));
 };
 
-var MobileNav = (0, styled_components_1["default"])(MNav)(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    height: ", ";\n    overflow: hidden;\n    position: absolute;\n    top: 100%;\n    left: 0;\n    right: 0;\n    width: 100%;\n    transition: all 0.6s ease;\n\n    nav {\n        background-color: rgba(255, 255, 255, 0.99);\n        height: ", ";\n        overflow: auto;\n        padding: 50px 0 20px 0;\n        box-shadow: 0 4px 10px 0 rgb(8 15 52 / 6%);\n\n        transform: ", ";\n        opacity: ", ";\n\n        transition: all 0.6s ease;\n    }\n\n    ul {\n        height: 100%;\n        margin-right: 24px;\n        margin-left: 24px;\n        display: flex;\n        flex-direction: column;\n        justify-content: flex-start;\n        align-items: stretch;\n    }\n    li {\n        padding: 12px 0;\n    }\n    li:last-of-type {\n        display: flex;\n        margin-top: auto;\n        padding-top: 60px;\n        padding-bottom: 40px;\n    }\n    a {\n        font-size: 28px;\n        line-height: 1.111em;\n        font-weight: 500;\n    }\n"])), function (_ref8) {
+var MobileNav = (0, styled_components_1["default"])(MNav)(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    height: ", ";\n    overflow: hidden;\n    position: absolute;\n    top: 100%;\n    left: 0;\n    right: 0;\n    width: 100%;\n    transition: all 0.6s ease;\n\n    nav {\n        background-color: rgba(255, 255, 255, 0.99);\n        height: ", ";\n        overflow: auto;\n        padding: 50px 0 20px 0;\n        box-shadow: 0 4px 10px 0 rgb(8 15 52 / 6%);\n\n        transform: ", ";\n        opacity: ", ";\n\n        transition: all 0.6s ease;\n    }\n\n    ul {\n        height: 100%;\n        margin-right: 24px;\n        margin-left: 24px;\n        display: flex;\n        flex-direction: column;\n        justify-content: flex-start;\n        align-items: stretch;\n    }\n    li {\n        padding: 12px 0;\n    }\n    li:last-of-type {\n        display: flex;\n        margin-top: auto;\n        padding-top: 55px;\n        padding-bottom: 40px;\n    }\n    a {\n        font-size: 28px;\n        line-height: 1.111em;\n        font-weight: 500;\n    }\n"])), function (_ref8) {
   var active = _ref8.active;
   return active ? "10000px" : 0;
 }, function (_ref9) {
@@ -3190,31 +3190,34 @@ var MobileNav = (0, styled_components_1["default"])(MNav)(_templateObject5 || (_
   var active = _ref11.active;
   return active ? 1 : 0;
 });
-var SSearch = (0, styled_components_1["default"])(Search)(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n    position: absolute;\n    top: 130px;\n    left: 50%;\n    transform: translateX(-50%)\n        ", ";\n    background-color: #fff;\n    opacity: ", ";\n\n    transition: all 0.6s ease-in-out;\n"])), function (_ref12) {
+var SSearch = (0, styled_components_1["default"])(Search)(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n    height: ", ";\n    position: absolute;\n    top: 130px;\n    left: 50%;\n    transform: translateX(-50%)\n        ", ";\n    background-color: #fff;\n    opacity: ", ";\n\n    transition: all 0.6s ease-in-out;\n"])), function (_ref12) {
   var active = _ref12.active;
-  return active ? "translateY(0)" : "translateY(10px)";
+  return active ? "auto" : 0;
 }, function (_ref13) {
   var active = _ref13.active;
+  return active ? "translateY(0)" : "translateY(10px)";
+}, function (_ref14) {
+  var active = _ref14.active;
   return active ? 1 : 0;
 });
 
-var NavToggle = function NavToggle(_ref14) {
-  var className = _ref14.className,
-      onClick = _ref14.onClick;
+var NavToggle = function NavToggle(_ref15) {
+  var className = _ref15.className,
+      onClick = _ref15.onClick;
   return react_1["default"].createElement(Buttons_1.PrimaryButton, {
     onClick: onClick,
     className: className
   }, react_1["default"].createElement("div", null, react_1["default"].createElement("span", null), react_1["default"].createElement("span", null), react_1["default"].createElement("span", null)));
 };
 
-var Toggle = (0, styled_components_1["default"])(NavToggle)(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n    padding: 18px;\n    div {\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        width: 20px;\n        min-height: 16px;\n        justify-content: space-between;\n    }\n    span {\n        width: 100%;\n        max-height: 2px;\n        min-height: 2px;\n        padding: 0px;\n        background-color: #fff;\n        opacity: ", ";\n        transform-style: preserve-3d;\n        transition: transform 0.6s ease, opacity 0.7s ease-out;\n        &:first-of-type {\n            opacity: 1;\n            transform: ", ";\n        }\n        &:last-of-type {\n            opacity: 1;\n            transform: ", ";\n        }\n    }\n"])), function (_ref15) {
-  var active = _ref15.active;
-  return active ? 0 : 1;
-}, function (_ref16) {
+var Toggle = (0, styled_components_1["default"])(NavToggle)(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n    padding: 18px;\n    div {\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        width: 20px;\n        min-height: 16px;\n        justify-content: space-between;\n    }\n    span {\n        width: 100%;\n        max-height: 2px;\n        min-height: 2px;\n        padding: 0px;\n        background-color: #fff;\n        opacity: ", ";\n        transform-style: preserve-3d;\n        transition: transform 0.6s ease, opacity 0.7s ease-out;\n        &:first-of-type {\n            opacity: 1;\n            transform: ", ";\n        }\n        &:last-of-type {\n            opacity: 1;\n            transform: ", ";\n        }\n    }\n"])), function (_ref16) {
   var active = _ref16.active;
-  return active ? "translate3d(0px, 7px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(140deg) skew(0deg, 0deg)" : "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)";
+  return active ? 0 : 1;
 }, function (_ref17) {
   var active = _ref17.active;
+  return active ? "translate3d(0px, 7px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(140deg) skew(0deg, 0deg)" : "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)";
+}, function (_ref18) {
+  var active = _ref18.active;
   return active ? "translate3d(0px, -7px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(40deg) skew(0deg, 0deg);" : "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)";
 });
 
@@ -3223,15 +3226,15 @@ var Header = function Header() {
   var isMiniMobile = (0, useMediaQuery_1["default"])("(max-width: 500px)");
   var isTall = (0, useMediaQuery_1["default"])("(min-height: 800px");
 
-  var _ref18 = (0, react_1.useState)(false),
-      _ref19 = _slicedToArray(_ref18, 2),
-      searchActive = _ref19[0],
-      setSearchActive = _ref19[1];
+  var _ref19 = (0, react_1.useState)(false),
+      _ref20 = _slicedToArray(_ref19, 2),
+      searchActive = _ref20[0],
+      setSearchActive = _ref20[1];
 
-  var _ref20 = (0, react_1.useState)(false),
-      _ref21 = _slicedToArray(_ref20, 2),
-      toggleActive = _ref21[0],
-      setToggleActive = _ref21[1];
+  var _ref21 = (0, react_1.useState)(false),
+      _ref22 = _slicedToArray(_ref21, 2),
+      toggleActive = _ref22[0],
+      setToggleActive = _ref22[1];
 
   return react_1["default"].createElement(Container_1["default"], {
     position: "sticky"

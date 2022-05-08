@@ -218,7 +218,7 @@ const MobileNav = styled(MNav)`
     li:last-of-type {
         display: flex;
         margin-top: auto;
-        padding-top: 60px;
+        padding-top: 55px;
         padding-bottom: 40px;
     }
     a {
@@ -229,6 +229,7 @@ const MobileNav = styled(MNav)`
 `;
 
 const SSearch = styled(Search)`
+    height: ${({ active }) => (active ? "auto" : 0)};
     position: absolute;
     top: 130px;
     left: 50%;
