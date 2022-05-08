@@ -117,7 +117,7 @@ const Search: React.FC<{
     const wrapperRef = useRef(null);
     useOutsideAlerter(wrapperRef);
     // if (active) {
-    const isDesktop = useMediaQuery("(min-width: 991px)");
+    const isDesktop = useMediaQuery("(min-width: 900px)");
     const isMini = useMediaQuery("(max-width: 500px)");
 
     console.log(isMini);
@@ -153,9 +153,11 @@ const Search: React.FC<{
     // }
 };
 
-const MNav: React.FC<{ className?: string; active: boolean }> = ({
-    className,
-}) => (
+const MNav: React.FC<{
+    className?: string;
+    active: boolean;
+    tall: boolean;
+}> = ({ className }) => (
     <div className={className}>
         <nav>
             <ul>
@@ -186,7 +188,8 @@ const MobileNav = styled(MNav)`
 
     nav {
         background-color: rgba(255, 255, 255, 0.99);
-        height: ${({ active }) => (active ? "91vh" : 0)};
+        height: ${({ active, tall }) =>
+            active ? (tall ? "82vh" : "77vh") : 0};
         overflow: auto;
         padding: 50px 0 20px 0;
         box-shadow: 0 4px 10px 0 rgb(8 15 52 / 6%);
@@ -287,8 +290,9 @@ const Toggle = styled(NavToggle)`
     }
 `;
 const Header: React.FC = () => {
-    const isDesktop = useMediaQuery("(min-width: 991px)");
+    const isDesktop = useMediaQuery("(min-width: 900px)");
     const isMiniMobile = useMediaQuery("(max-width: 500px)");
+    const isTall = useMediaQuery("(min-height: 800px");
     const [searchActive, setSearchActive] = useState(false);
     const [toggleActive, setToggleActive] = useState(false);
     return (
@@ -333,7 +337,7 @@ const Header: React.FC = () => {
                     </Flex>
                 </nav>
             </SHead>
-            {!isDesktop && <MobileNav active={toggleActive} />}
+            {!isDesktop && <MobileNav active={toggleActive} tall={isTall} />}
             {<SSearch active={searchActive} func={setSearchActive} />}
         </Container>
     );
