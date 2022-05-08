@@ -6,8 +6,9 @@ const Button: React.FC<{
     children?: React.ReactNode;
     onClick?: React.MouseEventHandler;
     width?: string;
-}> = ({ className, children, onClick }) => (
-    <button onClick={onClick} className={className}>
+    disabled?: boolean;
+}> = ({ className, children, onClick, disabled }) => (
+    <button onClick={onClick} className={className} disabled={disabled}>
         {children}
     </button>
 );

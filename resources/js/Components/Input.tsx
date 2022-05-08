@@ -9,13 +9,15 @@ const Input: React.FC<{
     placeholder?: string;
     maxLength?: number;
     required?: boolean;
-}> = ({ className, type, placeholder, maxLength, required }) => (
+    disabled?: boolean;
+}> = ({ className, type, placeholder, maxLength, required, disabled }) => (
     <input
         className={className}
         type={type ? type : "text"}
         maxLength={maxLength}
         placeholder={placeholder}
         required={required}
+        disabled={disabled}
     />
 );
 

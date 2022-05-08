@@ -140,7 +140,10 @@ const Search: React.FC<{
                             }
                             margin={isMini ? "15px 0" : "0 20px 0 0"}
                         />
-                        <SecondaryButton width={isMini ? "100%" : ""}>
+                        <SecondaryButton
+                            disabled={!active}
+                            width={isMini ? "100%" : ""}
+                        >
                             Search
                         </SecondaryButton>
                     </Flex>
@@ -234,7 +237,7 @@ const SSearch = styled(Search)`
     top: 130px;
     left: 50%;
     transform: translateX(-50%)
-        ${({ active }) => (active ? "translateY(0)" : "translateY(10px)")};
+        ${({ active }) => (active ? "translateY(0)" : "translateY(-500px)")};
     background-color: #fff;
     opacity: ${({ active }) => (active ? 1 : 0)};
 

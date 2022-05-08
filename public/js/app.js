@@ -2921,10 +2921,12 @@ var styled_components_1 = __importDefault(__webpack_require__(/*! styled-compone
 var Button = function Button(_ref) {
   var className = _ref.className,
       children = _ref.children,
-      onClick = _ref.onClick;
+      onClick = _ref.onClick,
+      disabled = _ref.disabled;
   return react_1["default"].createElement("button", {
     onClick: onClick,
-    className: className
+    className: className,
+    disabled: disabled
   }, children);
 };
 
@@ -3155,6 +3157,7 @@ var Search = function Search(_ref6) {
     width: !isMini ? isDesktop ? "500px" : "calc(100vw - 200px)" : "500px",
     margin: isMini ? "15px 0" : "0 20px 0 0"
   }), react_1["default"].createElement(Buttons_1.SecondaryButton, {
+    disabled: !active,
     width: isMini ? "100%" : ""
   }, "Search"))))); // } else {
   //     return <></>;
@@ -3195,7 +3198,7 @@ var SSearch = (0, styled_components_1["default"])(Search)(_templateObject6 || (_
   return active ? "auto" : 0;
 }, function (_ref13) {
   var active = _ref13.active;
-  return active ? "translateY(0)" : "translateY(10px)";
+  return active ? "translateY(0)" : "translateY(-500px)";
 }, function (_ref14) {
   var active = _ref14.active;
   return active ? 1 : 0;
@@ -3305,13 +3308,15 @@ var Input = function Input(_ref) {
       type = _ref.type,
       placeholder = _ref.placeholder,
       maxLength = _ref.maxLength,
-      required = _ref.required;
+      required = _ref.required,
+      disabled = _ref.disabled;
   return react_1["default"].createElement("input", {
     className: className,
     type: type ? type : "text",
     maxLength: maxLength,
     placeholder: placeholder,
-    required: required
+    required: required,
+    disabled: disabled
   });
 };
 
