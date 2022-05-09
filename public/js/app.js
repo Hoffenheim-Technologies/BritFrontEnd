@@ -4007,7 +4007,9 @@ var Home = function Home() {
     });
   };
 
-  return react_1["default"].createElement(react_1["default"].Fragment, null, react_1["default"].createElement(Container_1.SmallContainer, null, react_1["default"].createElement(Text_1.BoldContent, {
+  return react_1["default"].createElement(react_1["default"].Fragment, null, react_1["default"].createElement(Container_1.SmallContainer, {
+    small: isMiniMobile
+  }, react_1["default"].createElement(Text_1.BoldContent, {
     align: "center"
   }, "Your Dream Home is a Click Away"), react_1["default"].createElement(Text_1.Subtitle, {
     align: "center"
@@ -4170,7 +4172,10 @@ var Container = (0, styled_components_1["default"])(exports.Div)(_templateObject
   var zIndex = _ref3.zIndex;
   return zIndex;
 });
-exports.SmallContainer = (0, styled_components_1["default"])(exports.Div)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    max-width: 580px;\n    margin-right: auto;\n    margin-left: auto;\n    padding-right: 24px;\n    padding-left: 24px;\n"])));
+exports.SmallContainer = (0, styled_components_1["default"])(exports.Div)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    max-width: 580px;\n    margin-right: auto;\n    margin-left: auto;\n    padding-right: 24px;\n    padding-left: 24px;\n    margin-bottom: ", ";\n"])), function (_ref4) {
+  var small = _ref4.small;
+  return small ? "48px" : "82px";
+});
 exports["default"] = Container;
 
 /***/ }),

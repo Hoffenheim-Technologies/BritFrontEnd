@@ -13,7 +13,7 @@ const Home = () => {
         ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
     return (
         <>
-            <SmallContainer>
+            <SmallContainer small={isMiniMobile}>
                 <BoldContent align="center">
                     Your Dream Home is a Click Away
                 </BoldContent>
