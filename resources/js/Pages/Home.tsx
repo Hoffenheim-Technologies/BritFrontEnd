@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { PrimaryButton, TertiaryButton } from "../Components/Buttons";
 import useMediaQuery from "../hooks/useMediaQuery";
 import Layout from "../Layouts/Layout";
@@ -8,6 +8,9 @@ import { BoldContent, Subtitle } from "../shared/Text";
 
 const Home = () => {
     const isMiniMobile = useMediaQuery("(max-width: 500px)");
+    const PropertiesRef = useRef(null);
+    const executeScroll = (ref: React.MutableRefObject<any>) =>
+        ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
     return (
         <>
             <SmallContainer>
@@ -28,6 +31,7 @@ const Home = () => {
                     <PrimaryButton
                         margin={isMiniMobile ? 0 : ""}
                         width={isMiniMobile ? "100%" : ""}
+                        onClick={() => executeScroll(PropertiesRef)}
                     >
                         Browse Properties
                     </PrimaryButton>
@@ -41,6 +45,7 @@ const Home = () => {
             </SmallContainer>
             <section
                 style={{ backgroundColor: "rgb(249,249,249)", padding: "30px" }}
+                ref={PropertiesRef}
             >
                 Properties
             </section>

@@ -30,6 +30,9 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         display: block;
     }
+    html {
+        scroll-behaviour: smooth;
+    }
     * {
         font-family: 'SF Pro', sans-serif;
         font-weight: 400;

@@ -3740,6 +3740,46 @@ exports["default"] = About;
 "use strict";
 
 
+var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
+} : function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  o[k2] = m[k];
+});
+
+var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
+  Object.defineProperty(o, "default", {
+    enumerable: true,
+    value: v
+  });
+} : function (o, v) {
+  o["default"] = v;
+});
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+  }
+
+  __setModuleDefault(result, mod);
+
+  return result;
+};
+
 var __importDefault = this && this.__importDefault || function (mod) {
   return mod && mod.__esModule ? mod : {
     "default": mod
@@ -3750,7 +3790,7 @@ Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 
-var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
 var Buttons_1 = __webpack_require__(/*! ../Components/Buttons */ "./resources/js/Components/Buttons.tsx");
 
@@ -3766,6 +3806,15 @@ var Text_1 = __webpack_require__(/*! ../shared/Text */ "./resources/js/shared/Te
 
 var Home = function Home() {
   var isMiniMobile = (0, useMediaQuery_1["default"])("(max-width: 500px)");
+  var PropertiesRef = (0, react_1.useRef)(null);
+
+  var executeScroll = function executeScroll(ref) {
+    return ref.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  };
+
   return react_1["default"].createElement(react_1["default"].Fragment, null, react_1["default"].createElement(Container_1.SmallContainer, null, react_1["default"].createElement(Text_1.BoldContent, {
     align: "center"
   }, "Your Dream Home is a Click Away"), react_1["default"].createElement(Text_1.Subtitle, {
@@ -3778,7 +3827,10 @@ var Home = function Home() {
     gap: isMiniMobile ? "10px" : ""
   }, react_1["default"].createElement(Buttons_1.PrimaryButton, {
     margin: isMiniMobile ? 0 : "",
-    width: isMiniMobile ? "100%" : ""
+    width: isMiniMobile ? "100%" : "",
+    onClick: function onClick() {
+      return executeScroll(PropertiesRef);
+    }
   }, "Browse Properties"), react_1["default"].createElement(Buttons_1.TertiaryButton, {
     margin: isMiniMobile ? 0 : "",
     width: isMiniMobile ? "100%" : ""
@@ -3786,7 +3838,8 @@ var Home = function Home() {
     style: {
       backgroundColor: "rgb(249,249,249)",
       padding: "30px"
-    }
+    },
+    ref: PropertiesRef
   }, "Properties"));
 };
 
@@ -3820,7 +3873,7 @@ Object.defineProperty(exports, "__esModule", ({
 
 var styled_components_1 = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 
-var GlobalStyle = (0, styled_components_1.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Regular.otf') format(\"opentype\");\n        font-weight: 400;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Light.otf') format(\"opentype\");\n        font-weight: 300;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Thin.otf') format(\"opentype\");\n        font-weight: 200;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Ultralight.otf') format(\"opentype\");\n        font-weight: 100;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('fonts/SF/SF-Pro-Display-Bold.otf') format(\"opentype\");\n        font-weight: 700;\n    }\n    body {\n        margin: 0;\n        display: block;\n    }\n    * {\n        font-family: 'SF Pro', sans-serif;\n        font-weight: 400;\n        font-size: 16px;\n        margin: 0;\n        padding: 0;\n        box-sizing: border-box;\n    }\n    ul {\n        list-style: none;\n    }\n    a {\n        text-decoration: none;\n        color: black;\n    }\n    button {\n        border: 0;\n    }\n"])));
+var GlobalStyle = (0, styled_components_1.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Regular.otf') format(\"opentype\");\n        font-weight: 400;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Light.otf') format(\"opentype\");\n        font-weight: 300;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Thin.otf') format(\"opentype\");\n        font-weight: 200;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Ultralight.otf') format(\"opentype\");\n        font-weight: 100;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('fonts/SF/SF-Pro-Display-Bold.otf') format(\"opentype\");\n        font-weight: 700;\n    }\n    body {\n        margin: 0;\n        display: block;\n    }\n    html {\n        scroll-behaviour: smooth;\n    }\n    * {\n        font-family: 'SF Pro', sans-serif;\n        font-weight: 400;\n        font-size: 16px;\n        margin: 0;\n        padding: 0;\n        box-sizing: border-box;\n    }\n    ul {\n        list-style: none;\n    }\n    a {\n        text-decoration: none;\n        color: black;\n    }\n    button {\n        border: 0;\n    }\n"])));
 exports["default"] = GlobalStyle;
 
 /***/ }),
