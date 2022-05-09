@@ -3332,7 +3332,7 @@ var Logo = function Logo(_ref) {
   });
 };
 
-exports.SLogo = (0, styled_components_1["default"])(Logo)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    width: 200px;\n    max-width: 100%;\n    &:hover {\n        transform: scale(1.2);\n    }\n    transition: transform 0.3s ease;\n"])));
+exports.SLogo = (0, styled_components_1["default"])(Logo)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    width: 156px;\n    max-width: 100%;\n    &:hover {\n        transform: scale(1.2);\n    }\n    transition: transform 0.3s ease;\n"])));
 var routes = [{
   route: "Home",
   path: "/"
@@ -3481,7 +3481,7 @@ var NavToggle = function NavToggle(_ref15) {
   }, react_1["default"].createElement("div", null, react_1["default"].createElement("span", null), react_1["default"].createElement("span", null), react_1["default"].createElement("span", null)));
 };
 
-var Toggle = (0, styled_components_1["default"])(NavToggle)(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n    padding: 18px;\n    margin-left: 10px;\n    div {\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        width: 20px;\n        min-height: 16px;\n        justify-content: space-between;\n    }\n    span {\n        width: 100%;\n        max-height: 2px;\n        min-height: 2px;\n        padding: 0px;\n        background-color: #fff;\n        opacity: ", ";\n        transform-style: preserve-3d;\n        transition: transform 0.6s ease, opacity 0.7s ease-out;\n        &:first-of-type {\n            opacity: 1;\n            transform: ", ";\n        }\n        &:last-of-type {\n            opacity: 1;\n            transform: ", ";\n        }\n    }\n"])), function (_ref16) {
+var Toggle = (0, styled_components_1["default"])(NavToggle)(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n    padding: 12px;\n    margin-left: 10px;\n    div {\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        width: 20px;\n        min-height: 16px;\n        justify-content: space-between;\n    }\n    span {\n        width: 100%;\n        max-height: 2px;\n        min-height: 2px;\n        padding: 0px;\n        background-color: #fff;\n        opacity: ", ";\n        transform-style: preserve-3d;\n        transition: transform 0.6s ease, opacity 0.7s ease-out;\n        &:first-of-type {\n            opacity: 1;\n            transform: ", ";\n        }\n        &:last-of-type {\n            opacity: 1;\n            transform: ", ";\n        }\n    }\n"])), function (_ref16) {
   var active = _ref16.active;
   return active ? 0 : 1;
 }, function (_ref17) {

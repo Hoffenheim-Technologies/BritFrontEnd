@@ -22,7 +22,7 @@ const Logo: React.FC<{ className?: string }> = ({ className }) => (
     <Img className={className} src={"/assets/logo.webp"} alt="logo" />
 );
 export const SLogo = styled(Logo)`
-    width: 200px;
+    width: 156px;
     max-width: 100%;
     &:hover {
         transform: scale(1.2);
@@ -257,7 +257,7 @@ const NavToggle: React.FC<{
 );
 
 const Toggle = styled(NavToggle)`
-    padding: 18px;
+    padding: 12px;
     margin-left: 10px;
     div {
         display: flex;
