@@ -61,7 +61,7 @@ const Subtitle = styled(P)`
     font-size: 18px;
     font-weight: 500;
     line-height: 1.667em;
-    margin-bottom: ${({ margin }) => (margin != "" ? margin : "40px")};
+    margin-bottom: ${({ margin }) => (margin === "" ? margin : "40px")};
     color: #8d8d91;
     position: relative;
     transform: ${({ transform }) => (transform ? "" : "translateY(100px)")};

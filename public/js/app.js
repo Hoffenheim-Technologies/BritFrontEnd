@@ -4374,7 +4374,7 @@ var Subtitle = (0, styled_components_1["default"])(P)(_templateObject4 || (_temp
   return align;
 }, function (_ref11) {
   var margin = _ref11.margin;
-  return margin != "" ? margin : "40px";
+  return margin === "" ? margin : "40px";
 }, function (_ref12) {
   var transform = _ref12.transform;
   return transform ? "" : "translateY(100px)";
