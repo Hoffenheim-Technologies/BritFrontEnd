@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import styled, { useTheme } from "styled-components";
 import Container from "../shared/Container";
-import { SLogo } from "./Header";
+import { routes, SLogo } from "./Header";
 import { Subtitle, SH4 } from "../shared/Text";
 import { Flex } from "../shared/Flex";
 import useMediaQuery from "../hooks/useMediaQuery";
@@ -11,6 +11,9 @@ import { Link, usePage } from "@inertiajs/inertia-react";
 import { SInput } from "./Input";
 import { SecondaryButton } from "./Buttons";
 import { MailIcon } from "@heroicons/react/outline";
+import { Grid } from "../shared/Grid";
+import { Image } from "./Image";
+import { ArrowRightIcon } from "@heroicons/react/outline";
 
 const SMHandles = [
     {
@@ -50,6 +53,9 @@ const SMLink: React.FC<{
 
 const SM = styled(SMLink)`
     background-color: ${({ theme }) => theme.primaryColor};
+    &:hover {
+        background-color: ${({ theme }) => theme.secondaryColor};
+    }
     color: #fff;
     border-radius: 1000000px;
     display: flex;
@@ -60,6 +66,7 @@ const SM = styled(SMLink)`
     max-height: 34px;
     max-width: 34px;
     font-size: 16px;
+    transition: background 300ms ease;
     svg {
         height: 16px;
     }
@@ -105,8 +112,130 @@ const SSubscribe = styled(SubscribeForm)`
     }
 `;
 
+interface Property {
+    path: string;
+    image: string;
+    location: string;
+    description: string;
+}
+
+const featured: Property[] = [
+    {
+        path: "",
+        image: "",
+        location: "San Diego, CA",
+        description:
+            "Lorem ipsum dolor sit amet cons ectetur adipiscing elit mag",
+    },
+    {
+        path: "",
+        image: "",
+        location: "San Diego, CA",
+        description:
+            "Lorem ipsum dolor sit amet cons ectetur adipiscing elit mag",
+    },
+    {
+        path: "",
+        image: "",
+        location: "San Diego, CA",
+        description:
+            "Lorem ipsum dolor sit amet cons ectetur adipiscing elit mag",
+    },
+];
+
+const Featured: React.FC<{
+    property: Property;
+    className?: string;
+    small?: boolean;
+}> = ({ property, className, small }) => (
+    <Link href={property.path} className={className}>
+        <Flex
+            direction={small ? "column" : "row"}
+            align={small ? "flex-start" : "center"}
+        >
+            <div style={{ marginBottom: small ? "10px" : 0 }}>
+                <Suspense fallback="logo">
+                    <Image src={property.image} />
+                </Suspense>
+            </div>
+            <div
+                style={{
+                    marginBottom: "9px",
+                }}
+            >
+                <div
+                    style={{
+                        display: "flex",
+                        color: "#222223",
+                        fontSize: "18px",
+                        lineHeight: "1.333em",
+                        fontWeight: 700,
+                        alignItems: "center",
+                    }}
+                >
+                    <div
+                        style={{
+                            color: "#222223",
+                            fontSize: "18px",
+                            lineHeight: "1.333em",
+                            fontWeight: 700,
+                            marginRight: "12px",
+                        }}
+                    >
+                        <h5>{property.location}</h5>
+                    </div>
+                    <ArrowRightIcon />
+                </div>
+                <Subtitle margin={small ? "0" : ""} transform={true}>
+                    {property.description}
+                </Subtitle>
+            </div>
+        </Flex>
+    </Link>
+);
+
+const SFeatured = styled(Featured)`
+    &>div>div: first-of-type {
+        height: ${({ small }) => (small ? "80px" : "137px")};
+        width: ${({ small }) => (small ? "80px" : "137px")};
+        max-height: ${({ small }) => (small ? "80px" : "137px")};
+        min-height: ${({ small }) => (small ? "80px" : "137px")};
+        max-width: ${({ small }) => (small ? "80px" : "137px")};
+        min-width: ${({ small }) => (small ? "80px" : "137px")};
+        background: rgba(248, 87, 87, 0.2);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 36px;
+    }
+    h5 {
+        color: #222223;
+        font-size: 18px;
+        line-height: 1.333em;
+        font-weight: 700;
+    }
+    svg {
+        height: 15px;
+    }
+    &:hover {
+        h5,
+        svg {
+            color: ${({ theme }) => theme.secondaryColor};
+        }
+        img {
+            transform: scale(1.1);
+        }
+        svg {
+            transform: translateX(10px);
+            transition: transform 0.5s ease;
+        }
+    }
+`;
+
 const Foot: React.FC<{ className?: string }> = ({ className }) => {
     const isDesktop = useMediaQuery("(min-width: 900px)");
+    const isMiniMobile = useMediaQuery("(max-width: 500px)");
     const theme = useTheme();
     const { appYear } = usePage().props;
     return (
@@ -163,6 +292,91 @@ const Foot: React.FC<{ className?: string }> = ({ className }) => {
                                 backgroundColor: "#e9e9e9",
                             }}
                         ></div>
+                        <Flex
+                            justify="space-between"
+                            direction={isDesktop ? "row" : "column"}
+                        >
+                            <div
+                                style={{
+                                    maxWidth: "739px",
+                                    marginRight: "40px",
+                                    flexGrow: 1,
+                                    width: "100%",
+                                }}
+                            >
+                                <Flex
+                                    direction={isMiniMobile ? "column" : "row"}
+                                    justify={
+                                        !isMiniMobile && !isDesktop
+                                            ? ""
+                                            : "space-around"
+                                    }
+                                    width="100%"
+                                >
+                                    <div
+                                        style={{
+                                            width:
+                                                !isMiniMobile && !isDesktop
+                                                    ? "50%"
+                                                    : "",
+                                        }}
+                                    >
+                                        <SH4 margin="0 0 48px 0">Pages</SH4>
+                                        <ul>
+                                            {routes.map((route, index) => (
+                                                <li key={index}>
+                                                    <Link href={route.path}>
+                                                        {route.route}
+                                                    </Link>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <SH4 margin="0 0 48px 0">
+                                            Useful Pages
+                                        </SH4>
+                                        <ul>
+                                            <li>
+                                                <Link href="/">Licenses</Link>
+                                            </li>
+                                            <li>
+                                                <Link href="/">Privacy</Link>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </Flex>
+                            </div>
+                            <div style={{ width: "100%", maxWidth: "448px" }}>
+                                <SH4 margin="0 0 48px 0">Explore by City</SH4>
+                                <Grid
+                                    columnGap="20px"
+                                    rowGap="20px"
+                                    columns={1}
+                                >
+                                    {featured.map((property, index) => (
+                                        <SFeatured
+                                            small={isMiniMobile}
+                                            key={index}
+                                            property={property}
+                                        />
+                                    ))}
+                                </Grid>
+                            </div>
+                        </Flex>
+                        <div
+                            style={{
+                                minHeight: "1px",
+                                margin: isDesktop
+                                    ? "80px 0 36px 0"
+                                    : isMiniMobile
+                                    ? "36px 0 "
+                                    : "56px 0",
+                                width: "100%",
+                                opacity: 1,
+                                backgroundColor: "#e9e9e9",
+                            }}
+                        ></div>
                         <div style={{ width: "100%" }}>
                             <div style={{ width: "100%", textAlign: "center" }}>
                                 <Subtitle transform={true}>
@@ -195,6 +409,26 @@ const Footer = styled(Foot)`
     padding-bottom: 32px;
     border-top: 1px solid #e9e9e9;
     background-attachment: scroll;
+
+    img {
+        margin-bottom: 16px;
+        cursor: pointer;
+    }
+    // p {
+    //     margin: 0;
+    // }
+
+    ul a {
+        display: block;
+        margin-bottom: 24px;
+        color: #616066;
+        font-size: 16px;
+        line-height: 1.125em;
+        transition: color 300ms ease;
+        &:hover {
+            color: ${({ theme }) => theme.secondaryColor};
+        }
+    }
 `;
 
 export default Footer;

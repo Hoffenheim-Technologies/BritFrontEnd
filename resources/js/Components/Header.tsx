@@ -11,7 +11,6 @@ import Container from "../shared/Container";
 import { Link } from "@inertiajs/inertia-react";
 import { PrimaryButton, SecondaryButton } from "./Buttons";
 import { Img } from "react-image";
-import { logoSrc } from "../assets";
 import { SearchIcon } from "@heroicons/react/outline";
 import { SInput } from "./Input";
 import { Div } from "../shared/Container";
@@ -25,12 +24,12 @@ export const SLogo = styled(Logo)`
     width: 156px;
     max-width: 100%;
     &:hover {
-        transform: scale(1.2);
+        transform: scale(0.9);
     }
     transition: transform 0.3s ease;
 `;
 
-const routes: { route: string; path: string }[] = [
+export const routes: { route: string; path: string }[] = [
     { route: "Home", path: "/" },
     { route: "About", path: "/about" },
     { route: "Properties", path: "/properties" },

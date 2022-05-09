@@ -12,16 +12,9 @@ interface Props {
     className?: string;
 }
 
-const Div = ({
-    width,
-    height,
-    justify,
-    align,
-    direction,
-    children,
-    gap,
-    className,
-}: Props) => <div className={className}>{children}</div>;
+const Div = ({ children, className }: Props) => (
+    <div className={className}>{children}</div>
+);
 const Flex = styled(Div)`
     display: flex;
     width: ${(props) => (props.width ? props.width : "100%")};
