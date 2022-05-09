@@ -56,6 +56,10 @@ const SecondaryButton = styled(Button)`
     color: ${({ theme }) => theme.primaryTextColor};
     cursor: pointer;
     width: ${({ width }) => width};
+    &:hover {
+        transform: scale(0.9);
+    }
+    transition: transform 0.3s ease;
 `;
 
 const TertiaryButton = styled(Button)`

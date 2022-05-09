@@ -39,6 +39,11 @@ const Home = () => {
                     </TertiaryButton>
                 </Flex>
             </SmallContainer>
+            <section
+                style={{ backgroundColor: "rgb(249,249,249)", padding: "30px" }}
+            >
+                Properties
+            </section>
         </>
     );
 };

@@ -4,6 +4,7 @@ import { Inertia } from "@inertiajs/inertia";
 import { ThemeProvider } from "styled-components";
 import { lightTheme } from "../theme";
 import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 import GlobalStyle from "../createGlobalStyles";
 import Container from "../shared/Container";
 
@@ -12,7 +13,7 @@ const reveal = () => {
     for (var i = 0; i < reveals.length; i++) {
         var windowHeight = window.innerHeight;
         var elementTop = reveals[i].getBoundingClientRect().top;
-        var elementVisible = 120;
+        var elementVisible = 50;
         if (elementTop < windowHeight - elementVisible) {
             reveals[i].classList.add("active");
         } else {
@@ -34,11 +35,8 @@ const Layout: React.FC<{ title: string; children: React.ReactNode }> = ({
                 <GlobalStyle />
                 <div>
                     <Header />
-                    <section
-                        style={{ padding: "40px 0 0 0", minHeight: "150vh" }}
-                    >
-                        {children}
-                    </section>
+                    <main style={{ padding: "40px 0 0 0" }}>{children}</main>
+                    <Footer />
                 </div>
             </ThemeProvider>
         </>

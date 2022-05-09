@@ -21,7 +21,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
 const Logo: React.FC<{ className?: string }> = ({ className }) => (
     <Img className={className} src={"/assets/logo.webp"} alt="logo" />
 );
-const SLogo = styled(Logo)`
+export const SLogo = styled(Logo)`
     width: 200px;
     max-width: 100%;
     &:hover {
@@ -119,8 +119,6 @@ const Search: React.FC<{
     // if (active) {
     const isDesktop = useMediaQuery("(min-width: 900px)");
     const isMini = useMediaQuery("(max-width: 500px)");
-
-    console.log(isMini);
     return (
         <div ref={wrapperRef}>
             <SearchBar className={className}>

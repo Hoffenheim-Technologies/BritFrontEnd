@@ -5,9 +5,14 @@ interface Props {
     className?: string;
     children: React.ReactNode;
     align?: string;
+    transform?: boolean;
 }
 const H1 = ({ className, children }: Props) => (
-    <p className={className + " reveal"}>{children}</p>
+    <h1 className={className + " reveal"}>{children}</h1>
+);
+
+const H4 = ({ className, children }: Props) => (
+    <h4 className={className + " reveal"}>{children}</h4>
 );
 
 const P = ({ className, children }: Props) => (
@@ -29,6 +34,13 @@ const BoldContent = styled(H1)`
     }
 `;
 
+const SH4 = styled(H4)`
+    color: ${({ theme }) => theme.primaryColor};
+    font-size: 20px;
+    line-height: 1.4em;
+    font-weight: 700;
+`;
+
 const Subtitle = styled(P)`
     text-align: ${({ align }) => align};
     font-size: 18px;
@@ -37,8 +49,8 @@ const Subtitle = styled(P)`
     margin-bottom: 40px;
     color: #8d8d91;
     position: relative;
-    transform: translateY(100px);
-    opacity: 0;
+    transform: ${({ transform }) => (transform ? "" : "translateY(100px)")};
+    opacity: ${({ transform }) => (transform ? 1 : 0)};
     transition: all 0.8s ease 0.2s;
     &.active {
         transform: translateY(0);
@@ -46,4 +58,4 @@ const Subtitle = styled(P)`
     }
 `;
 
-export { BoldContent, Subtitle };
+export { BoldContent, Subtitle, SH4 };
