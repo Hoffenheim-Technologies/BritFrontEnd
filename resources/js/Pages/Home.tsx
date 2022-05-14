@@ -9,6 +9,7 @@ import { Flex } from "../shared/Flex";
 import { BoldContent, SH2, SH3, Subtitle } from "../shared/Text";
 import { SBadge as Badge } from "../Components/Badges";
 import { ArrowsExpandIcon } from "@heroicons/react/outline";
+import { Grid } from "../shared/Grid";
 
 const executeScroll = (ref: React.MutableRefObject<any>) =>
     ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -364,7 +365,6 @@ const Home = () => {
                     }}
                 ></div>
             </section>
-
             <section
                 style={{ backgroundColor: "rgb(249,249,249)", paddingTop: 0 }}
                 ref={PropertiesRef}
@@ -400,6 +400,333 @@ const Home = () => {
                         <Properties mini={isTinyMobile} mobile={!isDesktop} />
                     </div>
                 </Container>
+            </section>
+            <section
+                style={{
+                    display: isDesktop ? "flex" : "block",
+                    height: isDesktop ? "970px" : "auto",
+                    alignItems: "center",
+                }}
+            >
+                <Container>
+                    <div style={{ maxWidth: isDesktop ? "" : "660px" }}>
+                        <Flex align="center" justify="space-between">
+                            <div style={{ maxWidth: "39%", minWidth: "401px" }}>
+                                <SH2>Why Purchase with Us?</SH2>
+                                <Subtitle style={{ marginBottom: "34px" }}>
+                                    Turpis massa tincidunt dui ut ornare lectus
+                                    sit amet mi eget mauris pharetra et euismod
+                                    in pellentesque massa placerat duis
+                                    ultricies condimentum lacinia quis vel eros
+                                    donec ac odio
+                                </Subtitle>
+                                <Grid columns={1} rowGap={"16px"} rows="auto">
+                                    <Flex>
+                                        <img
+                                            style={{
+                                                width: "28px",
+                                                maxHeight: "28px",
+                                                minHeight: "28px",
+                                                minWidth: "28px",
+                                                marginTop: "-3px",
+                                                marginRight: "12px",
+                                                borderRadius: "10000000px",
+                                                display: "inline-block",
+                                            }}
+                                            src="https://assets.website-files.com/6193ce0889184dacb7d96c80/619698760c06a552711c5b59_icon-1-check-realtor-template.svg"
+                                            loading="eager"
+                                            alt="Check Icon - Realtor X Webflow Template"
+                                        />
+                                        <div
+                                            style={{
+                                                fontSize: "18px",
+                                                lineHeight: "1.111em",
+                                                fontWeight: "500",
+                                                color: "#616066",
+                                            }}
+                                        >
+                                            Move in 30 days or less
+                                        </div>
+                                    </Flex>
+                                    <Flex>
+                                        <img
+                                            style={{
+                                                width: "28px",
+                                                maxHeight: "28px",
+                                                minHeight: "28px",
+                                                minWidth: "28px",
+                                                marginTop: "-3px",
+                                                marginRight: "12px",
+                                                borderRadius: "10000000px",
+                                                display: "inline-block",
+                                            }}
+                                            src="https://assets.website-files.com/6193ce0889184dacb7d96c80/619698760c06a552711c5b59_icon-1-check-realtor-template.svg"
+                                            loading="eager"
+                                            alt="Check Icon - Realtor X Webflow Template"
+                                        />
+                                        <div
+                                            style={{
+                                                fontSize: "18px",
+                                                lineHeight: "1.111em",
+                                                fontWeight: "500",
+                                                color: "#616066",
+                                            }}
+                                        >
+                                            Move in 30 days or less
+                                        </div>
+                                    </Flex>
+                                    <Flex>
+                                        <img
+                                            style={{
+                                                width: "28px",
+                                                maxHeight: "28px",
+                                                minHeight: "28px",
+                                                minWidth: "28px",
+                                                marginTop: "-3px",
+                                                marginRight: "12px",
+                                                borderRadius: "10000000px",
+                                                display: "inline-block",
+                                            }}
+                                            src="https://assets.website-files.com/6193ce0889184dacb7d96c80/619698760c06a552711c5b59_icon-1-check-realtor-template.svg"
+                                            loading="eager"
+                                            alt="Check Icon - Realtor X Webflow Template"
+                                        />
+                                        <div
+                                            style={{
+                                                fontSize: "18px",
+                                                lineHeight: "1.111em",
+                                                fontWeight: "500",
+                                                color: "#616066",
+                                            }}
+                                        >
+                                            Move in 30 days or less
+                                        </div>
+                                    </Flex>
+                                    <Flex>
+                                        <img
+                                            style={{
+                                                width: "28px",
+                                                maxHeight: "28px",
+                                                minHeight: "28px",
+                                                minWidth: "28px",
+                                                marginTop: "-3px",
+                                                marginRight: "12px",
+                                                borderRadius: "10000000px",
+                                                display: "inline-block",
+                                            }}
+                                            src="https://assets.website-files.com/6193ce0889184dacb7d96c80/619698760c06a552711c5b59_icon-1-check-realtor-template.svg"
+                                            loading="eager"
+                                            alt="Check Icon - Realtor X Webflow Template"
+                                        />
+                                        <div
+                                            style={{
+                                                fontSize: "18px",
+                                                lineHeight: "1.111em",
+                                                fontWeight: "500",
+                                                color: "#616066",
+                                            }}
+                                        >
+                                            Move in 30 days or less
+                                        </div>
+                                    </Flex>
+                                </Grid>
+                            </div>
+                        </Flex>
+                    </div>
+                </Container>
+                <div
+                    style={{
+                        top: "0%",
+                        right: "0%",
+                        bottom: "0%",
+                        width: "50%",
+                        position: "absolute",
+                    }}
+                >
+                    <img
+                        src="https://assets.website-files.com/6193ce0889184dacb7d96c80/61969b2d1d8cb6eddb815e35_image-perks-realtor-template.jpg"
+                        loading="eager"
+                        data-w-id="4a410718-534f-7d64-fa07-496ed529cc65"
+                        srcSet="https://assets.website-files.com/6193ce0889184dacb7d96c80/61969b2d1d8cb6eddb815e35_image-perks-realtor-template-p-500.jpeg 500w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61969b2d1d8cb6eddb815e35_image-perks-realtor-template.jpg 1440w"
+                        sizes="(max-width: 991px) 100vw, 50vw"
+                        alt="House Real Estate - Realtor X Webflow Template"
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                            transform: "perspective(1000px)",
+                            objectFit: "cover",
+                        }}
+                    />
+                </div>
+            </section>
+            <section
+                style={{
+                    display: isDesktop ? "flex" : "block",
+                    height: isDesktop ? "970px" : "auto",
+                    alignItems: "center",
+                }}
+            >
+                <Container>
+                    <div style={{ maxWidth: isDesktop ? "" : "660px" }}>
+                        <Flex align="center" justify="space-between">
+                            <div
+                                style={{
+                                    maxWidth: "39%",
+                                    minWidth: "401px",
+                                    marginLeft: "auto",
+                                    marginRight: "-100px",
+                                }}
+                            >
+                                <SH2>About Brit Properties</SH2>
+                                <Subtitle style={{ marginBottom: "34px" }}>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipiscing elit odio massa eget posuere at
+                                    proin lectus proin morbi.
+                                </Subtitle>
+                                <div style={{ marginBottom: "54px" }}>
+                                    <div style={{ maxWidth: "476px" }}>
+                                        <Grid
+                                            columns={2}
+                                            columnGap={"16px"}
+                                            rowGap={"60px"}
+                                            justify="flex-start"
+                                        >
+                                            <div>
+                                                <div
+                                                    style={{
+                                                        marginBottom: "10px",
+                                                    }}
+                                                >
+                                                    <div
+                                                        style={{
+                                                            color: "#f85757",
+                                                            fontSize: "48px",
+                                                            lineHeight:
+                                                                "1.25em",
+                                                            fontWeight: "700",
+                                                        }}
+                                                    >
+                                                        99%
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    style={{
+                                                        fontSize: "18px",
+                                                        lineHeight: "1.111em",
+                                                        color: "#222223",
+                                                        fontWeight: 700,
+                                                    }}
+                                                >
+                                                    Customer satisfaction
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div>
+                                                    <div
+                                                        style={{
+                                                            color: "#f85757",
+                                                            fontSize: "48px",
+                                                            lineHeight:
+                                                                "1.25em",
+                                                            fontWeight: "700",
+                                                        }}
+                                                    >
+                                                        230+
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    style={{
+                                                        fontSize: "18px",
+                                                        lineHeight: "1.111em",
+                                                        color: "#222223",
+                                                        fontWeight: 700,
+                                                    }}
+                                                >
+                                                    Successful sales
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div>
+                                                    <div
+                                                        style={{
+                                                            color: "#f85757",
+                                                            fontSize: "48px",
+                                                            lineHeight:
+                                                                "1.25em",
+                                                            fontWeight: "700",
+                                                        }}
+                                                    >
+                                                        500M+
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    style={{
+                                                        fontSize: "18px",
+                                                        lineHeight: "1.111em",
+                                                        color: "#222223",
+                                                        fontWeight: 700,
+                                                    }}
+                                                >
+                                                    In property sales
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div>
+                                                    <div
+                                                        style={{
+                                                            color: "#f85757",
+                                                            fontSize: "48px",
+                                                            lineHeight:
+                                                                "1.25em",
+                                                            fontWeight: "700",
+                                                        }}
+                                                    >
+                                                        10%
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    style={{
+                                                        fontSize: "18px",
+                                                        lineHeight: "1.111em",
+                                                        color: "#222223",
+                                                        fontWeight: 700,
+                                                    }}
+                                                >
+                                                    Avg yearly appreciation
+                                                </div>
+                                            </div>
+                                        </Grid>
+                                    </div>
+                                </div>
+                                <Link href="/about">
+                                    <PrimaryButton>About Us</PrimaryButton>
+                                </Link>
+                            </div>
+                        </Flex>
+                    </div>
+                </Container>
+                <div
+                    style={{
+                        top: "0%",
+                        left: "0%",
+                        bottom: "0%",
+                        width: "50%",
+                        position: "absolute",
+                    }}
+                >
+                    <img
+                        src="https://assets.website-files.com/6193ce0889184dacb7d96c80/61969b2d7f0ca2e2d5593633_image-about-section-v2-realtor-template.jpg"
+                        loading="eager"
+                        data-w-id="a390926b-b834-b6f5-1eae-a3de11336098"
+                        alt="Real Agent - Realtor X Webflow Template"
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                            transform: "perspective(1000px)",
+                            objectFit: "cover",
+                        }}
+                    />
+                </div>
             </section>
         </main>
     );

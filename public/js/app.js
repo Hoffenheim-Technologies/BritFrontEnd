@@ -4143,6 +4143,8 @@ var Badges_1 = __webpack_require__(/*! ../Components/Badges */ "./resources/js/C
 
 var outline_1 = __webpack_require__(/*! @heroicons/react/outline */ "./node_modules/@heroicons/react/outline/esm/index.js");
 
+var Grid_1 = __webpack_require__(/*! ../shared/Grid */ "./resources/js/shared/Grid.tsx");
+
 var executeScroll = function executeScroll(ref) {
   return ref.current.scrollIntoView({
     behavior: "smooth",
@@ -4388,7 +4390,256 @@ var Home = function Home() {
   }, react_1["default"].createElement(Properties, {
     mini: isTinyMobile,
     mobile: !isDesktop
-  })))));
+  })))), react_1["default"].createElement("section", {
+    style: {
+      display: isDesktop ? "flex" : "block",
+      height: isDesktop ? "970px" : "auto",
+      alignItems: "center"
+    }
+  }, react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("div", {
+    style: {
+      maxWidth: isDesktop ? "" : "660px"
+    }
+  }, react_1["default"].createElement(Flex_1.Flex, {
+    align: "center",
+    justify: "space-between"
+  }, react_1["default"].createElement("div", {
+    style: {
+      maxWidth: "39%",
+      minWidth: "401px"
+    }
+  }, react_1["default"].createElement(Text_1.SH2, null, "Why Purchase with Us?"), react_1["default"].createElement(Text_1.Subtitle, {
+    style: {
+      marginBottom: "34px"
+    }
+  }, "Turpis massa tincidunt dui ut ornare lectus sit amet mi eget mauris pharetra et euismod in pellentesque massa placerat duis ultricies condimentum lacinia quis vel eros donec ac odio"), react_1["default"].createElement(Grid_1.Grid, {
+    columns: 1,
+    rowGap: "16px",
+    rows: "auto"
+  }, react_1["default"].createElement(Flex_1.Flex, null, react_1["default"].createElement("img", {
+    style: {
+      width: "28px",
+      maxHeight: "28px",
+      minHeight: "28px",
+      minWidth: "28px",
+      marginTop: "-3px",
+      marginRight: "12px",
+      borderRadius: "10000000px",
+      display: "inline-block"
+    },
+    src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/619698760c06a552711c5b59_icon-1-check-realtor-template.svg",
+    loading: "eager",
+    alt: "Check Icon - Realtor X Webflow Template"
+  }), react_1["default"].createElement("div", {
+    style: {
+      fontSize: "18px",
+      lineHeight: "1.111em",
+      fontWeight: "500",
+      color: "#616066"
+    }
+  }, "Move in 30 days or less")), react_1["default"].createElement(Flex_1.Flex, null, react_1["default"].createElement("img", {
+    style: {
+      width: "28px",
+      maxHeight: "28px",
+      minHeight: "28px",
+      minWidth: "28px",
+      marginTop: "-3px",
+      marginRight: "12px",
+      borderRadius: "10000000px",
+      display: "inline-block"
+    },
+    src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/619698760c06a552711c5b59_icon-1-check-realtor-template.svg",
+    loading: "eager",
+    alt: "Check Icon - Realtor X Webflow Template"
+  }), react_1["default"].createElement("div", {
+    style: {
+      fontSize: "18px",
+      lineHeight: "1.111em",
+      fontWeight: "500",
+      color: "#616066"
+    }
+  }, "Move in 30 days or less")), react_1["default"].createElement(Flex_1.Flex, null, react_1["default"].createElement("img", {
+    style: {
+      width: "28px",
+      maxHeight: "28px",
+      minHeight: "28px",
+      minWidth: "28px",
+      marginTop: "-3px",
+      marginRight: "12px",
+      borderRadius: "10000000px",
+      display: "inline-block"
+    },
+    src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/619698760c06a552711c5b59_icon-1-check-realtor-template.svg",
+    loading: "eager",
+    alt: "Check Icon - Realtor X Webflow Template"
+  }), react_1["default"].createElement("div", {
+    style: {
+      fontSize: "18px",
+      lineHeight: "1.111em",
+      fontWeight: "500",
+      color: "#616066"
+    }
+  }, "Move in 30 days or less")), react_1["default"].createElement(Flex_1.Flex, null, react_1["default"].createElement("img", {
+    style: {
+      width: "28px",
+      maxHeight: "28px",
+      minHeight: "28px",
+      minWidth: "28px",
+      marginTop: "-3px",
+      marginRight: "12px",
+      borderRadius: "10000000px",
+      display: "inline-block"
+    },
+    src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/619698760c06a552711c5b59_icon-1-check-realtor-template.svg",
+    loading: "eager",
+    alt: "Check Icon - Realtor X Webflow Template"
+  }), react_1["default"].createElement("div", {
+    style: {
+      fontSize: "18px",
+      lineHeight: "1.111em",
+      fontWeight: "500",
+      color: "#616066"
+    }
+  }, "Move in 30 days or less"))))))), react_1["default"].createElement("div", {
+    style: {
+      top: "0%",
+      right: "0%",
+      bottom: "0%",
+      width: "50%",
+      position: "absolute"
+    }
+  }, react_1["default"].createElement("img", {
+    src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/61969b2d1d8cb6eddb815e35_image-perks-realtor-template.jpg",
+    loading: "eager",
+    "data-w-id": "4a410718-534f-7d64-fa07-496ed529cc65",
+    srcSet: "https://assets.website-files.com/6193ce0889184dacb7d96c80/61969b2d1d8cb6eddb815e35_image-perks-realtor-template-p-500.jpeg 500w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61969b2d1d8cb6eddb815e35_image-perks-realtor-template.jpg 1440w",
+    sizes: "(max-width: 991px) 100vw, 50vw",
+    alt: "House Real Estate - Realtor X Webflow Template",
+    style: {
+      width: "100%",
+      height: "100%",
+      transform: "perspective(1000px)",
+      objectFit: "cover"
+    }
+  }))), react_1["default"].createElement("section", {
+    style: {
+      display: isDesktop ? "flex" : "block",
+      height: isDesktop ? "970px" : "auto",
+      alignItems: "center"
+    }
+  }, react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("div", {
+    style: {
+      maxWidth: isDesktop ? "" : "660px"
+    }
+  }, react_1["default"].createElement(Flex_1.Flex, {
+    align: "center",
+    justify: "space-between"
+  }, react_1["default"].createElement("div", {
+    style: {
+      maxWidth: "39%",
+      minWidth: "401px",
+      marginLeft: "auto",
+      marginRight: "-100px"
+    }
+  }, react_1["default"].createElement(Text_1.SH2, null, "About Brit Properties"), react_1["default"].createElement(Text_1.Subtitle, {
+    style: {
+      marginBottom: "34px"
+    }
+  }, "Lorem ipsum dolor sit amet consectetur adipiscing elit odio massa eget posuere at proin lectus proin morbi."), react_1["default"].createElement("div", {
+    style: {
+      marginBottom: "54px"
+    }
+  }, react_1["default"].createElement("div", {
+    style: {
+      maxWidth: "476px"
+    }
+  }, react_1["default"].createElement(Grid_1.Grid, {
+    columns: 2,
+    columnGap: "16px",
+    rowGap: "60px",
+    justify: "flex-start"
+  }, react_1["default"].createElement("div", null, react_1["default"].createElement("div", {
+    style: {
+      marginBottom: "10px"
+    }
+  }, react_1["default"].createElement("div", {
+    style: {
+      color: "#f85757",
+      fontSize: "48px",
+      lineHeight: "1.25em",
+      fontWeight: "700"
+    }
+  }, "99%")), react_1["default"].createElement("div", {
+    style: {
+      fontSize: "18px",
+      lineHeight: "1.111em",
+      color: "#222223",
+      fontWeight: 700
+    }
+  }, "Customer satisfaction")), react_1["default"].createElement("div", null, react_1["default"].createElement("div", null, react_1["default"].createElement("div", {
+    style: {
+      color: "#f85757",
+      fontSize: "48px",
+      lineHeight: "1.25em",
+      fontWeight: "700"
+    }
+  }, "230+")), react_1["default"].createElement("div", {
+    style: {
+      fontSize: "18px",
+      lineHeight: "1.111em",
+      color: "#222223",
+      fontWeight: 700
+    }
+  }, "Successful sales")), react_1["default"].createElement("div", null, react_1["default"].createElement("div", null, react_1["default"].createElement("div", {
+    style: {
+      color: "#f85757",
+      fontSize: "48px",
+      lineHeight: "1.25em",
+      fontWeight: "700"
+    }
+  }, "500M+")), react_1["default"].createElement("div", {
+    style: {
+      fontSize: "18px",
+      lineHeight: "1.111em",
+      color: "#222223",
+      fontWeight: 700
+    }
+  }, "In property sales")), react_1["default"].createElement("div", null, react_1["default"].createElement("div", null, react_1["default"].createElement("div", {
+    style: {
+      color: "#f85757",
+      fontSize: "48px",
+      lineHeight: "1.25em",
+      fontWeight: "700"
+    }
+  }, "10%")), react_1["default"].createElement("div", {
+    style: {
+      fontSize: "18px",
+      lineHeight: "1.111em",
+      color: "#222223",
+      fontWeight: 700
+    }
+  }, "Avg yearly appreciation"))))), react_1["default"].createElement(inertia_react_1.Link, {
+    href: "/about"
+  }, react_1["default"].createElement(Buttons_1.PrimaryButton, null, "About Us")))))), react_1["default"].createElement("div", {
+    style: {
+      top: "0%",
+      left: "0%",
+      bottom: "0%",
+      width: "50%",
+      position: "absolute"
+    }
+  }, react_1["default"].createElement("img", {
+    src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/61969b2d7f0ca2e2d5593633_image-about-section-v2-realtor-template.jpg",
+    loading: "eager",
+    "data-w-id": "a390926b-b834-b6f5-1eae-a3de11336098",
+    alt: "Real Agent - Realtor X Webflow Template",
+    style: {
+      width: "100%",
+      height: "100%",
+      transform: "perspective(1000px)",
+      objectFit: "cover"
+    }
+  }))));
 };
 
 Home.layout = function (page) {
