@@ -13,6 +13,10 @@ const H1 = ({ className, children }: Props) => (
     <h1 className={className + " reveal"}>{children}</h1>
 );
 
+const H2 = ({ className, children }: Props) => (
+    <h2 className={className + " reveal"}>{children}</h2>
+);
+
 const H4 = ({ className, children }: Props) => (
     <h4 className={className + " reveal"}>{children}</h4>
 );
@@ -55,7 +59,14 @@ const SH5 = styled(H4)`
     font-weight: 700;
     margin: ${({ margin }) => margin};
 `;
-
+const SH2 = styled(H2)`
+    margin-top: 0px;
+    margin-bottom: 16px;
+    color: #222223;
+    font-size: 32px;
+    line-height: 1.375em;
+    font-weight: 700;
+`;
 const Subtitle = styled(P)`
     text-align: ${({ align }) => align};
     font-size: 18px;
@@ -73,4 +84,4 @@ const Subtitle = styled(P)`
     }
 `;
 
-export { BoldContent, Subtitle, SH4, SH5 };
+export { BoldContent, Subtitle, SH4, SH5, SH2 };

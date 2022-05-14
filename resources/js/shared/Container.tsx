@@ -7,9 +7,14 @@ interface Props {
     children: React.ReactNode;
     zIndex?: number;
     small?: boolean;
+    id?: string;
+    width?: string;
+    style?: any;
 }
-export const Div = ({ className, children }: Props) => (
-    <div className={className}>{children}</div>
+export const Div = ({ className, children, id, style }: Props) => (
+    <div id={id} className={className} style={style}>
+        {children}
+    </div>
 );
 
 const Container = styled(Div)`
@@ -24,7 +29,7 @@ const Container = styled(Div)`
 `;
 
 export const SmallContainer = styled(Div)`
-    max-width: 580px;
+    max-width: ${({ width }) => (width ? width : "580px")};
     margin-right: auto;
     margin-left: auto;
     padding-right: 24px;

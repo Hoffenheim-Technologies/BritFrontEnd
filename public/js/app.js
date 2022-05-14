@@ -3868,11 +3868,7 @@ var Layout = function Layout(_ref) {
     title: title ? title : "Admin"
   }), react_1["default"].createElement(styled_components_1.ThemeProvider, {
     theme: theme_1.lightTheme
-  }, react_1["default"].createElement(createGlobalStyles_1["default"], null), react_1["default"].createElement("div", null, react_1["default"].createElement(Header_1["default"], null), react_1["default"].createElement("main", {
-    style: {
-      padding: "40px 0 0 0"
-    }
-  }, children), react_1["default"].createElement(Footer_1["default"], null))));
+  }, react_1["default"].createElement(createGlobalStyles_1["default"], null), react_1["default"].createElement("div", null, react_1["default"].createElement(Header_1["default"], null), children, react_1["default"].createElement(Footer_1["default"], null))));
 };
 
 exports["default"] = Layout;
@@ -3932,6 +3928,10 @@ exports["default"] = About;
 "use strict";
 
 
+var _templateObject;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
 var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
   var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -3984,30 +3984,87 @@ Object.defineProperty(exports, "__esModule", ({
 
 var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
+var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
+
 var Buttons_1 = __webpack_require__(/*! ../Components/Buttons */ "./resources/js/Components/Buttons.tsx");
 
 var useMediaQuery_1 = __importDefault(__webpack_require__(/*! ../hooks/useMediaQuery */ "./resources/js/hooks/useMediaQuery.tsx"));
 
 var Layout_1 = __importDefault(__webpack_require__(/*! ../Layouts/Layout */ "./resources/js/Layouts/Layout.tsx"));
 
-var Container_1 = __webpack_require__(/*! ../shared/Container */ "./resources/js/shared/Container.tsx");
+var Container_1 = __importStar(__webpack_require__(/*! ../shared/Container */ "./resources/js/shared/Container.tsx"));
 
 var Flex_1 = __webpack_require__(/*! ../shared/Flex */ "./resources/js/shared/Flex.tsx");
 
 var Text_1 = __webpack_require__(/*! ../shared/Text */ "./resources/js/shared/Text.tsx");
 
+var executeScroll = function executeScroll(ref) {
+  return ref.current.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+};
+
+var homescroll = function homescroll() {
+  var section = document.getElementById("homeImageSection");
+  var top = section.getBoundingClientRect().top;
+  var windowHeight = window.innerHeight;
+  var vertical = window.scrollY;
+  var firstImage = document.querySelector(".first");
+  var secondImage = document.querySelector(".second"); // console.log(windowHeight - top, windowHeight, top);
+
+  if (vertical < top) {
+    firstImage.style.transform = "translate3d(0px, ".concat(-(vertical / windowHeight * 25), "%, 0px)");
+  }
+
+  secondImage.style.transform = "translate3d(0px, ".concat(-(vertical / windowHeight * 125), "%, 0px)");
+};
+
+var ImageSection = function ImageSection(_ref) {
+  var className = _ref.className;
+  return react_1["default"].createElement(Container_1["default"], {
+    id: "homeImageSection",
+    className: className,
+    style: {
+      zIndex: 1
+    }
+  }, react_1["default"].createElement(Flex_1.Flex, null, react_1["default"].createElement("div", {
+    className: "image-wrapper first",
+    style: {}
+  }, react_1["default"].createElement("img", {
+    src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1410cffb1c0b026536_image-1-hero-v2-realtor-template.jpg",
+    loading: "eager",
+    sizes: "100vw",
+    srcSet: "https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1410cffb1c0b026536_image-1-hero-v2-realtor-template-p-500.jpeg 500w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1410cffb1c0b026536_image-1-hero-v2-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1410cffb1c0b026536_image-1-hero-v2-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1410cffb1c0b026536_image-1-hero-v2-realtor-template.jpg 2258w",
+    alt: "Real Agent - Realtor X Webflow Template"
+  })), react_1["default"].createElement("div", {
+    className: "image-wrapper second"
+  }, react_1["default"].createElement("img", {
+    src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1421cb1a6f711390c7_image-2-hero-v2-realtor-template.jpg",
+    loading: "eager",
+    sizes: "100vw",
+    srcSet: "https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1421cb1a6f711390c7_image-2-hero-v2-realtor-template-p-500.jpeg 500w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1421cb1a6f711390c7_image-2-hero-v2-realtor-template-p-1080.jpeg 1080w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1421cb1a6f711390c7_image-2-hero-v2-realtor-template.jpg 1312w",
+    alt: "Real Estate - Realtor X Webflow Template"
+  }))));
+};
+
+var SImageSection = (0, styled_components_1["default"])(ImageSection)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    img {\n        width: 100%;\n        height: 100%;\n        transform: perspective(1000px);\n        object-fit: cover;\n    }\n    .image-wrapper {\n        display: flex;\n        overflow: hidden;\n        align-items: center;\n        transform: translate(0px, 0px);\n        border-radius: 12px;\n        will-change: transform;\n        transform-style: preserve-3d;\n    }\n    .image-wrapper.first {\n        max-width: 89%;\n        margin-bottom: 127px;\n    }\n    .image-wrapper.second {\n        position: absolute;\n        right: 0px;\n        bottom: 0px;\n        max-width: 52%;\n        box-shadow: 0 10px 34px 0 rgba(0, 0, 0, 0.14);\n    }\n"])));
+
 var Home = function Home() {
+  document.addEventListener("scroll", homescroll);
   var isMiniMobile = (0, useMediaQuery_1["default"])("(max-width: 500px)");
   var PropertiesRef = (0, react_1.useRef)(null);
-
-  var executeScroll = function executeScroll(ref) {
-    return ref.current.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
-  };
-
-  return react_1["default"].createElement(react_1["default"].Fragment, null, react_1["default"].createElement(Container_1.SmallContainer, {
+  return react_1["default"].createElement("main", null, react_1["default"].createElement("section", {
+    style: {
+      paddingTop: "40px",
+      paddingBottom: 0
+    },
+    id: "hero"
+  }, react_1["default"].createElement("div", {
+    style: {
+      position: "relative"
+    }
+  }, react_1["default"].createElement(Container_1.SmallContainer, {
     small: isMiniMobile
   }, react_1["default"].createElement(Text_1.BoldContent, {
     align: "center"
@@ -4028,13 +4085,32 @@ var Home = function Home() {
   }, "Browse Properties"), react_1["default"].createElement(Buttons_1.TertiaryButton, {
     margin: isMiniMobile ? 0 : "",
     width: isMiniMobile ? "100%" : ""
-  }, "Talk to an Agent"))), react_1["default"].createElement("section", {
+  }, "Talk to an Agent")))), react_1["default"].createElement(SImageSection, null), react_1["default"].createElement("div", {
+    style: {
+      left: 0,
+      right: 0,
+      bottom: 0,
+      minHeight: "259px",
+      position: "absolute",
+      backgroundColor: "#f9f9f9",
+      zIndex: -1
+    }
+  })), react_1["default"].createElement("section", {
     style: {
       backgroundColor: "rgb(249,249,249)",
-      padding: "30px"
+      paddingTop: 0
     },
-    ref: PropertiesRef
-  }, "Properties"));
+    ref: PropertiesRef,
+    id: "properties"
+  }, react_1["default"].createElement(Container_1.SmallContainer, {
+    width: "601px"
+  }, react_1["default"].createElement("div", {
+    style: {
+      margin: "auto",
+      maxWidth: "486px",
+      textAlign: "center"
+    }
+  }, react_1["default"].createElement("div", null, react_1["default"].createElement(Text_1.SH2, null, "Browse our four types of apartments available"))))));
 };
 
 Home.layout = function (page) {
@@ -4067,7 +4143,7 @@ Object.defineProperty(exports, "__esModule", ({
 
 var styled_components_1 = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 
-var GlobalStyle = (0, styled_components_1.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Regular.otf') format(\"opentype\");\n        font-weight: 400;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Light.otf') format(\"opentype\");\n        font-weight: 300;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Thin.otf') format(\"opentype\");\n        font-weight: 200;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Ultralight.otf') format(\"opentype\");\n        font-weight: 100;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('fonts/SF/SF-Pro-Display-Bold.otf') format(\"opentype\");\n        font-weight: 700;\n    }\n    body {\n        margin: 0;\n        display: block;\n    }\n    html {\n        scroll-behaviour: smooth;\n    }\n    * {\n        font-family: 'SF Pro', sans-serif;\n        font-weight: 400;\n        font-size: 16px;\n        margin: 0;\n        padding: 0;\n        box-sizing: border-box;\n    }\n    ul {\n        list-style: none;\n    }\n    a {\n        text-decoration: none;\n        color: black;\n    }\n    button {\n        border: 0;\n    }\n"])));
+var GlobalStyle = (0, styled_components_1.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Regular.otf') format(\"opentype\");\n        font-weight: 400;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Light.otf') format(\"opentype\");\n        font-weight: 300;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Thin.otf') format(\"opentype\");\n        font-weight: 200;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Ultralight.otf') format(\"opentype\");\n        font-weight: 100;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('fonts/SF/SF-Pro-Display-Bold.otf') format(\"opentype\");\n        font-weight: 700;\n    }\n    body {\n        margin: 0;\n        display: block;\n    }\n    html {\n        scroll-behaviour: smooth;\n    }\n    * {\n        font-family: 'SF Pro', sans-serif;\n        font-weight: 400;\n        font-size: 16px;\n        margin: 0;\n        padding: 0;\n        box-sizing: border-box;\n    }\n    ul {\n        list-style: none;\n    }\n    a {\n        text-decoration: none;\n        color: black;\n    }\n    button {\n        border: 0;\n    }\n    section {\n        padding: 160px 0;\n        position: relative;\n    }\n    img {\n        max-width: 100%;\n        vertical-align: middle;\n        display: inline-block;\n        border: 0;\n    }\n"])));
 exports["default"] = GlobalStyle;
 
 /***/ }),
@@ -4158,9 +4234,13 @@ var styled_components_1 = __importDefault(__webpack_require__(/*! styled-compone
 
 var Div = function Div(_ref) {
   var className = _ref.className,
-      children = _ref.children;
+      children = _ref.children,
+      id = _ref.id,
+      style = _ref.style;
   return react_1["default"].createElement("div", {
-    className: className
+    id: id,
+    className: className,
+    style: style
   }, children);
 };
 
@@ -4172,8 +4252,11 @@ var Container = (0, styled_components_1["default"])(exports.Div)(_templateObject
   var zIndex = _ref3.zIndex;
   return zIndex;
 });
-exports.SmallContainer = (0, styled_components_1["default"])(exports.Div)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    max-width: 580px;\n    margin-right: auto;\n    margin-left: auto;\n    padding-right: 24px;\n    padding-left: 24px;\n    margin-bottom: ", ";\n"])), function (_ref4) {
-  var small = _ref4.small;
+exports.SmallContainer = (0, styled_components_1["default"])(exports.Div)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    max-width: ", ";\n    margin-right: auto;\n    margin-left: auto;\n    padding-right: 24px;\n    padding-left: 24px;\n    margin-bottom: ", ";\n"])), function (_ref4) {
+  var width = _ref4.width;
+  return width ? width : "580px";
+}, function (_ref5) {
+  var small = _ref5.small;
   return small ? "48px" : "82px";
 });
 exports["default"] = Container;
@@ -4216,7 +4299,7 @@ var Div = function Div(_ref) {
   }, children);
 };
 
-var Flex = (0, styled_components_1["default"])(Div)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    display: flex;\n    width: ", ";\n    height: ", ";\n    justify-content: ", ";\n    align-items: ", ";\n    flex-direction: ", ";\n    gap: ", ";\n"])), function (props) {
+var Flex = (0, styled_components_1["default"])(Div)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    display: flex;\n    width: ", ";\n    height: ", ";\n    justify-content: ", ";\n    align-items: ", ";\n    flex-direction: ", ";\n    gap: ", ";\n    position: relative;\n"])), function (props) {
   return props.width ? props.width : "100%";
 }, function (props) {
   return props.height ? props.height : "auto";
@@ -4302,7 +4385,7 @@ exports.Grid = Grid;
 "use strict";
 
 
-var _templateObject, _templateObject2, _templateObject3, _templateObject4;
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5;
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -4315,7 +4398,7 @@ var __importDefault = this && this.__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.SH5 = exports.SH4 = exports.Subtitle = exports.BoldContent = void 0;
+exports.SH2 = exports.SH5 = exports.SH4 = exports.Subtitle = exports.BoldContent = void 0;
 
 var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
@@ -4329,62 +4412,72 @@ var H1 = function H1(_ref) {
   }, children);
 };
 
-var H4 = function H4(_ref2) {
+var H2 = function H2(_ref2) {
   var className = _ref2.className,
       children = _ref2.children;
+  return react_1["default"].createElement("h2", {
+    className: className + " reveal"
+  }, children);
+};
+
+var H4 = function H4(_ref3) {
+  var className = _ref3.className,
+      children = _ref3.children;
   return react_1["default"].createElement("h4", {
     className: className + " reveal"
   }, children);
 };
 
-var H5 = function H5(_ref3) {
-  var className = _ref3.className,
-      children = _ref3.children;
+var H5 = function H5(_ref4) {
+  var className = _ref4.className,
+      children = _ref4.children;
   return react_1["default"].createElement("h5", {
     className: className + " reveal"
   }, children);
 };
 
-var P = function P(_ref4) {
-  var className = _ref4.className,
-      children = _ref4.children;
+var P = function P(_ref5) {
+  var className = _ref5.className,
+      children = _ref5.children;
   return react_1["default"].createElement("p", {
     className: className + " reveal"
   }, children);
 };
 
-var BoldContent = (0, styled_components_1["default"])(H1)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    margin-bottom: 10px;\n    font-size: 48px;\n    font-weight: 700;\n    text-align: ", ";\n    position: relative;\n    transform: translateY(20px);\n    opacity: 0;\n    transition: all 1s ease;\n    &.active {\n        transform: translateY(0);\n        opacity: 1;\n    }\n"])), function (_ref5) {
-  var align = _ref5.align;
+var BoldContent = (0, styled_components_1["default"])(H1)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    margin-bottom: 10px;\n    font-size: 48px;\n    font-weight: 700;\n    text-align: ", ";\n    position: relative;\n    transform: translateY(20px);\n    opacity: 0;\n    transition: all 1s ease;\n    &.active {\n        transform: translateY(0);\n        opacity: 1;\n    }\n"])), function (_ref6) {
+  var align = _ref6.align;
   return align;
 });
 exports.BoldContent = BoldContent;
-var SH4 = (0, styled_components_1["default"])(H4)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    color: ", ";\n    font-size: 20px;\n    line-height: 1.4em;\n    font-weight: 700;\n    margin: ", ";\n"])), function (_ref6) {
-  var theme = _ref6.theme;
+var SH4 = (0, styled_components_1["default"])(H4)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    color: ", ";\n    font-size: 20px;\n    line-height: 1.4em;\n    font-weight: 700;\n    margin: ", ";\n"])), function (_ref7) {
+  var theme = _ref7.theme;
   return theme.primaryColor;
-}, function (_ref7) {
-  var margin = _ref7.margin;
+}, function (_ref8) {
+  var margin = _ref8.margin;
   return margin;
 });
 exports.SH4 = SH4;
-var SH5 = (0, styled_components_1["default"])(H4)(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    color: ", ";\n    font-size: 18px;\n    line-height: 1.4em;\n    font-weight: 700;\n    margin: ", ";\n"])), function (_ref8) {
-  var theme = _ref8.theme;
+var SH5 = (0, styled_components_1["default"])(H4)(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    color: ", ";\n    font-size: 18px;\n    line-height: 1.4em;\n    font-weight: 700;\n    margin: ", ";\n"])), function (_ref9) {
+  var theme = _ref9.theme;
   return theme.primaryColor;
-}, function (_ref9) {
-  var margin = _ref9.margin;
+}, function (_ref10) {
+  var margin = _ref10.margin;
   return margin;
 });
 exports.SH5 = SH5;
-var Subtitle = (0, styled_components_1["default"])(P)(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    text-align: ", ";\n    font-size: 18px;\n    font-weight: 500;\n    line-height: 1.667em;\n    margin-bottom: ", ";\n    color: #8d8d91;\n    position: relative;\n    transform: ", ";\n    opacity: ", ";\n    transition: all 0.8s ease 0.2s;\n    &.active {\n        transform: translateY(0);\n        opacity: 1;\n    }\n"])), function (_ref10) {
-  var align = _ref10.align;
+var SH2 = (0, styled_components_1["default"])(H2)(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    margin-top: 0px;\n    margin-bottom: 16px;\n    color: #222223;\n    font-size: 32px;\n    line-height: 1.375em;\n    font-weight: 700;\n"])));
+exports.SH2 = SH2;
+var Subtitle = (0, styled_components_1["default"])(P)(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    text-align: ", ";\n    font-size: 18px;\n    font-weight: 500;\n    line-height: 1.667em;\n    margin-bottom: ", ";\n    color: #8d8d91;\n    position: relative;\n    transform: ", ";\n    opacity: ", ";\n    transition: all 0.8s ease 0.2s;\n    &.active {\n        transform: translateY(0);\n        opacity: 1;\n    }\n"])), function (_ref11) {
+  var align = _ref11.align;
   return align;
-}, function (_ref11) {
-  var margin = _ref11.margin;
-  return margin === "" ? margin : "40px";
 }, function (_ref12) {
-  var transform = _ref12.transform;
-  return transform ? "" : "translateY(100px)";
+  var margin = _ref12.margin;
+  return margin === "" ? margin : "40px";
 }, function (_ref13) {
   var transform = _ref13.transform;
+  return transform ? "" : "translateY(100px)";
+}, function (_ref14) {
+  var transform = _ref14.transform;
   return transform ? 1 : 0;
 });
 exports.Subtitle = Subtitle;

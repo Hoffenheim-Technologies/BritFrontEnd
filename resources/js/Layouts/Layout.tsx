@@ -9,11 +9,11 @@ import GlobalStyle from "../createGlobalStyles";
 import Container from "../shared/Container";
 
 const reveal = () => {
-    var reveals = document.querySelectorAll(".reveal");
+    const reveals = document.querySelectorAll(".reveal");
     for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var elementTop = reveals[i].getBoundingClientRect().top;
-        var elementVisible = 50;
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementVisible = 50;
         if (elementTop < windowHeight - elementVisible) {
             reveals[i].classList.add("active");
         } else {
@@ -35,7 +35,7 @@ const Layout: React.FC<{ title: string; children: React.ReactNode }> = ({
                 <GlobalStyle />
                 <div>
                     <Header />
-                    <main style={{ padding: "40px 0 0 0" }}>{children}</main>
+                    {children}
                     <Footer />
                 </div>
             </ThemeProvider>

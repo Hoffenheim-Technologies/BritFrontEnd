@@ -24,6 +24,7 @@ const Flex = styled(Div)`
     align-items: ${(props) => (props.align ? props.align : "flex-start")};
     flex-direction: ${(props) => (props.direction ? props.direction : "row")};
     gap: ${({ gap }) => gap};
+    position: relative;
 `;
 
 export { Flex };

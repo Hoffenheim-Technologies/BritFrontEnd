@@ -51,6 +51,16 @@ const GlobalStyle = createGlobalStyle`
     button {
         border: 0;
     }
+    section {
+        padding: 160px 0;
+        position: relative;
+    }
+    img {
+        max-width: 100%;
+        vertical-align: middle;
+        display: inline-block;
+        border: 0;
+    }
 `;
 
 export default GlobalStyle;
