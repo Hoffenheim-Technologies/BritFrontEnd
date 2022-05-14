@@ -291,7 +291,7 @@ const Toggle = styled(NavToggle)`
         }
     }
 `;
-const Header: React.FC = () => {
+const Header: React.FC<{ style?: any }> = ({ style }) => {
     const isDesktop = useMediaQuery("(min-width: 900px)");
     const isMiniMobile = useMediaQuery("(max-width: 500px)");
     const isTall = useMediaQuery("(min-height: 800px");
@@ -299,58 +299,62 @@ const Header: React.FC = () => {
     const [toggleActive, setToggleActive] = useState(false);
     Inertia.on("navigate", () => setToggleActive(false));
     return (
-        <Container zIndex={2} position="sticky">
-            <SHead>
-                <nav>
-                    <Flex
-                        direction="row"
-                        justify="space-between"
-                        align="center"
-                    >
-                        <div>
-                            <Link href="/">
-                                <Suspense fallback={"logo"}>
-                                    <SLogo />
-                                </Suspense>
-                            </Link>
-                        </div>
-
-                        {isDesktop && (
+        <div style={{ backgroundColor: "white", ...style }}>
+            <Container zIndex={2}>
+                <SHead>
+                    <nav>
+                        <Flex
+                            direction="row"
+                            justify="space-between"
+                            align="center"
+                        >
                             <div>
-                                <SNav />
+                                <Link href="/">
+                                    <Suspense fallback={"logo"}>
+                                        <SLogo />
+                                    </Suspense>
+                                </Link>
                             </div>
-                        )}
-                        <Flex align="center" width="fit-content">
-                            <SearchIcon
-                                className="search"
-                                onClick={() => setSearchActive(true)}
-                            />
-                            {!isMiniMobile && (
-                                <PrimaryButton
-                                    padding="18px 26px"
-                                    fontSize="16px"
-                                    fontWeight={400}
-                                    transform={true}
-                                    margin={"0 0 0 10px"}
-                                >
-                                    Post a Property
-                                </PrimaryButton>
+
+                            {isDesktop && (
+                                <div>
+                                    <SNav />
+                                </div>
                             )}
-                            {!isDesktop && (
-                                <Toggle
-                                    onClick={() =>
-                                        setToggleActive(!toggleActive)
-                                    }
-                                    active={toggleActive}
+                            <Flex align="center" width="fit-content">
+                                <SearchIcon
+                                    className="search"
+                                    onClick={() => setSearchActive(true)}
                                 />
-                            )}
+                                {!isMiniMobile && (
+                                    <PrimaryButton
+                                        padding="18px 26px"
+                                        fontSize="16px"
+                                        fontWeight={400}
+                                        transform={true}
+                                        margin={"0 0 0 10px"}
+                                    >
+                                        Post a Property
+                                    </PrimaryButton>
+                                )}
+                                {!isDesktop && (
+                                    <Toggle
+                                        onClick={() =>
+                                            setToggleActive(!toggleActive)
+                                        }
+                                        active={toggleActive}
+                                    />
+                                )}
+                            </Flex>
                         </Flex>
-                    </Flex>
-                </nav>
-            </SHead>
-            {!isDesktop && <MobileNav active={toggleActive} tall={isTall} />}
-            {<SSearch active={searchActive} func={setSearchActive} />}
-        </Container>
+                    </nav>
+                </SHead>
+                {!isDesktop && (
+                    <MobileNav active={toggleActive} tall={isTall} />
+                )}
+                {<SSearch active={searchActive} func={setSearchActive} />}
+            </Container>
+        </div>
     );
 };
 

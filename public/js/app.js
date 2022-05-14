@@ -2890,6 +2890,49 @@ var n,e=(n=__webpack_require__(/*! nprogress */ "./node_modules/nprogress/nprogr
 
 /***/ }),
 
+/***/ "./resources/js/Components/Badges.tsx":
+/*!********************************************!*\
+  !*** ./resources/js/Components/Badges.tsx ***!
+  \********************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _templateObject;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.SBadge = void 0;
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
+
+var Badge = function Badge(_ref) {
+  var className = _ref.className,
+      children = _ref.children,
+      style = _ref.style;
+  return react_1["default"].createElement("div", {
+    style: style,
+    className: className
+  }, children);
+};
+
+var SBadge = (0, styled_components_1["default"])(Badge)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    display: flex;\n    padding: 10px 14px;\n    align-items: center;\n    border-radius: 40px;\n    background-color: #fff;\n    box-shadow: 0 1px 6px 0 rgba(20, 20, 43, 0.09);\n    color: #222223;\n    font-size: 14px;\n    line-height: 1.143em;\n    font-weight: 400;\n    text-align: center;\n"])));
+exports.SBadge = SBadge;
+
+/***/ }),
+
 /***/ "./resources/js/Components/Buttons.tsx":
 /*!*********************************************!*\
   !*** ./resources/js/Components/Buttons.tsx ***!
@@ -3646,27 +3689,31 @@ var Toggle = (0, styled_components_1["default"])(NavToggle)(_templateObject7 || 
   return active ? "translate3d(0px, -7px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(40deg) skew(0deg, 0deg);" : "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)";
 });
 
-var Header = function Header() {
+var Header = function Header(_ref19) {
+  var style = _ref19.style;
   var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 900px)");
   var isMiniMobile = (0, useMediaQuery_1["default"])("(max-width: 500px)");
   var isTall = (0, useMediaQuery_1["default"])("(min-height: 800px");
 
-  var _ref19 = (0, react_1.useState)(false),
-      _ref20 = _slicedToArray(_ref19, 2),
-      searchActive = _ref20[0],
-      setSearchActive = _ref20[1];
+  var _ref20 = (0, react_1.useState)(false),
+      _ref21 = _slicedToArray(_ref20, 2),
+      searchActive = _ref21[0],
+      setSearchActive = _ref21[1];
 
-  var _ref21 = (0, react_1.useState)(false),
-      _ref22 = _slicedToArray(_ref21, 2),
-      toggleActive = _ref22[0],
-      setToggleActive = _ref22[1];
+  var _ref22 = (0, react_1.useState)(false),
+      _ref23 = _slicedToArray(_ref22, 2),
+      toggleActive = _ref23[0],
+      setToggleActive = _ref23[1];
 
   inertia_1.Inertia.on("navigate", function () {
     return setToggleActive(false);
   });
-  return react_1["default"].createElement(Container_1["default"], {
-    zIndex: 2,
-    position: "sticky"
+  return react_1["default"].createElement("div", {
+    style: Object.assign({
+      backgroundColor: "white"
+    }, style)
+  }, react_1["default"].createElement(Container_1["default"], {
+    zIndex: 2
   }, react_1["default"].createElement(SHead, null, react_1["default"].createElement("nav", null, react_1["default"].createElement(Flex_1.Flex, {
     direction: "row",
     justify: "space-between",
@@ -3700,7 +3747,7 @@ var Header = function Header() {
   }), react_1["default"].createElement(SSearch, {
     active: searchActive,
     func: setSearchActive
-  }));
+  })));
 };
 
 exports["default"] = Header;
@@ -3817,6 +3864,46 @@ exports.SInput = SInput;
 "use strict";
 
 
+var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
+} : function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  o[k2] = m[k];
+});
+
+var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
+  Object.defineProperty(o, "default", {
+    enumerable: true,
+    value: v
+  });
+} : function (o, v) {
+  o["default"] = v;
+});
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+  }
+
+  __setModuleDefault(result, mod);
+
+  return result;
+};
+
 var __importDefault = this && this.__importDefault || function (mod) {
   return mod && mod.__esModule ? mod : {
     "default": mod
@@ -3827,7 +3914,7 @@ Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 
-var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
 var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 
@@ -3843,8 +3930,17 @@ var Footer_1 = __importDefault(__webpack_require__(/*! ../Components/Footer */ "
 
 var createGlobalStyles_1 = __importDefault(__webpack_require__(/*! ../createGlobalStyles */ "./resources/js/createGlobalStyles.ts"));
 
+var outline_1 = __webpack_require__(/*! @heroicons/react/outline */ "./node_modules/@heroicons/react/outline/esm/index.js");
+
 var reveal = function reveal() {
   var reveals = document.querySelectorAll(".reveal");
+  var toTop = document.getElementById("toTop");
+
+  if (window.scrollY > window.innerHeight) {
+    toTop.style.transform = "translateY(0)";
+  } else {
+    toTop.style.transform = "translateY(100px)";
+  }
 
   for (var i = 0; i < reveals.length; i++) {
     var windowHeight = window.innerHeight;
@@ -3859,16 +3955,59 @@ var reveal = function reveal() {
   }
 };
 
+var executeScroll = function executeScroll(ref) {
+  return ref.current.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+};
+
 var Layout = function Layout(_ref) {
   var children = _ref.children,
       title = _ref.title;
   window.addEventListener("scroll", reveal);
+  var start = (0, react_1.useRef)(null);
   inertia_1.Inertia.on("navigate", reveal);
   return react_1["default"].createElement(react_1["default"].Fragment, null, react_1["default"].createElement(inertia_react_1.Head, {
     title: title ? title : "Admin"
   }), react_1["default"].createElement(styled_components_1.ThemeProvider, {
     theme: theme_1.lightTheme
-  }, react_1["default"].createElement(createGlobalStyles_1["default"], null), react_1["default"].createElement("div", null, react_1["default"].createElement(Header_1["default"], null), children, react_1["default"].createElement(Footer_1["default"], null))));
+  }, react_1["default"].createElement(createGlobalStyles_1["default"], null), react_1["default"].createElement("div", {
+    ref: start
+  }, react_1["default"].createElement(Header_1["default"], {
+    style: {
+      position: "sticky",
+      top: 0,
+      zIndex: 2
+    }
+  }), children, react_1["default"].createElement(Footer_1["default"], null), react_1["default"].createElement("div", {
+    id: "toTop",
+    style: {
+      position: "fixed",
+      bottom: "20px",
+      right: "20px",
+      background: theme_1.lightTheme.secondaryColor,
+      color: theme_1.lightTheme.primaryTextColor,
+      cursor: "pointer",
+      minWidth: "40px",
+      minHeight: "40px",
+      lineHeight: 0,
+      borderRadius: "100px",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      transform: "translateY(100px)",
+      transition: "transform .3s ease",
+      boxShadow: "0 5px 20px 5px rgba(8, 15, 52, 0.2)"
+    },
+    onClick: function onClick() {
+      return executeScroll(start);
+    }
+  }, react_1["default"].createElement(outline_1.ChevronUpIcon, {
+    style: {
+      width: "30px"
+    }
+  })))));
 };
 
 exports["default"] = Layout;
@@ -3928,7 +4067,7 @@ exports["default"] = About;
 "use strict";
 
 
-var _templateObject;
+var _templateObject, _templateObject2;
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -3982,6 +4121,8 @@ Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 
+var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+
 var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
 var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
@@ -3997,6 +4138,10 @@ var Container_1 = __importStar(__webpack_require__(/*! ../shared/Container */ ".
 var Flex_1 = __webpack_require__(/*! ../shared/Flex */ "./resources/js/shared/Flex.tsx");
 
 var Text_1 = __webpack_require__(/*! ../shared/Text */ "./resources/js/shared/Text.tsx");
+
+var Badges_1 = __webpack_require__(/*! ../Components/Badges */ "./resources/js/Components/Badges.tsx");
+
+var outline_1 = __webpack_require__(/*! @heroicons/react/outline */ "./node_modules/@heroicons/react/outline/esm/index.js");
 
 var executeScroll = function executeScroll(ref) {
   return ref.current.scrollIntoView({
@@ -4048,12 +4193,137 @@ var ImageSection = function ImageSection(_ref) {
   }))));
 };
 
-var SImageSection = (0, styled_components_1["default"])(ImageSection)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    img {\n        width: 100%;\n        height: 100%;\n        transform: perspective(1000px);\n        object-fit: cover;\n    }\n    .image-wrapper {\n        display: flex;\n        overflow: hidden;\n        align-items: center;\n        transform: translate(0px, 0px);\n        border-radius: 12px;\n        will-change: transform;\n        transform-style: preserve-3d;\n    }\n    .image-wrapper.first {\n        max-width: 89%;\n        margin-bottom: 127px;\n    }\n    .image-wrapper.second {\n        position: absolute;\n        right: 0px;\n        bottom: 0px;\n        max-width: 52%;\n        box-shadow: 0 10px 34px 0 rgba(0, 0, 0, 0.14);\n    }\n"])));
+var Props = function Props(_ref2) {
+  var className = _ref2.className;
+  var isSmall = (0, useMediaQuery_1["default"])("(max-width: 768px)");
+  var isMiniMobile = (0, useMediaQuery_1["default"])("(max-width: 374px)");
+  var properties = [{
+    image: {
+      src: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template.jpg",
+      sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px",
+      srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template-p-500.jpeg 500w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template.jpg 1832w"
+    },
+    price: 650000,
+    name: "Valerie Phase 1",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit feugiat purus suscipit turpis sed vitae.",
+    area: 550,
+    type: "Land"
+  }, {
+    image: {
+      src: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template.jpg",
+      sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px",
+      srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template.jpg 1832w"
+    },
+    price: 5000000,
+    name: "Britwook Park 1",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit feugiat purus suscipit turpis sed vitae.",
+    area: 400,
+    type: "Residential"
+  }, {
+    image: {
+      src: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template.jpg",
+      sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px",
+      srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template.jpg 1832w"
+    },
+    price: 1200000,
+    name: "Bethel Home Phase 3",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit feugiat purus suscipit turpis sed vitae.",
+    area: 550,
+    type: "Dry Land"
+  }, {
+    image: {
+      src: "https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template.jpg",
+      sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px",
+      srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template.jpg 1832w"
+    },
+    price: 34000000,
+    name: "Bethel Home Phase 2",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit feugiat purus suscipit turpis sed vitae.",
+    area: 550,
+    type: "Industrial"
+  }];
+  return react_1["default"].createElement("div", {
+    className: className
+  }, react_1["default"].createElement("ul", null, properties.length && properties.map(function (property, index) {
+    return react_1["default"].createElement("li", {
+      key: index
+    }, react_1["default"].createElement(inertia_react_1.Link, {
+      href: ""
+    }, react_1["default"].createElement("div", null, react_1["default"].createElement("img", {
+      src: property.image.src,
+      loading: "eager",
+      alt: property.name,
+      sizes: property.image.sizes,
+      srcSet: property.image.srcSet
+    })), react_1["default"].createElement("div", null, react_1["default"].createElement("div", {
+      style: {
+        marginBottom: "14px"
+      }
+    }, react_1["default"].createElement(Flex_1.Flex, {
+      justify: "space-between",
+      align: "center",
+      direction: isMiniMobile ? "column" : "row"
+    }, react_1["default"].createElement("div", {
+      style: {
+        width: isSmall ? "100%" : ""
+      }
+    }, react_1["default"].createElement(Text_1.SH3, null, property.name)), react_1["default"].createElement("div", null, react_1["default"].createElement(Text_1.SH3, {
+      style: {
+        color: "#f85757"
+      }
+    }, "\u20A6", property.price.toLocaleString("en-US"))))), react_1["default"].createElement("p", null, property.description), react_1["default"].createElement("div", {
+      style: {
+        marginTop: "auto"
+      }
+    }, react_1["default"].createElement("div", {
+      style: {
+        width: "100%",
+        minHeight: "1px",
+        marginTop: "36px",
+        marginBottom: "36px",
+        backgroundColor: "#e9e9e9"
+      }
+    }), react_1["default"].createElement(Flex_1.Flex, {
+      align: "center",
+      direction: "row"
+    }, react_1["default"].createElement(Badges_1.SBadge, {
+      style: {
+        margin: "0 18px 0 0 "
+      }
+    }, react_1["default"].createElement(outline_1.ArrowsExpandIcon, {
+      style: {
+        width: "20px",
+        marginRight: "5px"
+      }
+    }), property.area, "\xA0sqft"), react_1["default"].createElement(Badges_1.SBadge, {
+      style: {
+        margin: "0 18px 0 0"
+      }
+    }, property.type))))));
+  })));
+};
+
+var Properties = (0, styled_components_1["default"])(Props)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    ul {\n        margin-top: 70px;\n        display: grid;\n        grid-column-gap: 55px;\n        grid-row-gap: 0px;\n\n        display: grid;\n        grid-auto-columns: 1fr;\n        grid-template-columns: ", ";\n        grid-template-rows: auto;\n\n        li:first-of-type {\n            margin-top: ", ";\n            margin-bottom: 55px;\n        }\n        li {\n            margin-bottom: ", ";\n        }\n        li:last-of-type {\n            margin-top: ", ";\n        }\n    }\n    img {\n        transition: transform 0.3s ease;\n    }\n\n    a {\n        display: flex;\n        padding: 0px;\n        flex-direction: column;\n        transition: box-shadow 300ms ease, transform 300ms ease;\n        overflow: hidden;\n        max-width: 100%;\n        color: #8d8d91;\n        text-decoration: none;\n        border-radius: 24px;\n        background-color: #fff;\n        box-shadow: 0 3px 20px 0 rgba(8, 15, 52, 0.06);\n\n        & > div:first-of-type {\n            display: flex;\n            overflow: hidden;\n            align-items: center;\n            transform: translate(0px, 0px);\n        }\n        & > div:last-of-type {\n            display: flex;\n            padding: 46px 35px 38px;\n            flex-direction: column;\n            flex: 1;\n        }\n\n        p {\n            margin-bottom: 0;\n            line-height: 1.667em;\n        }\n    }\n\n    li:hover {\n        transform: translateY(-2px);\n        img {\n            transform: scale3d(1.04, 1.04, 1);\n        }\n        a {\n            box-shadow: 0 3px 20px 0 rgba(8, 15, 52, 0.1);\n        }\n    }\n"])), function (_ref3) {
+  var mobile = _ref3.mobile;
+  return mobile ? "1fr" : "1fr 1fr";
+}, function (_ref4) {
+  var mobile = _ref4.mobile;
+  return mobile ? "" : "-55px";
+}, function (_ref5) {
+  var mobile = _ref5.mobile;
+  return mobile ? "55px" : "";
+}, function (_ref6) {
+  var mobile = _ref6.mobile;
+  return mobile ? "" : "55px";
+});
+var SImageSection = (0, styled_components_1["default"])(ImageSection)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    img {\n        width: 100%;\n        height: 100%;\n        transform: perspective(1000px);\n        object-fit: cover;\n    }\n    .image-wrapper {\n        display: flex;\n        overflow: hidden;\n        align-items: center;\n        transform: translate(0px, 0px);\n        border-radius: 12px;\n        will-change: transform;\n        transform-style: preserve-3d;\n    }\n    .image-wrapper.first {\n        max-width: 89%;\n        margin-bottom: 127px;\n    }\n    .image-wrapper.second {\n        position: absolute;\n        right: 0px;\n        bottom: 0px;\n        max-width: 52%;\n        box-shadow: 0 10px 34px 0 rgba(0, 0, 0, 0.14);\n    }\n"])));
 
 var Home = function Home() {
   document.addEventListener("scroll", homescroll);
   var isMiniMobile = (0, useMediaQuery_1["default"])("(max-width: 500px)");
+  var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 900px)");
   var PropertiesRef = (0, react_1.useRef)(null);
+  var isTinyMobile = (0, useMediaQuery_1["default"])("(max-width: 374px)");
   return react_1["default"].createElement("main", null, react_1["default"].createElement("section", {
     style: {
       paddingTop: "40px",
@@ -4110,7 +4380,15 @@ var Home = function Home() {
       maxWidth: "486px",
       textAlign: "center"
     }
-  }, react_1["default"].createElement("div", null, react_1["default"].createElement(Text_1.SH2, null, "Browse our four types of apartments available"))))));
+  }, react_1["default"].createElement("div", null, react_1["default"].createElement(Text_1.SH2, null, "Browse our four types of properties available")), react_1["default"].createElement(Text_1.Subtitle, null, "Lorem ipsum dolor sit amet consectetur adipiscing elit odio massa eget posuere at proin lectus proin morbi"))), react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("div", {
+    style: {
+      maxWidth: !isDesktop ? "660px" : "",
+      margin: !isDesktop ? "0 auto" : ""
+    }
+  }, react_1["default"].createElement(Properties, {
+    mini: isTinyMobile,
+    mobile: !isDesktop
+  })))));
 };
 
 Home.layout = function (page) {
@@ -4143,7 +4421,7 @@ Object.defineProperty(exports, "__esModule", ({
 
 var styled_components_1 = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 
-var GlobalStyle = (0, styled_components_1.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Regular.otf') format(\"opentype\");\n        font-weight: 400;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Light.otf') format(\"opentype\");\n        font-weight: 300;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Thin.otf') format(\"opentype\");\n        font-weight: 200;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Ultralight.otf') format(\"opentype\");\n        font-weight: 100;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('fonts/SF/SF-Pro-Display-Bold.otf') format(\"opentype\");\n        font-weight: 700;\n    }\n    body {\n        margin: 0;\n        display: block;\n    }\n    html {\n        scroll-behaviour: smooth;\n    }\n    * {\n        font-family: 'SF Pro', sans-serif;\n        font-weight: 400;\n        font-size: 16px;\n        margin: 0;\n        padding: 0;\n        box-sizing: border-box;\n    }\n    ul {\n        list-style: none;\n    }\n    a {\n        text-decoration: none;\n        color: black;\n    }\n    button {\n        border: 0;\n    }\n    section {\n        padding: 160px 0;\n        position: relative;\n    }\n    img {\n        max-width: 100%;\n        vertical-align: middle;\n        display: inline-block;\n        border: 0;\n    }\n"])));
+var GlobalStyle = (0, styled_components_1.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Regular.otf') format(\"opentype\");\n        font-weight: 400;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Light.otf') format(\"opentype\");\n        font-weight: 300;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Thin.otf') format(\"opentype\");\n        font-weight: 200;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Ultralight.otf') format(\"opentype\");\n        font-weight: 100;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('fonts/SF/SF-Pro-Display-Bold.otf') format(\"opentype\");\n        font-weight: 700;\n    }\n    body {\n        margin: 0;\n        display: block;\n        font-size: 18px;\n    }\n    html {\n        scroll-behaviour: smooth;\n    }\n    * {\n        font-family: 'SF Pro', sans-serif;\n        font-weight: 400;\n        margin: 0;\n        padding: 0;\n        box-sizing: border-box;\n    }\n    ul {\n        list-style: none;\n    }\n    a {\n        text-decoration: none;\n        color: black;\n    }\n    button {\n        border: 0;\n    }\n    section {\n        padding: 160px 0;\n        position: relative;\n    }\n    img {\n        max-width: 100%;\n        vertical-align: middle;\n        display: inline-block;\n        border: 0;\n    }\n"])));
 exports["default"] = GlobalStyle;
 
 /***/ }),
@@ -4385,7 +4663,7 @@ exports.Grid = Grid;
 "use strict";
 
 
-var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5;
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6;
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -4398,7 +4676,7 @@ var __importDefault = this && this.__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.SH2 = exports.SH5 = exports.SH4 = exports.Subtitle = exports.BoldContent = void 0;
+exports.SH3 = exports.SH2 = exports.SH5 = exports.SH4 = exports.Subtitle = exports.BoldContent = void 0;
 
 var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
@@ -4420,64 +4698,76 @@ var H2 = function H2(_ref2) {
   }, children);
 };
 
-var H4 = function H4(_ref3) {
+var H3 = function H3(_ref3) {
   var className = _ref3.className,
-      children = _ref3.children;
+      children = _ref3.children,
+      style = _ref3.style;
+  return react_1["default"].createElement("h3", {
+    style: style,
+    className: className + " reveal"
+  }, children);
+};
+
+var H4 = function H4(_ref4) {
+  var className = _ref4.className,
+      children = _ref4.children;
   return react_1["default"].createElement("h4", {
     className: className + " reveal"
   }, children);
 };
 
-var H5 = function H5(_ref4) {
-  var className = _ref4.className,
-      children = _ref4.children;
+var H5 = function H5(_ref5) {
+  var className = _ref5.className,
+      children = _ref5.children;
   return react_1["default"].createElement("h5", {
     className: className + " reveal"
   }, children);
 };
 
-var P = function P(_ref5) {
-  var className = _ref5.className,
-      children = _ref5.children;
+var P = function P(_ref6) {
+  var className = _ref6.className,
+      children = _ref6.children;
   return react_1["default"].createElement("p", {
     className: className + " reveal"
   }, children);
 };
 
-var BoldContent = (0, styled_components_1["default"])(H1)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    margin-bottom: 10px;\n    font-size: 48px;\n    font-weight: 700;\n    text-align: ", ";\n    position: relative;\n    transform: translateY(20px);\n    opacity: 0;\n    transition: all 1s ease;\n    &.active {\n        transform: translateY(0);\n        opacity: 1;\n    }\n"])), function (_ref6) {
-  var align = _ref6.align;
+var BoldContent = (0, styled_components_1["default"])(H1)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    margin-bottom: 10px;\n    font-size: 48px;\n    font-weight: 700;\n    text-align: ", ";\n    position: relative;\n    transform: translateY(20px);\n    opacity: 0;\n    transition: all 1s ease;\n    &.active {\n        transform: translateY(0);\n        opacity: 1;\n    }\n"])), function (_ref7) {
+  var align = _ref7.align;
   return align;
 });
 exports.BoldContent = BoldContent;
-var SH4 = (0, styled_components_1["default"])(H4)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    color: ", ";\n    font-size: 20px;\n    line-height: 1.4em;\n    font-weight: 700;\n    margin: ", ";\n"])), function (_ref7) {
-  var theme = _ref7.theme;
+var SH4 = (0, styled_components_1["default"])(H4)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    color: ", ";\n    font-size: 20px;\n    line-height: 1.4em;\n    font-weight: 700;\n    margin: ", ";\n"])), function (_ref8) {
+  var theme = _ref8.theme;
   return theme.primaryColor;
-}, function (_ref8) {
-  var margin = _ref8.margin;
+}, function (_ref9) {
+  var margin = _ref9.margin;
   return margin;
 });
 exports.SH4 = SH4;
-var SH5 = (0, styled_components_1["default"])(H4)(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    color: ", ";\n    font-size: 18px;\n    line-height: 1.4em;\n    font-weight: 700;\n    margin: ", ";\n"])), function (_ref9) {
-  var theme = _ref9.theme;
+var SH5 = (0, styled_components_1["default"])(H4)(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    color: ", ";\n    font-size: 18px;\n    line-height: 1.4em;\n    font-weight: 700;\n    margin: ", ";\n"])), function (_ref10) {
+  var theme = _ref10.theme;
   return theme.primaryColor;
-}, function (_ref10) {
-  var margin = _ref10.margin;
+}, function (_ref11) {
+  var margin = _ref11.margin;
   return margin;
 });
 exports.SH5 = SH5;
 var SH2 = (0, styled_components_1["default"])(H2)(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    margin-top: 0px;\n    margin-bottom: 16px;\n    color: #222223;\n    font-size: 32px;\n    line-height: 1.375em;\n    font-weight: 700;\n"])));
 exports.SH2 = SH2;
-var Subtitle = (0, styled_components_1["default"])(P)(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    text-align: ", ";\n    font-size: 18px;\n    font-weight: 500;\n    line-height: 1.667em;\n    margin-bottom: ", ";\n    color: #8d8d91;\n    position: relative;\n    transform: ", ";\n    opacity: ", ";\n    transition: all 0.8s ease 0.2s;\n    &.active {\n        transform: translateY(0);\n        opacity: 1;\n    }\n"])), function (_ref11) {
-  var align = _ref11.align;
+var SH3 = (0, styled_components_1["default"])(H3)(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    margin-top: 0px;\n    margin-bottom: 16px;\n    color: rgb(34, 34, 35);\n    font-size: 22px;\n    line-height: 1.364em;\n    font-weight: 700;\n"])));
+exports.SH3 = SH3;
+var Subtitle = (0, styled_components_1["default"])(P)(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n    text-align: ", ";\n    font-size: 18px;\n    font-weight: 500;\n    line-height: 1.667em;\n    margin-bottom: ", ";\n    color: #8d8d91;\n    position: relative;\n    transform: ", ";\n    opacity: ", ";\n    transition: all 0.8s ease 0.2s;\n    &.active {\n        transform: translateY(0);\n        opacity: 1;\n    }\n"])), function (_ref12) {
+  var align = _ref12.align;
   return align;
-}, function (_ref12) {
-  var margin = _ref12.margin;
-  return margin === "" ? margin : "40px";
 }, function (_ref13) {
-  var transform = _ref13.transform;
-  return transform ? "" : "translateY(100px)";
+  var margin = _ref13.margin;
+  return margin === "" ? margin : "40px";
 }, function (_ref14) {
   var transform = _ref14.transform;
+  return transform ? "" : "translateY(100px)";
+}, function (_ref15) {
+  var transform = _ref15.transform;
   return transform ? 1 : 0;
 });
 exports.Subtitle = Subtitle;

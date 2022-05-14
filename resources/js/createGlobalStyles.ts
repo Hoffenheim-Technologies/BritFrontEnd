@@ -29,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
     body {
         margin: 0;
         display: block;
+        font-size: 18px;
     }
     html {
         scroll-behaviour: smooth;
@@ -36,7 +37,6 @@ const GlobalStyle = createGlobalStyle`
     * {
         font-family: 'SF Pro', sans-serif;
         font-weight: 400;
-        font-size: 16px;
         margin: 0;
         padding: 0;
         box-sizing: border-box;

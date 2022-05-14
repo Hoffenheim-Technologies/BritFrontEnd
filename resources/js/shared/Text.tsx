@@ -8,6 +8,7 @@ interface Props {
     transform?: boolean;
     margin?: string;
     hover?: boolean;
+    style?: any;
 }
 const H1 = ({ className, children }: Props) => (
     <h1 className={className + " reveal"}>{children}</h1>
@@ -15,6 +16,12 @@ const H1 = ({ className, children }: Props) => (
 
 const H2 = ({ className, children }: Props) => (
     <h2 className={className + " reveal"}>{children}</h2>
+);
+
+const H3 = ({ className, children, style }: Props) => (
+    <h3 style={style} className={className + " reveal"}>
+        {children}
+    </h3>
 );
 
 const H4 = ({ className, children }: Props) => (
@@ -67,6 +74,15 @@ const SH2 = styled(H2)`
     line-height: 1.375em;
     font-weight: 700;
 `;
+
+const SH3 = styled(H3)`
+    margin-top: 0px;
+    margin-bottom: 16px;
+    color: rgb(34, 34, 35);
+    font-size: 22px;
+    line-height: 1.364em;
+    font-weight: 700;
+`;
 const Subtitle = styled(P)`
     text-align: ${({ align }) => align};
     font-size: 18px;
@@ -84,4 +100,4 @@ const Subtitle = styled(P)`
     }
 `;
 
-export { BoldContent, Subtitle, SH4, SH5, SH2 };
+export { BoldContent, Subtitle, SH4, SH5, SH2, SH3 };
