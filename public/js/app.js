@@ -3045,6 +3045,52 @@ exports.TertiaryButton = TertiaryButton;
 
 /***/ }),
 
+/***/ "./resources/js/Components/Card.tsx":
+/*!******************************************!*\
+  !*** ./resources/js/Components/Card.tsx ***!
+  \******************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _templateObject;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
+
+var Text_1 = __webpack_require__(/*! ../shared/Text */ "./resources/js/shared/Text.tsx");
+
+var Card = function Card(_ref) {
+  var className = _ref.className,
+      heading = _ref.heading,
+      children = _ref.children;
+  return react_1["default"].createElement("div", {
+    className: className
+  }, react_1["default"].createElement(Text_1.SH3, null, heading), children);
+};
+
+var SCard = (0, styled_components_1["default"])(Card)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    overflow: hidden;\n    padding: ", ";\n    border-radius: 24px;\n    background-color: #fff;\n    box-shadow: 0 3px 20px 0 rgba(8, 15, 52, 0.06);\n"])), function (_ref2) {
+  var padding = _ref2.padding;
+  return padding ? padding : "32px 34px 44px";
+});
+exports["default"] = SCard;
+
+/***/ }),
+
 /***/ "./resources/js/Components/Footer.tsx":
 /*!********************************************!*\
   !*** ./resources/js/Components/Footer.tsx ***!
@@ -3107,6 +3153,7 @@ var __importDefault = this && this.__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
+exports.SM = void 0;
 
 var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
@@ -3186,7 +3233,7 @@ var SMLink = function SMLink(_ref) {
   }, icon);
 };
 
-var SM = (0, styled_components_1["default"])(SMLink)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    background-color: ", ";\n    &:hover {\n        background-color: ", ";\n    }\n    color: #fff;\n    border-radius: 1000000px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    min-height: 34px;\n    min-width: 34px;\n    max-height: 34px;\n    max-width: 34px;\n    font-size: 16px;\n    transition: background 300ms ease;\n    svg {\n        height: 16px;\n    }\n"])), function (_ref2) {
+exports.SM = (0, styled_components_1["default"])(SMLink)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    background-color: ", ";\n    &:hover {\n        background-color: ", ";\n    }\n    color: #fff;\n    border-radius: 1000000px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    min-height: 34px;\n    min-width: 34px;\n    max-height: 34px;\n    max-width: 34px;\n    font-size: 16px;\n    transition: background 300ms ease;\n    svg {\n        height: 16px;\n    }\n"])), function (_ref2) {
   var theme = _ref2.theme;
   return theme.primaryColor;
 }, function (_ref3) {
@@ -3316,7 +3363,7 @@ var Foot = function Foot(_ref13) {
     direction: "row",
     gap: "16px"
   }, SMHandles.map(function (handle, index) {
-    return react_1["default"].createElement(SM, {
+    return react_1["default"].createElement(exports.SM, {
       key: index,
       path: handle.url,
       icon: handle.icon
@@ -3801,7 +3848,7 @@ exports.Image = Image;
 "use strict";
 
 
-var _templateObject;
+var _templateObject, _templateObject2;
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -3814,7 +3861,7 @@ var __importDefault = this && this.__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.Input = exports.SInput = void 0;
+exports.TextArea = exports.STextArea = exports.Input = exports.SInput = void 0;
 
 var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
@@ -3852,6 +3899,24 @@ var SInput = (0, styled_components_1["default"])(Input)(_templateObject || (_tem
   return theme.secondaryColor;
 });
 exports.SInput = SInput;
+
+var TextArea = function TextArea(_ref6) {
+  var className = _ref6.className,
+      placeholder = _ref6.placeholder,
+      maxLength = _ref6.maxLength;
+  return react_1["default"].createElement("textarea", {
+    placeholder: placeholder,
+    maxLength: maxLength,
+    className: className
+  });
+};
+
+exports.TextArea = TextArea;
+var STextArea = (0, styled_components_1["default"])(TextArea)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    max-height: 250px;\n    max-width: 100%;\n    min-height: 182px;\n    min-width: 100%;\n    margin-bottom: 0px;\n    padding: 18px 24px;\n    border-style: solid;\n    border-width: 1px;\n    border-color: #f6f6f6;\n    border-radius: 12px;\n    background-color: #f6f6f6;\n    -webkit-transition: border-color 300ms ease, color 300ms ease;\n    transition: border-color 300ms ease, color 300ms ease;\n    color: #222223;\n    font-size: 18px;\n\n    &:focus,\n    &:hover {\n        outline: 1px solid ", ";\n    }\n"])), function (_ref7) {
+  var theme = _ref7.theme;
+  return theme.secondaryColor;
+});
+exports.STextArea = STextArea;
 
 /***/ }),
 
@@ -4067,7 +4132,7 @@ exports["default"] = About;
 "use strict";
 
 
-var _templateObject, _templateObject2;
+var _templateObject, _templateObject2, _templateObject3, _templateObject4;
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -4144,6 +4209,14 @@ var Badges_1 = __webpack_require__(/*! ../Components/Badges */ "./resources/js/C
 var outline_1 = __webpack_require__(/*! @heroicons/react/outline */ "./node_modules/@heroicons/react/outline/esm/index.js");
 
 var Grid_1 = __webpack_require__(/*! ../shared/Grid */ "./resources/js/shared/Grid.tsx");
+
+var Card_1 = __importDefault(__webpack_require__(/*! ../Components/Card */ "./resources/js/Components/Card.tsx"));
+
+var Input_1 = __webpack_require__(/*! ../Components/Input */ "./resources/js/Components/Input.tsx");
+
+var react_lineicons_1 = __importDefault(__webpack_require__(/*! react-lineicons */ "./node_modules/react-lineicons/dist/index.js"));
+
+var Footer_1 = __webpack_require__(/*! ../Components/Footer */ "./resources/js/Components/Footer.tsx");
 
 var executeScroll = function executeScroll(ref) {
   return ref.current.scrollIntoView({
@@ -4319,6 +4392,212 @@ var Properties = (0, styled_components_1["default"])(Props)(_templateObject || (
   return mobile ? "" : "55px";
 });
 var SImageSection = (0, styled_components_1["default"])(ImageSection)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    img {\n        width: 100%;\n        height: 100%;\n        transform: perspective(1000px);\n        object-fit: cover;\n    }\n    .image-wrapper {\n        display: flex;\n        overflow: hidden;\n        align-items: center;\n        transform: translate(0px, 0px);\n        border-radius: 12px;\n        will-change: transform;\n        transform-style: preserve-3d;\n    }\n    .image-wrapper.first {\n        max-width: 89%;\n        margin-bottom: 127px;\n    }\n    .image-wrapper.second {\n        position: absolute;\n        right: 0px;\n        bottom: 0px;\n        max-width: 52%;\n        box-shadow: 0 10px 34px 0 rgba(0, 0, 0, 0.14);\n    }\n"])));
+var ContactCard = (0, styled_components_1["default"])(Card_1["default"])(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    display: flex;\n    min-height: 724px;\n    padding: 89px 55px;\n    align-items: center;\n    border-radius: 20px;\n    @media (max-width: 770px) {\n        padding: 40px 25px;\n    }\n"])));
+
+var ContactSection = function ContactSection(_ref7) {
+  var className = _ref7.className,
+      mobile = _ref7.mobile;
+  var SMHandles = [{
+    name: "facebook",
+    icon: react_1["default"].createElement(react_lineicons_1["default"], {
+      name: "facebook-filled"
+    }),
+    url: ""
+  }, {
+    name: "twitter",
+    icon: react_1["default"].createElement(react_lineicons_1["default"], {
+      name: "twitter-filled"
+    }),
+    url: ""
+  }, {
+    name: "instagram",
+    icon: react_1["default"].createElement(react_lineicons_1["default"], {
+      name: "instagram-original"
+    }),
+    url: ""
+  }, {
+    name: "whatsapp",
+    icon: react_1["default"].createElement(react_lineicons_1["default"], {
+      name: "whatsapp"
+    }),
+    url: ""
+  }];
+  var phone = "(414)807-0196";
+  var email = "contact@britproperties.ng";
+  var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 900px");
+  var isMiniMobile = (0, useMediaQuery_1["default"])("(max-width: 500px");
+  return react_1["default"].createElement("div", {
+    className: className
+  }, react_1["default"].createElement(Flex_1.Flex, {
+    direction: mobile ? "column" : "row",
+    justify: "space-between",
+    align: "center"
+  }, react_1["default"].createElement("div", {
+    style: {
+      maxWidth: isDesktop ? "469px" : "",
+      marginRight: isDesktop ? "30px" : "",
+      marginBottom: "40px"
+    }
+  }, react_1["default"].createElement("div", null, react_1["default"].createElement(Text_1.SH2, null, "Get in touch to schedule a visit to one of our properties.")), react_1["default"].createElement("div", {
+    style: {
+      marginBottom: "26px"
+    }
+  }, react_1["default"].createElement(Text_1.Subtitle, null, "Lorem ipsum dolor sit amet consectetur adipiscing elit dui ornare lectus in suscipit tellus ac purus.")), react_1["default"].createElement(Grid_1.Grid, {
+    columns: 1,
+    rowGap: "16px",
+    width: "100%"
+  }, react_1["default"].createElement(inertia_react_1.Link, {
+    href: "tel: ".concat(phone),
+    style: {
+      width: "inherit"
+    }
+  }, react_1["default"].createElement(Card_1["default"], {
+    padding: "18px"
+  }, react_1["default"].createElement(Flex_1.Flex, {
+    direction: isMiniMobile ? "column" : "row",
+    align: isMiniMobile ? "" : "center"
+  }, react_1["default"].createElement("div", {
+    style: {
+      width: "84px",
+      maxHeight: "84px",
+      minHeight: "84px",
+      minWidth: "84px",
+      marginRight: "20px",
+      marginBottom: "15px",
+      borderRadius: "10000000px",
+      display: "flex",
+      overflow: "hidden",
+      alignItems: "center"
+    }
+  }, react_1["default"].createElement("img", {
+    src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/6196b065ab885f467883135d_icon-1-contact-link-realtor-template.svg",
+    loading: "eager",
+    alt: "Phone Icon - Realtor X Webflow Template"
+  })), react_1["default"].createElement("div", {
+    style: {
+      width: "100%",
+      maxWidth: "220px",
+      marginBottom: "15px"
+    }
+  }, react_1["default"].createElement(Text_1.Subtitle, {
+    margin: "6px"
+  }, "Give us a call"), react_1["default"].createElement(Text_1.SH3, null, phone))))), react_1["default"].createElement(inertia_react_1.Link, {
+    href: "mailto: ".concat(email),
+    style: {
+      width: "inherit"
+    }
+  }, react_1["default"].createElement(Card_1["default"], {
+    padding: "33px 30px 18px"
+  }, react_1["default"].createElement(Flex_1.Flex, {
+    direction: isMiniMobile ? "column" : "row",
+    align: isMiniMobile ? "" : "center"
+  }, react_1["default"].createElement("div", {
+    style: {
+      width: "84px",
+      maxHeight: "84px",
+      minHeight: "84px",
+      minWidth: "84px",
+      marginRight: "20px",
+      marginBottom: "15px",
+      borderRadius: "10000000px",
+      display: "flex",
+      overflow: "hidden",
+      alignItems: "center"
+    }
+  }, react_1["default"].createElement("img", {
+    src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/6196b065ab885f0e8883135e_icon-2-contact-link-realtor-template.svg",
+    loading: "eager",
+    alt: "Email Icon - Realtor X Webflow Template"
+  })), react_1["default"].createElement("div", {
+    style: {
+      width: "100%",
+      maxWidth: "220px",
+      marginBottom: "15px"
+    }
+  }, react_1["default"].createElement(Text_1.Subtitle, {
+    margin: "6px"
+  }, "Send us an email"), react_1["default"].createElement(Text_1.SH3, {
+    style: {
+      lineBreak: "anywhere"
+    }
+  }, email))))))), react_1["default"].createElement("div", {
+    style: {
+      width: "100%",
+      maxWidth: "704px",
+      minWidth: isDesktop ? "593px" : "auto"
+    }
+  }, react_1["default"].createElement(ContactCard, null, react_1["default"].createElement("div", {
+    style: {
+      flex: 1,
+      maxWidth: "100%"
+    }
+  }, react_1["default"].createElement("form", null, react_1["default"].createElement(Flex_1.Flex, {
+    width: "100%"
+  }, react_1["default"].createElement(Input_1.SInput, {
+    margin: "0 0 12px 0",
+    placeholder: "Full name",
+    type: "text"
+  }), react_1["default"].createElement(outline_1.MailIcon, null)), react_1["default"].createElement(Flex_1.Flex, {
+    width: "100%"
+  }, react_1["default"].createElement(Input_1.SInput, {
+    margin: "0 0 12px 0",
+    placeholder: "Email",
+    type: "email"
+  }), react_1["default"].createElement(outline_1.MailIcon, null)), react_1["default"].createElement(Flex_1.Flex, {
+    width: "100%"
+  }, react_1["default"].createElement(Input_1.SInput, {
+    margin: "0 0 12px 0",
+    placeholder: "Phone",
+    type: "tel"
+  }), react_1["default"].createElement(outline_1.MailIcon, null)), react_1["default"].createElement(Flex_1.Flex, {
+    width: "100%"
+  }, react_1["default"].createElement(Input_1.SInput, {
+    margin: "0 0 12px 0",
+    placeholder: "Property type",
+    type: "text"
+  }), react_1["default"].createElement(outline_1.MailIcon, null)), react_1["default"].createElement(Flex_1.Flex, {
+    width: "100%"
+  }, react_1["default"].createElement(Input_1.SInput, {
+    margin: "0 0 12px 0",
+    placeholder: "Desired date",
+    type: "date"
+  }), react_1["default"].createElement(outline_1.MailIcon, null)), react_1["default"].createElement(Flex_1.Flex, {
+    width: "100%"
+  }, react_1["default"].createElement(Input_1.SInput, {
+    margin: "0 0 12px 0",
+    placeholder: "Desired time",
+    type: "time"
+  }), react_1["default"].createElement(outline_1.MailIcon, null)), react_1["default"].createElement("div", {
+    style: {
+      gridColumn: "1 / span 2"
+    }
+  }, react_1["default"].createElement(Input_1.STextArea, {
+    placeholder: "Please write any additional note here...",
+    maxLength: 5000
+  })), react_1["default"].createElement("div", {
+    style: {
+      gridColumn: "1 / span 2"
+    }
+  }, react_1["default"].createElement(Flex_1.Flex, {
+    direction: isMiniMobile ? "column" : "row",
+    width: "100%",
+    justify: isMiniMobile ? "" : "space-between",
+    align: isMiniMobile ? "" : "center",
+    gap: isMiniMobile ? "10px" : ""
+  }, react_1["default"].createElement(Buttons_1.SecondaryButton, null, "Send Message"), react_1["default"].createElement(Flex_1.Flex, {
+    width: "fit-content",
+    direction: "row",
+    gap: "16px"
+  }, SMHandles.map(function (handle, index) {
+    return react_1["default"].createElement(Footer_1.SM, {
+      key: index,
+      path: handle.url,
+      icon: handle.icon
+    });
+  }))))))))));
+};
+
+var Contact = (0, styled_components_1["default"])(ContactSection)(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    form {\n        display: grid;\n        grid-auto-columns: 1fr;\n        grid-column-gap: 21px;\n        grid-row-gap: 28px;\n        grid-template-columns: 1fr 1fr;\n        grid-template-rows: auto;\n\n        @media (max-width: 770px) {\n            display: block;\n        }\n    }\n    input {\n        padding-right: 50px;\n        max-width: 100%;\n        &:hover,\n        &:focus {\n            & ~ svg {\n                color: inherit;\n            }\n        }\n    }\n    svg {\n        position: absolute;\n        width: 32px;\n        color: #8d8d91;\n        top: calc(1.5em + 4px);\n        right: 20px;\n        transform: translateY(-50%);\n        stroke-width: 1px;\n    }\n    img {\n        width: 100%;\n        height: 100%;\n        transform: perspective(1000px);\n        object-fit: cover;\n    }\n"])));
 
 var Home = function Home() {
   document.addEventListener("scroll", homescroll);
@@ -4398,15 +4677,18 @@ var Home = function Home() {
     }
   }, react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("div", {
     style: {
-      maxWidth: isDesktop ? "" : "660px"
+      maxWidth: isDesktop ? "" : "660px",
+      margin: isDesktop ? "" : "auto"
     }
   }, react_1["default"].createElement(Flex_1.Flex, {
     align: "center",
-    justify: "space-between"
+    justify: "space-between",
+    direction: isDesktop ? "row" : "column"
   }, react_1["default"].createElement("div", {
     style: {
-      maxWidth: "39%",
-      minWidth: "401px"
+      maxWidth: isDesktop ? "39%" : "",
+      marginBottom: isDesktop ? "" : "30px",
+      minWidth: isMiniMobile ? "100%" : "401px"
     }
   }, react_1["default"].createElement(Text_1.SH2, null, "Why Purchase with Us?"), react_1["default"].createElement(Text_1.Subtitle, {
     style: {
@@ -4415,7 +4697,8 @@ var Home = function Home() {
   }, "Turpis massa tincidunt dui ut ornare lectus sit amet mi eget mauris pharetra et euismod in pellentesque massa placerat duis ultricies condimentum lacinia quis vel eros donec ac odio"), react_1["default"].createElement(Grid_1.Grid, {
     columns: 1,
     rowGap: "16px",
-    rows: "auto"
+    rows: "auto",
+    align: isDesktop ? "" : "center"
   }, react_1["default"].createElement(Flex_1.Flex, null, react_1["default"].createElement("img", {
     style: {
       width: "28px",
@@ -4505,8 +4788,8 @@ var Home = function Home() {
       top: "0%",
       right: "0%",
       bottom: "0%",
-      width: "50%",
-      position: "absolute"
+      width: isDesktop ? "50%" : "100%",
+      position: isDesktop ? "absolute" : "relative"
     }
   }, react_1["default"].createElement("img", {
     src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/61969b2d1d8cb6eddb815e35_image-perks-realtor-template.jpg",
@@ -4529,17 +4812,20 @@ var Home = function Home() {
     }
   }, react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("div", {
     style: {
-      maxWidth: isDesktop ? "" : "660px"
+      maxWidth: isDesktop ? "" : "660px",
+      margin: isDesktop ? "" : "auto"
     }
   }, react_1["default"].createElement(Flex_1.Flex, {
+    direction: !isDesktop ? "column" : "row",
     align: "center",
     justify: "space-between"
   }, react_1["default"].createElement("div", {
     style: {
-      maxWidth: "39%",
-      minWidth: "401px",
+      maxWidth: isDesktop ? "39%" : "700px",
+      minWidth: isMiniMobile ? "100%" : "401px",
+      marginBottom: isDesktop ? "" : "30px",
       marginLeft: "auto",
-      marginRight: "-100px"
+      marginRight: isDesktop ? "-100px" : "auto"
     }
   }, react_1["default"].createElement(Text_1.SH2, null, "About Brit Properties"), react_1["default"].createElement(Text_1.Subtitle, {
     style: {
@@ -4554,7 +4840,7 @@ var Home = function Home() {
       maxWidth: "476px"
     }
   }, react_1["default"].createElement(Grid_1.Grid, {
-    columns: 2,
+    columns: isMiniMobile ? 1 : 2,
     columnGap: "16px",
     rowGap: "60px",
     justify: "flex-start"
@@ -4620,13 +4906,15 @@ var Home = function Home() {
     }
   }, "Avg yearly appreciation"))))), react_1["default"].createElement(inertia_react_1.Link, {
     href: "/about"
-  }, react_1["default"].createElement(Buttons_1.PrimaryButton, null, "About Us")))))), react_1["default"].createElement("div", {
+  }, react_1["default"].createElement(Buttons_1.PrimaryButton, {
+    width: isMiniMobile ? "100%" : ""
+  }, "About Us")))))), react_1["default"].createElement("div", {
     style: {
       top: "0%",
       left: "0%",
       bottom: "0%",
-      width: "50%",
-      position: "absolute"
+      width: isDesktop ? "50%" : "100%",
+      position: isDesktop ? "absolute" : "relative"
     }
   }, react_1["default"].createElement("img", {
     src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/61969b2d7f0ca2e2d5593633_image-about-section-v2-realtor-template.jpg",
@@ -4639,6 +4927,12 @@ var Home = function Home() {
       transform: "perspective(1000px)",
       objectFit: "cover"
     }
+  }))), react_1["default"].createElement("section", {
+    style: {
+      backgroundColor: "rgb(249,249,249)"
+    }
+  }, react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement(Contact, {
+    mobile: !isDesktop
   }))));
 };
 
@@ -4672,7 +4966,7 @@ Object.defineProperty(exports, "__esModule", ({
 
 var styled_components_1 = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 
-var GlobalStyle = (0, styled_components_1.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Regular.otf') format(\"opentype\");\n        font-weight: 400;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Light.otf') format(\"opentype\");\n        font-weight: 300;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Thin.otf') format(\"opentype\");\n        font-weight: 200;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Ultralight.otf') format(\"opentype\");\n        font-weight: 100;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('fonts/SF/SF-Pro-Display-Bold.otf') format(\"opentype\");\n        font-weight: 700;\n    }\n    body {\n        margin: 0;\n        display: block;\n        font-size: 18px;\n    }\n    html {\n        scroll-behaviour: smooth;\n    }\n    * {\n        font-family: 'SF Pro', sans-serif;\n        font-weight: 400;\n        margin: 0;\n        padding: 0;\n        box-sizing: border-box;\n    }\n    ul {\n        list-style: none;\n    }\n    a {\n        text-decoration: none;\n        color: black;\n    }\n    button {\n        border: 0;\n    }\n    section {\n        padding: 160px 0;\n        position: relative;\n    }\n    img {\n        max-width: 100%;\n        vertical-align: middle;\n        display: inline-block;\n        border: 0;\n    }\n"])));
+var GlobalStyle = (0, styled_components_1.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Regular.otf') format(\"opentype\");\n        font-weight: 400;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Light.otf') format(\"opentype\");\n        font-weight: 300;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Thin.otf') format(\"opentype\");\n        font-weight: 200;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Ultralight.otf') format(\"opentype\");\n        font-weight: 100;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('fonts/SF/SF-Pro-Display-Bold.otf') format(\"opentype\");\n        font-weight: 700;\n    }\n    body {\n        margin: 0;\n        display: block;\n        font-size: 18px;\n    }\n    html {\n        scroll-behaviour: smooth;\n    }\n    * {\n        font-family: 'SF Pro', sans-serif;\n        font-weight: 400;\n        margin: 0;\n        padding: 0;\n        box-sizing: border-box;\n    }\n    ul {\n        list-style: none;\n    }\n    a {\n        text-decoration: none;\n        color: black;\n    }\n    button {\n        border: 0;\n    }\n    section {\n        padding: 160px 0;\n        position: relative;\n    }\n    @media screen and (max-width: 900px) {\n        section {\n            padding: 40px 0\n        }\n    }\n    img {\n        max-width: 100%;\n        vertical-align: middle;\n        display: inline-block;\n        border: 0;\n    }\n"])));
 exports["default"] = GlobalStyle;
 
 /***/ }),
@@ -5013,7 +5307,7 @@ var Subtitle = (0, styled_components_1["default"])(P)(_templateObject6 || (_temp
   return align;
 }, function (_ref13) {
   var margin = _ref13.margin;
-  return margin === "" ? margin : "40px";
+  return margin ? margin : margin === "" ? margin : "40px";
 }, function (_ref14) {
   var transform = _ref14.transform;
   return transform ? "" : "translateY(100px)";

@@ -55,6 +55,11 @@ const GlobalStyle = createGlobalStyle`
         padding: 160px 0;
         position: relative;
     }
+    @media screen and (max-width: 900px) {
+        section {
+            padding: 40px 0
+        }
+    }
     img {
         max-width: 100%;
         vertical-align: middle;

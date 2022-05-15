@@ -40,4 +40,38 @@ const SInput = styled(Input)`
     }
 `;
 
-export { SInput, Input };
+const TextArea: React.FC<{
+    className?: string;
+    placeholder?: string;
+    maxLength?: number;
+}> = ({ className, placeholder, maxLength }) => (
+    <textarea
+        placeholder={placeholder}
+        maxLength={maxLength}
+        className={className}
+    ></textarea>
+);
+
+const STextArea = styled(TextArea)`
+    max-height: 250px;
+    max-width: 100%;
+    min-height: 182px;
+    min-width: 100%;
+    margin-bottom: 0px;
+    padding: 18px 24px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #f6f6f6;
+    border-radius: 12px;
+    background-color: #f6f6f6;
+    -webkit-transition: border-color 300ms ease, color 300ms ease;
+    transition: border-color 300ms ease, color 300ms ease;
+    color: #222223;
+    font-size: 18px;
+
+    &:focus,
+    &:hover {
+        outline: 1px solid ${({ theme }) => theme.secondaryColor};
+    }
+`;
+export { SInput, Input, STextArea, TextArea };

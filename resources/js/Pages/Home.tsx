@@ -1,15 +1,23 @@
 import { Link } from "@inertiajs/inertia-react";
 import React, { useRef } from "react";
 import styled from "styled-components";
-import { PrimaryButton, TertiaryButton } from "../Components/Buttons";
+import {
+    PrimaryButton,
+    SecondaryButton,
+    TertiaryButton,
+} from "../Components/Buttons";
 import useMediaQuery from "../hooks/useMediaQuery";
 import Layout from "../Layouts/Layout";
 import Container, { SmallContainer } from "../shared/Container";
 import { Flex } from "../shared/Flex";
 import { BoldContent, SH2, SH3, Subtitle } from "../shared/Text";
 import { SBadge as Badge } from "../Components/Badges";
-import { ArrowsExpandIcon } from "@heroicons/react/outline";
+import { ArrowsExpandIcon, MailIcon } from "@heroicons/react/outline";
 import { Grid } from "../shared/Grid";
+import Card from "../Components/Card";
+import { SInput, STextArea } from "../Components/Input";
+import LineIcon from "react-lineicons";
+import { SM } from "../Components/Footer";
 
 const executeScroll = (ref: React.MutableRefObject<any>) =>
     ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -310,6 +318,306 @@ const SImageSection = styled(ImageSection)`
         box-shadow: 0 10px 34px 0 rgba(0, 0, 0, 0.14);
     }
 `;
+
+const ContactCard = styled(Card)`
+    display: flex;
+    min-height: 724px;
+    padding: 89px 55px;
+    align-items: center;
+    border-radius: 20px;
+    @media (max-width: 770px) {
+        padding: 40px 25px;
+    }
+`;
+
+const ContactSection: React.FC<{ className?: string; mobile: boolean }> = ({
+    className,
+    mobile,
+}) => {
+    const SMHandles = [
+        {
+            name: "facebook",
+            icon: <LineIcon name="facebook-filled" />,
+            url: "",
+        },
+        {
+            name: "twitter",
+            icon: <LineIcon name="twitter-filled" />,
+            url: "",
+        },
+        {
+            name: "instagram",
+            icon: <LineIcon name="instagram-original" />,
+            url: "",
+        },
+
+        { name: "whatsapp", icon: <LineIcon name="whatsapp" />, url: "" },
+    ];
+    const phone = "(414)807-0196";
+    const email = "contact@britproperties.ng";
+    const isDesktop = useMediaQuery("(min-width: 900px");
+    const isMiniMobile = useMediaQuery("(max-width: 500px");
+    return (
+        <div className={className}>
+            <Flex
+                direction={mobile ? "column" : "row"}
+                justify="space-between"
+                align="center"
+            >
+                <div
+                    style={{
+                        maxWidth: isDesktop ? "469px" : "",
+                        marginRight: isDesktop ? "30px" : "",
+                        marginBottom: "40px",
+                    }}
+                >
+                    <div>
+                        <SH2>
+                            Get in touch to schedule a visit to one of our
+                            properties.
+                        </SH2>
+                    </div>
+                    <div style={{ marginBottom: "26px" }}>
+                        <Subtitle>
+                            Lorem ipsum dolor sit amet consectetur adipiscing
+                            elit dui ornare lectus in suscipit tellus ac purus.
+                        </Subtitle>
+                    </div>
+                    <Grid columns={1} rowGap={"16px"} width="100%">
+                        <Link
+                            href={`tel: ${phone}`}
+                            style={{ width: "inherit" }}
+                        >
+                            <Card padding="18px">
+                                <Flex
+                                    direction={isMiniMobile ? "column" : "row"}
+                                    align={isMiniMobile ? "" : "center"}
+                                >
+                                    <div
+                                        style={{
+                                            width: "84px",
+                                            maxHeight: "84px",
+                                            minHeight: "84px",
+                                            minWidth: "84px",
+                                            marginRight: "20px",
+                                            marginBottom: "15px",
+                                            borderRadius: "10000000px",
+                                            display: "flex",
+                                            overflow: "hidden",
+                                            alignItems: "center",
+                                        }}
+                                    >
+                                        <img
+                                            src="https://assets.website-files.com/6193ce0889184dacb7d96c80/6196b065ab885f467883135d_icon-1-contact-link-realtor-template.svg"
+                                            loading="eager"
+                                            alt="Phone Icon - Realtor X Webflow Template"
+                                        />
+                                    </div>
+                                    <div
+                                        style={{
+                                            width: "100%",
+                                            maxWidth: "220px",
+                                            marginBottom: "15px",
+                                        }}
+                                    >
+                                        <Subtitle margin="6px">
+                                            Give us a call
+                                        </Subtitle>
+                                        <SH3>{phone}</SH3>
+                                    </div>
+                                </Flex>
+                            </Card>
+                        </Link>
+                        <Link
+                            href={`mailto: ${email}`}
+                            style={{ width: "inherit" }}
+                        >
+                            <Card padding="33px 30px 18px">
+                                <Flex
+                                    direction={isMiniMobile ? "column" : "row"}
+                                    align={isMiniMobile ? "" : "center"}
+                                >
+                                    <div
+                                        style={{
+                                            width: "84px",
+                                            maxHeight: "84px",
+                                            minHeight: "84px",
+                                            minWidth: "84px",
+                                            marginRight: "20px",
+                                            marginBottom: "15px",
+                                            borderRadius: "10000000px",
+                                            display: "flex",
+                                            overflow: "hidden",
+                                            alignItems: "center",
+                                        }}
+                                    >
+                                        <img
+                                            src="https://assets.website-files.com/6193ce0889184dacb7d96c80/6196b065ab885f0e8883135e_icon-2-contact-link-realtor-template.svg"
+                                            loading="eager"
+                                            alt="Email Icon - Realtor X Webflow Template"
+                                        />
+                                    </div>
+                                    <div
+                                        style={{
+                                            width: "100%",
+                                            maxWidth: "220px",
+                                            marginBottom: "15px",
+                                        }}
+                                    >
+                                        <Subtitle margin="6px">
+                                            Send us an email
+                                        </Subtitle>
+                                        <SH3 style={{ lineBreak: "anywhere" }}>
+                                            {email}
+                                        </SH3>
+                                    </div>
+                                </Flex>
+                            </Card>
+                        </Link>
+                    </Grid>
+                </div>
+                <div
+                    style={{
+                        width: "100%",
+                        maxWidth: "704px",
+                        minWidth: isDesktop ? "593px" : "auto",
+                    }}
+                >
+                    <ContactCard>
+                        <div style={{ flex: 1, maxWidth: "100%" }}>
+                            <form>
+                                <Flex width="100%">
+                                    <SInput
+                                        margin="0 0 12px 0"
+                                        placeholder="Full name"
+                                        type="text"
+                                    />
+                                    <MailIcon />
+                                </Flex>
+                                <Flex width="100%">
+                                    <SInput
+                                        margin="0 0 12px 0"
+                                        placeholder="Email"
+                                        type="email"
+                                    />
+                                    <MailIcon />
+                                </Flex>
+                                <Flex width="100%">
+                                    <SInput
+                                        margin="0 0 12px 0"
+                                        placeholder="Phone"
+                                        type="tel"
+                                    />
+                                    <MailIcon />
+                                </Flex>
+                                <Flex width="100%">
+                                    <SInput
+                                        margin="0 0 12px 0"
+                                        placeholder="Property type"
+                                        type="text"
+                                    />
+                                    <MailIcon />
+                                </Flex>
+                                <Flex width="100%">
+                                    <SInput
+                                        margin="0 0 12px 0"
+                                        placeholder="Desired date"
+                                        type="date"
+                                    />
+                                    <MailIcon />
+                                </Flex>
+                                <Flex width="100%">
+                                    <SInput
+                                        margin="0 0 12px 0"
+                                        placeholder="Desired time"
+                                        type="time"
+                                    />
+                                    <MailIcon />
+                                </Flex>
+                                <div style={{ gridColumn: "1 / span 2" }}>
+                                    <STextArea
+                                        placeholder="Please write any additional note here..."
+                                        maxLength={5000}
+                                    />
+                                </div>
+                                <div style={{ gridColumn: "1 / span 2" }}>
+                                    <Flex
+                                        direction={
+                                            isMiniMobile ? "column" : "row"
+                                        }
+                                        width="100%"
+                                        justify={
+                                            isMiniMobile ? "" : "space-between"
+                                        }
+                                        align={isMiniMobile ? "" : "center"}
+                                        gap={isMiniMobile ? "10px" : ""}
+                                    >
+                                        <SecondaryButton>
+                                            Send Message
+                                        </SecondaryButton>
+                                        <Flex
+                                            width="fit-content"
+                                            direction="row"
+                                            gap="16px"
+                                        >
+                                            {SMHandles.map((handle, index) => (
+                                                <SM
+                                                    key={index}
+                                                    path={handle.url}
+                                                    icon={handle.icon}
+                                                />
+                                            ))}
+                                        </Flex>
+                                    </Flex>
+                                </div>
+                            </form>
+                        </div>
+                    </ContactCard>
+                </div>
+            </Flex>
+        </div>
+    );
+};
+
+const Contact = styled(ContactSection)`
+    form {
+        display: grid;
+        grid-auto-columns: 1fr;
+        grid-column-gap: 21px;
+        grid-row-gap: 28px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+
+        @media (max-width: 770px) {
+            display: block;
+        }
+    }
+    input {
+        padding-right: 50px;
+        max-width: 100%;
+        &:hover,
+        &:focus {
+            & ~ svg {
+                color: inherit;
+            }
+        }
+    }
+    svg {
+        position: absolute;
+        width: 32px;
+        color: #8d8d91;
+        top: calc(1.5em + 4px);
+        right: 20px;
+        transform: translateY(-50%);
+        stroke-width: 1px;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        transform: perspective(1000px);
+        object-fit: cover;
+    }
+`;
 const Home = () => {
     document.addEventListener("scroll", homescroll);
     const isMiniMobile = useMediaQuery("(max-width: 500px)");
@@ -409,9 +717,24 @@ const Home = () => {
                 }}
             >
                 <Container>
-                    <div style={{ maxWidth: isDesktop ? "" : "660px" }}>
-                        <Flex align="center" justify="space-between">
-                            <div style={{ maxWidth: "39%", minWidth: "401px" }}>
+                    <div
+                        style={{
+                            maxWidth: isDesktop ? "" : "660px",
+                            margin: isDesktop ? "" : "auto",
+                        }}
+                    >
+                        <Flex
+                            align="center"
+                            justify="space-between"
+                            direction={isDesktop ? "row" : "column"}
+                        >
+                            <div
+                                style={{
+                                    maxWidth: isDesktop ? "39%" : "",
+                                    marginBottom: isDesktop ? "" : "30px",
+                                    minWidth: isMiniMobile ? "100%" : "401px",
+                                }}
+                            >
                                 <SH2>Why Purchase with Us?</SH2>
                                 <Subtitle style={{ marginBottom: "34px" }}>
                                     Turpis massa tincidunt dui ut ornare lectus
@@ -420,7 +743,12 @@ const Home = () => {
                                     ultricies condimentum lacinia quis vel eros
                                     donec ac odio
                                 </Subtitle>
-                                <Grid columns={1} rowGap={"16px"} rows="auto">
+                                <Grid
+                                    columns={1}
+                                    rowGap={"16px"}
+                                    rows="auto"
+                                    align={isDesktop ? "" : "center"}
+                                >
                                     <Flex>
                                         <img
                                             style={{
@@ -539,8 +867,8 @@ const Home = () => {
                         top: "0%",
                         right: "0%",
                         bottom: "0%",
-                        width: "50%",
-                        position: "absolute",
+                        width: isDesktop ? "50%" : "100%",
+                        position: isDesktop ? "absolute" : "relative",
                     }}
                 >
                     <img
@@ -567,14 +895,24 @@ const Home = () => {
                 }}
             >
                 <Container>
-                    <div style={{ maxWidth: isDesktop ? "" : "660px" }}>
-                        <Flex align="center" justify="space-between">
+                    <div
+                        style={{
+                            maxWidth: isDesktop ? "" : "660px",
+                            margin: isDesktop ? "" : "auto",
+                        }}
+                    >
+                        <Flex
+                            direction={!isDesktop ? "column" : "row"}
+                            align="center"
+                            justify="space-between"
+                        >
                             <div
                                 style={{
-                                    maxWidth: "39%",
-                                    minWidth: "401px",
+                                    maxWidth: isDesktop ? "39%" : "700px",
+                                    minWidth: isMiniMobile ? "100%" : "401px",
+                                    marginBottom: isDesktop ? "" : "30px",
                                     marginLeft: "auto",
-                                    marginRight: "-100px",
+                                    marginRight: isDesktop ? "-100px" : "auto",
                                 }}
                             >
                                 <SH2>About Brit Properties</SH2>
@@ -586,7 +924,7 @@ const Home = () => {
                                 <div style={{ marginBottom: "54px" }}>
                                     <div style={{ maxWidth: "476px" }}>
                                         <Grid
-                                            columns={2}
+                                            columns={isMiniMobile ? 1 : 2}
                                             columnGap={"16px"}
                                             rowGap={"60px"}
                                             justify="flex-start"
@@ -699,7 +1037,11 @@ const Home = () => {
                                     </div>
                                 </div>
                                 <Link href="/about">
-                                    <PrimaryButton>About Us</PrimaryButton>
+                                    <PrimaryButton
+                                        width={isMiniMobile ? "100%" : ""}
+                                    >
+                                        About Us
+                                    </PrimaryButton>
                                 </Link>
                             </div>
                         </Flex>
@@ -710,8 +1052,8 @@ const Home = () => {
                         top: "0%",
                         left: "0%",
                         bottom: "0%",
-                        width: "50%",
-                        position: "absolute",
+                        width: isDesktop ? "50%" : "100%",
+                        position: isDesktop ? "absolute" : "relative",
                     }}
                 >
                     <img
@@ -727,6 +1069,15 @@ const Home = () => {
                         }}
                     />
                 </div>
+            </section>
+            <section
+                style={{
+                    backgroundColor: "rgb(249,249,249)",
+                }}
+            >
+                <Container>
+                    <Contact mobile={!isDesktop} />
+                </Container>
             </section>
         </main>
     );

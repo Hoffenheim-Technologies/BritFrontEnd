@@ -51,7 +51,7 @@ const SMLink: React.FC<{
     </Link>
 );
 
-const SM = styled(SMLink)`
+export const SM = styled(SMLink)`
     background-color: ${({ theme }) => theme.primaryColor};
     &:hover {
         background-color: ${({ theme }) => theme.secondaryColor};
