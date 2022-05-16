@@ -46,7 +46,7 @@ const Nav: React.FC<{ className?: string }> = ({ className }) => (
     </ul>
 );
 
-const SearchBar = styled(Div)`
+export const SearchBar = styled(Div)`
     padding: 32px;
     box-shadow: 0 3px 20px 0 rgb(8 15 52 / 6%);
 `;

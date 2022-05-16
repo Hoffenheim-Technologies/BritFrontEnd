@@ -10,7 +10,16 @@ const Input: React.FC<{
     maxLength?: number;
     required?: boolean;
     disabled?: boolean;
-}> = ({ className, type, placeholder, maxLength, required, disabled }) => (
+    style?: any;
+}> = ({
+    className,
+    type,
+    placeholder,
+    maxLength,
+    required,
+    disabled,
+    style,
+}) => (
     <input
         className={className}
         type={type ? type : "text"}
@@ -18,11 +27,19 @@ const Input: React.FC<{
         placeholder={placeholder}
         required={required}
         disabled={disabled}
+        style={style}
     />
 );
 
 const SInput = styled(Input)`
-    width: ${({ width }) => (width ? width : "100%")};
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+        appearance: none;
+    }
+    appearance: none;
+    width: ${({ width }) => (width ? width : width === "" ? width : "100%")};
     max-width: min(80vw, 450px);
     margin: ${({ margin }) => (margin ? margin : 0)};
     padding: 8px 12px;

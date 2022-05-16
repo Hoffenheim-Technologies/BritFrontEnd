@@ -12,11 +12,13 @@ const Button: React.FC<{
     fontWeight?: number;
     margin?: string | number;
     transform?: boolean;
-}> = ({ className, children, onClick, disabled }) => (
+    style?: any;
+}> = ({ className, children, onClick, disabled, style }) => (
     <button
         onClick={onClick}
         className={className + " reveal"}
         disabled={disabled}
+        style={style}
     >
         {children}
     </button>

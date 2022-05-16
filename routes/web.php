@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', ['as'=> 'home', 'uses'=>'App\Http\Controllers\HomeController@show']);
 Route::get('/about', ['as'=> 'about', 'uses'=>'App\Http\Controllers\AboutController@show']);
+Route::get('/properties', ['as'=> 'properties', 'uses'=>'App\Http\Controllers\PropertiesController@show']);
+Route::get('/contact', ['as'=> 'contact', 'uses'=>'App\Http\Controllers\ContactController@show']);
