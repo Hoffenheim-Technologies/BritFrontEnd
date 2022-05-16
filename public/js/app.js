@@ -3077,9 +3077,11 @@ var Text_1 = __webpack_require__(/*! ../shared/Text */ "./resources/js/shared/Te
 var Card = function Card(_ref) {
   var className = _ref.className,
       heading = _ref.heading,
-      children = _ref.children;
+      children = _ref.children,
+      style = _ref.style;
   return react_1["default"].createElement("div", {
-    className: className
+    className: className,
+    style: style
   }, react_1["default"].createElement(Text_1.SH3, null, heading), children);
 };
 
@@ -4088,6 +4090,10 @@ exports["default"] = Layout;
 "use strict";
 
 
+var _templateObject;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
 var __importDefault = this && this.__importDefault || function (mod) {
   return mod && mod.__esModule ? mod : {
     "default": mod
@@ -4100,16 +4106,586 @@ Object.defineProperty(exports, "__esModule", ({
 
 var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
+var useMediaQuery_1 = __importDefault(__webpack_require__(/*! ../hooks/useMediaQuery */ "./resources/js/hooks/useMediaQuery.tsx"));
+
 var Layout_1 = __importDefault(__webpack_require__(/*! ../Layouts/Layout */ "./resources/js/Layouts/Layout.tsx"));
 
-var Container_1 = __webpack_require__(/*! ../shared/Container */ "./resources/js/shared/Container.tsx");
+var Container_1 = __importDefault(__webpack_require__(/*! ../shared/Container */ "./resources/js/shared/Container.tsx"));
+
+var Flex_1 = __webpack_require__(/*! ../shared/Flex */ "./resources/js/shared/Flex.tsx");
+
+var Grid_1 = __webpack_require__(/*! ../shared/Grid */ "./resources/js/shared/Grid.tsx");
 
 var Text_1 = __webpack_require__(/*! ../shared/Text */ "./resources/js/shared/Text.tsx");
 
+var Card_1 = __importDefault(__webpack_require__(/*! ../Components/Card */ "./resources/js/Components/Card.tsx"));
+
+var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
+
+var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+
+var AboutShow = function AboutShow(_ref) {
+  var children = _ref.children,
+      header = _ref.header;
+  return react_1["default"].createElement("div", {
+    style: {
+      maxWidth: "298px",
+      textAlign: "center"
+    }
+  }, react_1["default"].createElement("div", {
+    style: {
+      marginBottom: "30px"
+    }
+  }, react_1["default"].createElement("div", {
+    style: {
+      fontSize: "63px",
+      lineHeight: "0.825em",
+      color: "#f85757"
+    }
+  }, header)), children);
+};
+
+var SCard = (0, styled_components_1["default"])(Card_1["default"])(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    position: absolute;\n    right: 0;\n    bottom: 50px;\n\n    @media screen and (max-width: 499px) {\n        position: relative;\n        right: auto;\n        bottom: auto;\n        max-width: 90%;\n        margin-top: -69px;\n        margin-right: auto;\n        margin-left: auto;\n        padding: 33px 25px;\n    }\n\n    & > div {\n        text-align: center;\n        div {\n            margin-bottom: 16px;\n            font-size: 63px;\n            line-height: 0.825em;\n            color: #f85757;\n        }\n    }\n"])));
+
 var About = function About() {
-  return react_1["default"].createElement(react_1["default"].Fragment, null, react_1["default"].createElement(Container_1.SmallContainer, null, react_1["default"].createElement(Text_1.BoldContent, {
+  var isMiniMobile = (0, useMediaQuery_1["default"])("(max-width: 500px)");
+  var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 900px)");
+  var isTinyMobile = (0, useMediaQuery_1["default"])("(max-width: 374px)");
+  var isTablet = (0, useMediaQuery_1["default"])("(max-width: 767px)");
+  var agents = [{
+    name: "John Carter",
+    description: "Blandit massa enim nec dui morbi enim nunc faucibus a pellent.",
+    phone: "(414) 325-427",
+    email: "john@britproperties.ng",
+    picture: {
+      src: "https://assets.website-files.com/6193ce0889184df85cd96c91/619458f159ee9149d326b898_image-1-agents-realtor-template.jpg",
+      srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/619458f159ee9149d326b898_image-1-agents-realtor-template-p-500.jpeg 500w, https://assets.website-files.com/6193ce0889184df85cd96c91/619458f159ee9149d326b898_image-1-agents-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/619458f159ee9149d326b898_image-1-agents-realtor-template-p-1080.jpeg 1080w, https://assets.website-files.com/6193ce0889184df85cd96c91/619458f159ee9149d326b898_image-1-agents-realtor-template.jpg 1160w",
+      sizes: "(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 660px, (max-width: 1919px) 31vw, 406px"
+    }
+  }, {
+    name: "Sophie Moore",
+    description: "Blandit massa enim nec dui morbi enim nunc faucibus a pellent.",
+    phone: "(414) 325-427",
+    email: "sophie@britproperties.ng",
+    picture: {
+      src: "https://assets.website-files.com/6193ce0889184df85cd96c91/619458cd5b21d6434837e15d_image-3-agents-realtor-template.jpg",
+      srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/619458cd5b21d6434837e15d_image-3-agents-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/619458cd5b21d6434837e15d_image-3-agents-realtor-template-p-1080.jpeg 1080w, https://assets.website-files.com/6193ce0889184df85cd96c91/619458cd5b21d6434837e15d_image-3-agents-realtor-template.jpg 1160w",
+      sizes: "(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 660px, (max-width: 1919px) 31vw, 406px"
+    }
+  }, {
+    name: "Andi Smith",
+    description: "Blandit massa enim nec dui morbi enim nunc faucibus a pellent.",
+    phone: "(414) 325-427",
+    email: "andi@britproperties.ng",
+    picture: {
+      src: "https://assets.website-files.com/6193ce0889184df85cd96c91/619458a393e1e343176067b5_image-2-agents-realtor-template.jpg",
+      srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/619458a393e1e343176067b5_image-2-agents-realtor-template-p-500.jpeg 500w, https://assets.website-files.com/6193ce0889184df85cd96c91/619458a393e1e343176067b5_image-2-agents-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/619458a393e1e343176067b5_image-2-agents-realtor-template-p-1080.jpeg 1080w, https://assets.website-files.com/6193ce0889184df85cd96c91/619458a393e1e343176067b5_image-2-agents-realtor-template.jpg 1160w",
+      sizes: "(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 660px, (max-width: 1919px) 31vw, 406px"
+    }
+  }];
+  return react_1["default"].createElement("main", null, react_1["default"].createElement("section", {
+    style: {
+      paddingBottom: 0
+    }
+  }, react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("div", {
+    style: {
+      maxWidth: !isDesktop ? "660px" : "",
+      margin: !isDesktop ? "0 auto" : ""
+    }
+  }, react_1["default"].createElement(Flex_1.Flex, {
+    align: "center",
+    direction: isDesktop ? "row" : "column",
+    gap: isDesktop ? "40px" : "",
+    style: isDesktop ? {
+      marginBottom: "116px"
+    } : {
+      marginBottom: "98px"
+    }
+  }, react_1["default"].createElement("div", {
+    style: isDesktop ? {
+      maxWidth: "591px"
+    } : {
+      maxWidth: "100%",
+      textAlign: "center",
+      marginBottom: "32px"
+    }
+  }, react_1["default"].createElement(Text_1.BoldContent, {
+    align: "center",
+    style: {
+      marginBottom: isDesktop ? "54px" : "10px",
+      textAlign: isDesktop ? "left" : "center"
+    }
+  }, "About our real estate firm"), react_1["default"].createElement(Text_1.Subtitle, {
+    margin: "",
+    transform: true
+  }, "Lorem ipsum dolor sit amet consectetur adipiscing eli quis sed ac curabitur bibendum blandit nisl morbi tellus tincidunt condimentum facilisi rhoncus ut cursus placerat facilisis dui posuere.")), react_1["default"].createElement("div", {
+    style: {
+      marginTop: "auto",
+      textAlign: isDesktop ? "left" : "center"
+    }
+  }, react_1["default"].createElement(Text_1.Subtitle, {
+    margin: "",
+    transform: true
+  }, "Blandit massa enim nec dui morbi enim nunc faucibus a pellentesque sit amet porttitor eget non enim praesent elementum facilisis aliquet enim tortor at auctor urna ullamcorper a lacus.")))), react_1["default"].createElement(Grid_1.Grid, {
+    columns: 3,
+    columnGap: "21px"
+  }, react_1["default"].createElement(Flex_1.Flex, {
     align: "center"
-  }, "About Page")));
+  }, react_1["default"].createElement("img", {
+    style: {
+      width: "100%",
+      height: "100%",
+      transform: "perspective(1000px)",
+      objectFit: "cover"
+    },
+    src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/6197ef1975cc9145aaf865a2_image-1-about-hero-realtor-template.jpg",
+    loading: "eager",
+    alt: "About House - Realtor X Webflow Template"
+  })), react_1["default"].createElement(Flex_1.Flex, {
+    align: "center"
+  }, react_1["default"].createElement("img", {
+    style: {
+      width: "100%",
+      height: "100%",
+      transform: "perspective(1000px)",
+      objectFit: "cover"
+    },
+    src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/6197ef190a77414b661404a9_image-2-about-hero-realtor-template.jpg",
+    loading: "eager",
+    alt: "About House - Realtor X Webflow Template"
+  })), react_1["default"].createElement(Flex_1.Flex, {
+    align: "center"
+  }, react_1["default"].createElement("img", {
+    style: {
+      width: "100%",
+      height: "100%",
+      transform: "perspective(1000px)",
+      objectFit: "cover"
+    },
+    src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/6197ef185cf1e43fd962d58d_image-3-about-hero-realtor-template.jpg",
+    loading: "eager",
+    alt: "About House - Realtor X Webflow Template"
+  }))))), react_1["default"].createElement("section", null, react_1["default"].createElement(Container_1["default"], {
+    width: "1158px"
+  }, react_1["default"].createElement(Text_1.SH2, {
+    style: {
+      margin: "auto auto 64px auto",
+      width: "fit-content"
+    }
+  }, "Take a look at our numbers"), react_1["default"].createElement(Grid_1.Grid, {
+    columns: isDesktop ? 3 : 1,
+    columnGap: "16px",
+    rowGap: "80px",
+    justify: isDesktop ? "" : "center"
+  }, react_1["default"].createElement(AboutShow, {
+    header: "99%"
+  }, react_1["default"].createElement("div", null, react_1["default"].createElement(Text_1.SH3, null, "Customer Satisfaction"), react_1["default"].createElement(Text_1.Subtitle, {
+    margin: "0",
+    transform: true
+  }, "Lorem ipsum dolor sit amet dolor sit consectetur adipiscing."))), react_1["default"].createElement(AboutShow, {
+    header: "50M+"
+  }, react_1["default"].createElement("div", null, react_1["default"].createElement(Text_1.SH3, null, "In Property Sales"), react_1["default"].createElement(Text_1.Subtitle, {
+    margin: "0",
+    transform: true
+  }, "Lorem ipsum dolor sit amet dolor sit consectetur adipiscing."))), react_1["default"].createElement(AboutShow, {
+    header: "2,400+"
+  }, react_1["default"].createElement("div", null, react_1["default"].createElement(Text_1.SH3, null, "Successful Sales"), react_1["default"].createElement(Text_1.Subtitle, {
+    margin: "0",
+    transform: true
+  }, "Lorem ipsum dolor sit amet dolor sit consectetur adipiscing.")))))), react_1["default"].createElement("section", {
+    style: {
+      backgroundColor: "rgb(249,249,249)"
+    }
+  }, react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("div", {
+    style: {
+      maxWidth: !isDesktop ? "660px" : "",
+      margin: !isDesktop ? "0 auto" : ""
+    }
+  }, react_1["default"].createElement(Flex_1.Flex, {
+    direction: isDesktop ? "row" : "column",
+    style: {
+      marginBottom: "54px"
+    },
+    align: "center"
+  }, react_1["default"].createElement("div", {
+    style: {
+      maxWidth: isDesktop ? "39%" : "",
+      marginBottom: isDesktop ? "" : "30px",
+      minWidth: isMiniMobile ? "100%" : "401px"
+    }
+  }, react_1["default"].createElement(Text_1.SH2, null, "We have only one goal: To help you find your dream home"), react_1["default"].createElement(Text_1.Subtitle, {
+    style: {
+      marginBottom: "34px"
+    }
+  }, "Lorem ipsum dolor sit amet consectetur adipiscing elit augue sit nunc amet posuere amet mauris maecenas facilisi eu nunc sapien eget volutpat mauris hac ipsum arcu praesent tristique scelerisque volutpat non vitae dolor vestibulum tortor nibh molestie odio rhoncus.")), react_1["default"].createElement("div", {
+    style: {
+      position: "relative",
+      width: "100%",
+      maxWidth: "730px"
+    }
+  }, react_1["default"].createElement("div", {
+    style: {
+      maxWidth: !isTablet ? "85%" : !isMiniMobile ? "80%" : "100%",
+      marginLeft: isDesktop ? "auto" : "",
+      marginRight: isDesktop ? "" : "auto",
+      borderRadius: "12px",
+      overflow: "hidden"
+    }
+  }, react_1["default"].createElement("img", {
+    style: {
+      width: "100%",
+      height: "100%",
+      transform: "perspective(1000px)",
+      objectFit: "cover"
+    },
+    src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/6197f6a483260460d2901008_image-2-story-realtor-template.jpg",
+    loading: "eager",
+    sizes: "(max-width: 479px) 87vw, (max-width: 767px) 72vw, (max-width: 991px) 560.9943237304688px, (max-width: 1919px) 47vw, 620.4971313476562px",
+    srcSet: "https://assets.website-files.com/6193ce0889184dacb7d96c80/6197f6a483260460d2901008_image-2-story-realtor-template-p-500.jpeg 500w, https://assets.website-files.com/6193ce0889184dacb7d96c80/6197f6a483260460d2901008_image-2-story-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184dacb7d96c80/6197f6a483260460d2901008_image-2-story-realtor-template-p-1080.jpeg 1080w, https://assets.website-files.com/6193ce0889184dacb7d96c80/6197f6a483260460d2901008_image-2-story-realtor-template.jpg 1246w",
+    alt: "Our Story - Realtor X Webflow Template"
+  })), react_1["default"].createElement(SCard, {
+    style: isDesktop ? {
+      left: 0,
+      right: "auto"
+    } : {}
+  }, react_1["default"].createElement("div", null, react_1["default"].createElement("div", null, "2,400+"), react_1["default"].createElement(Text_1.SH3, null, "Successful Sales"))))), react_1["default"].createElement(Flex_1.Flex, {
+    direction: isDesktop ? "row" : "column",
+    align: "center"
+  }, react_1["default"].createElement("div", {
+    style: {
+      position: "relative",
+      width: "100%",
+      maxWidth: "694px",
+      marginRight: "40px",
+      order: isDesktop ? "" : "2"
+    }
+  }, react_1["default"].createElement("div", {
+    style: {
+      maxWidth: !isTablet ? "90%" : !isMiniMobile ? "80%" : "100%",
+      marginRight: "auto",
+      borderRadius: "12px",
+      overflow: "hidden"
+    }
+  }, react_1["default"].createElement("img", {
+    src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/6197f6a404193316aa50187d_image-1-story-realtor-template.jpg",
+    loading: "eager",
+    sizes: "(max-width: 479px) 87vw, (max-width: 767px) 72vw, (max-width: 991px) 593.99853515625px, (max-width: 1919px) 50vw, 624.5951538085938px",
+    srcSet: "https://assets.website-files.com/6193ce0889184dacb7d96c80/6197f6a404193316aa50187d_image-1-story-realtor-template-p-500.jpeg 500w, https://assets.website-files.com/6193ce0889184dacb7d96c80/6197f6a404193316aa50187d_image-1-story-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184dacb7d96c80/6197f6a404193316aa50187d_image-1-story-realtor-template-p-1080.jpeg 1080w, https://assets.website-files.com/6193ce0889184dacb7d96c80/6197f6a404193316aa50187d_image-1-story-realtor-template.jpg 1246w",
+    alt: "Our Story - Realtor X Webflow Template"
+  })), react_1["default"].createElement(SCard, null, react_1["default"].createElement("div", null, react_1["default"].createElement("div", null, "1,000+"), react_1["default"].createElement(Text_1.SH3, null, "Happy Clients")))), react_1["default"].createElement("div", {
+    style: {
+      maxWidth: isDesktop ? "39%" : "",
+      marginBottom: isDesktop ? "" : "30px",
+      minWidth: isMiniMobile ? "100%" : "401px",
+      order: isDesktop ? "" : "1"
+    }
+  }, react_1["default"].createElement(Text_1.SH2, null, "We have helped over a thousand clients"), react_1["default"].createElement(Text_1.Subtitle, {
+    style: {
+      marginBottom: "34px"
+    }
+  }, "Lorem ipsum dolor sit amet consectetur adipiscing elit augue sit nunc amet posuere amet mauris maecenas facilisi eu nunc sapien eget volutpat mauris hac ipsum arcu praesent tristique scelerisque volutpat non vitae dolor vestibulum tortor nibh molestie odio rhoncus.")))))), react_1["default"].createElement("section", null, react_1["default"].createElement(Container_1["default"], {
+    style: {
+      textAlign: "center"
+    },
+    width: "682px"
+  }, react_1["default"].createElement(Text_1.SH2, null, "Meet the agents in our firm"), react_1["default"].createElement("div", {
+    style: {
+      maxWidth: "514px",
+      margin: "auto"
+    }
+  }, react_1["default"].createElement(Text_1.Subtitle, null, "Lorem ipsum dolor sit amet consectetur adipiscing elit mi lobortis gravida ornare leo in at", " "))), react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("div", {
+    style: {
+      maxWidth: !isDesktop ? "660px" : "",
+      margin: !isDesktop ? "0 auto" : ""
+    }
+  }, react_1["default"].createElement("div", null, react_1["default"].createElement(Grid_1.Grid, {
+    columns: isDesktop ? 3 : 1,
+    columnGap: "26px",
+    rowGap: "45px"
+  }, agents.map(function (agent, index) {
+    return react_1["default"].createElement("div", {
+      key: index
+    }, react_1["default"].createElement("div", {
+      style: {
+        overflow: "hidden",
+        borderRadius: "24px",
+        backgroundColor: "#fff",
+        boxShadow: "0 3px 20px 0 rgba(8, 15, 52, 0.06)",
+        transition: "box-shadow 300ms ease, transform 300ms ease, -webkit-transform 300ms ease"
+      }
+    }, react_1["default"].createElement("div", null, react_1["default"].createElement("img", {
+      src: agent.picture.src,
+      loading: "eager",
+      alt: agent.name,
+      sizes: agent.picture.sizes,
+      srcSet: agent.picture.srcSet
+    })), react_1["default"].createElement("div", {
+      style: {
+        padding: "36px 40px 55px"
+      }
+    }, react_1["default"].createElement("div", null, react_1["default"].createElement(Text_1.SH3, null, agent.name), react_1["default"].createElement(Text_1.Subtitle, {
+      margin: ""
+    }, agent.description)), react_1["default"].createElement("div", {
+      style: {
+        marginTop: "26px",
+        marginBottom: "26px",
+        width: "100%",
+        minHeight: "1px",
+        backgroundColor: "#e9e9e9"
+      }
+    }), react_1["default"].createElement(Grid_1.Grid, {
+      columns: 1,
+      rowGap: "16px"
+    }, react_1["default"].createElement(inertia_react_1.Link, {
+      href: "tel: ".concat(agent.phone),
+      style: {
+        width: "inherit"
+      }
+    }, react_1["default"].createElement(Flex_1.Flex, {
+      gap: "10px",
+      direction: isMiniMobile ? "column" : "row",
+      align: isMiniMobile ? "" : "center"
+    }, react_1["default"].createElement("div", null, react_1["default"].createElement("img", {
+      src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/6197fd4fdabccf005b3c9570_icon-2-agents-realtor-template.svg",
+      loading: "eager",
+      alt: "Phone Icon - Realtor X Webflow Template"
+    })), react_1["default"].createElement("div", {
+      style: {
+        width: "100%",
+        maxWidth: "220px"
+      }
+    }, agent.phone))), react_1["default"].createElement(inertia_react_1.Link, {
+      href: "mailto: ".concat(agent.email),
+      style: {
+        width: "inherit"
+      }
+    }, react_1["default"].createElement(Flex_1.Flex, {
+      gap: "10px",
+      direction: isMiniMobile ? "column" : "row",
+      align: isMiniMobile ? "" : "center"
+    }, react_1["default"].createElement("div", null, react_1["default"].createElement("img", {
+      src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/6197fd4f75db262a65c572df_icon-1-agents-realtor-template.svg",
+      loading: "eager",
+      alt: "Email Icon - Realtor X Webflow Template"
+    })), react_1["default"].createElement("div", {
+      style: {
+        width: "100%",
+        maxWidth: "220px"
+      }
+    }, agent.email)))))));
+  })))))), react_1["default"].createElement("section", {
+    style: {
+      backgroundColor: "rgb(249,249,249)"
+    }
+  }, react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("div", {
+    style: {
+      maxWidth: !isDesktop ? "660px" : "",
+      margin: !isDesktop ? "0 auto" : ""
+    }
+  }, react_1["default"].createElement(Flex_1.Flex, {
+    align: "center",
+    direction: isDesktop ? "row" : "column",
+    gap: "40px"
+  }, react_1["default"].createElement("div", {
+    style: {
+      maxWidth: isDesktop ? "621px" : ""
+    }
+  }, react_1["default"].createElement("div", {
+    style: {
+      maxWidth: "492px",
+      margin: isDesktop ? "0 0 25px 0" : "auto auto 30px auto"
+    }
+  }, react_1["default"].createElement("div", {
+    style: {
+      textAlign: isDesktop ? "left" : "center"
+    }
+  }, react_1["default"].createElement("div", {
+    style: {
+      maxWidth: "424px",
+      margin: isDesktop ? "" : "auto"
+    }
+  }, react_1["default"].createElement("div", {
+    style: {
+      maxWidth: isTablet ? "320px" : "",
+      margin: isTablet ? "" : "auto"
+    }
+  }, react_1["default"].createElement(Text_1.SH2, null, "The values that drive everything we do"))), react_1["default"].createElement(Text_1.Subtitle, {
+    transform: true,
+    margin: ""
+  }, "Lorem ipsum dolor sit amet consectetur adipiscing elit feugiat purus suscipit turpis sed vitae"))), react_1["default"].createElement(Card_1["default"], {
+    style: {
+      marginBottom: "35px"
+    },
+    padding: "50px 38px 70px"
+  }, react_1["default"].createElement(Flex_1.Flex, {
+    direction: !isMiniMobile ? "row" : "column"
+  }, react_1["default"].createElement("div", {
+    style: {
+      width: "108px",
+      maxHeight: "108px",
+      minHeight: "108px",
+      minWidth: "108px",
+      marginRight: "23px",
+      borderRadius: "10000000px",
+      display: "flex",
+      overflow: "hidden",
+      alignItems: "center",
+      transform: "translate(0px, 0px)"
+    }
+  }, react_1["default"].createElement("img", {
+    style: {
+      width: "100%",
+      height: "100%",
+      transform: "perspective(1000px)",
+      objectFit: "cover"
+    },
+    src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/619802d67457484f730c9c5f_icon-1-values-realtor-template.svg",
+    loading: "eager",
+    alt: "Excellence - Realtor X Webflow Template"
+  })), react_1["default"].createElement("div", null, react_1["default"].createElement(Text_1.SH3, {
+    margin: "8px"
+  }, "Excellence"), react_1["default"].createElement(Text_1.Subtitle, {
+    margin: "",
+    transform: true
+  }, "Lorem ipsum dolor sit amet conse ctetur adipiscing elit ipsum at iaculis nulla nulla justo vestibulum faucibus nec ullamcorper bibend.")))), react_1["default"].createElement(Card_1["default"], {
+    padding: "50px 38px 70px"
+  }, react_1["default"].createElement(Flex_1.Flex, {
+    direction: !isMiniMobile ? "row" : "column"
+  }, react_1["default"].createElement("div", {
+    style: {
+      width: "108px",
+      maxHeight: "108px",
+      minHeight: "108px",
+      minWidth: "108px",
+      marginRight: "23px",
+      borderRadius: "10000000px",
+      display: "flex",
+      overflow: "hidden",
+      alignItems: "center",
+      transform: "translate(0px, 0px)"
+    }
+  }, react_1["default"].createElement("img", {
+    style: {
+      width: "100%",
+      height: "100%",
+      transform: "perspective(1000px)",
+      objectFit: "cover"
+    },
+    src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/619802d67457484f730c9c5f_icon-1-values-realtor-template.svg",
+    loading: "eager",
+    alt: "Excellence - Realtor X Webflow Template"
+  })), react_1["default"].createElement("div", null, react_1["default"].createElement(Text_1.SH3, {
+    margin: "8px"
+  }, "Excellence"), react_1["default"].createElement(Text_1.Subtitle, {
+    margin: "",
+    transform: true
+  }, "Lorem ipsum dolor sit amet conse ctetur adipiscing elit ipsum at iaculis nulla nulla justo vestibulum faucibus nec ullamcorper bibend."))))), react_1["default"].createElement("div", {
+    style: {
+      maxWidth: isDesktop ? "621px" : ""
+    }
+  }, react_1["default"].createElement(Card_1["default"], {
+    style: {
+      marginBottom: "35px"
+    },
+    padding: "50px 38px 70px"
+  }, react_1["default"].createElement(Flex_1.Flex, {
+    direction: !isMiniMobile ? "row" : "column"
+  }, react_1["default"].createElement("div", {
+    style: {
+      width: "108px",
+      maxHeight: "108px",
+      minHeight: "108px",
+      minWidth: "108px",
+      marginRight: "23px",
+      borderRadius: "10000000px",
+      display: "flex",
+      overflow: "hidden",
+      alignItems: "center",
+      transform: "translate(0px, 0px)"
+    }
+  }, react_1["default"].createElement("img", {
+    style: {
+      width: "100%",
+      height: "100%",
+      transform: "perspective(1000px)",
+      objectFit: "cover"
+    },
+    src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/619802d67457484f730c9c5f_icon-1-values-realtor-template.svg",
+    loading: "eager",
+    alt: "Excellence - Realtor X Webflow Template"
+  })), react_1["default"].createElement("div", null, react_1["default"].createElement(Text_1.SH3, {
+    margin: "8px"
+  }, "Excellence"), react_1["default"].createElement(Text_1.Subtitle, {
+    margin: "",
+    transform: true
+  }, "Lorem ipsum dolor sit amet conse ctetur adipiscing elit ipsum at iaculis nulla nulla justo vestibulum faucibus nec ullamcorper bibend.")))), react_1["default"].createElement(Card_1["default"], {
+    style: {
+      marginBottom: "35px"
+    },
+    padding: "50px 38px 70px"
+  }, react_1["default"].createElement(Flex_1.Flex, {
+    direction: !isMiniMobile ? "row" : "column"
+  }, react_1["default"].createElement("div", {
+    style: {
+      width: "108px",
+      maxHeight: "108px",
+      minHeight: "108px",
+      minWidth: "108px",
+      marginRight: "23px",
+      borderRadius: "10000000px",
+      display: "flex",
+      overflow: "hidden",
+      alignItems: "center",
+      transform: "translate(0px, 0px)"
+    }
+  }, react_1["default"].createElement("img", {
+    style: {
+      width: "100%",
+      height: "100%",
+      transform: "perspective(1000px)",
+      objectFit: "cover"
+    },
+    src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/619802d67457484f730c9c5f_icon-1-values-realtor-template.svg",
+    loading: "eager",
+    alt: "Excellence - Realtor X Webflow Template"
+  })), react_1["default"].createElement("div", null, react_1["default"].createElement(Text_1.SH3, {
+    margin: "8px"
+  }, "Excellence"), react_1["default"].createElement(Text_1.Subtitle, {
+    margin: "",
+    transform: true
+  }, "Lorem ipsum dolor sit amet conse ctetur adipiscing elit ipsum at iaculis nulla nulla justo vestibulum faucibus nec ullamcorper bibend.")))), react_1["default"].createElement(Card_1["default"], {
+    padding: "50px 38px 70px"
+  }, react_1["default"].createElement(Flex_1.Flex, {
+    direction: !isMiniMobile ? "row" : "column"
+  }, react_1["default"].createElement("div", {
+    style: {
+      width: "108px",
+      maxHeight: "108px",
+      minHeight: "108px",
+      minWidth: "108px",
+      marginRight: "23px",
+      borderRadius: "10000000px",
+      display: "flex",
+      overflow: "hidden",
+      alignItems: "center",
+      transform: "translate(0px, 0px)"
+    }
+  }, react_1["default"].createElement("img", {
+    style: {
+      width: "100%",
+      height: "100%",
+      transform: "perspective(1000px)",
+      objectFit: "cover"
+    },
+    src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/619802d67457484f730c9c5f_icon-1-values-realtor-template.svg",
+    loading: "eager",
+    alt: "Excellence - Realtor X Webflow Template"
+  })), react_1["default"].createElement("div", null, react_1["default"].createElement(Text_1.SH3, {
+    margin: "8px"
+  }, "Excellence"), react_1["default"].createElement(Text_1.Subtitle, {
+    margin: "",
+    transform: true
+  }, "Lorem ipsum dolor sit amet conse ctetur adipiscing elit ipsum at iaculis nulla nulla justo vestibulum faucibus nec ullamcorper bibend."))))))))));
 };
 
 About.layout = function (page) {
@@ -4120,6 +4696,17 @@ About.layout = function (page) {
 };
 
 exports["default"] = About;
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Contact.tsx":
+/*!****************************************!*\
+  !*** ./resources/js/Pages/Contact.tsx ***!
+  \****************************************/
+/***/ (() => {
+
+"use strict";
+
 
 /***/ }),
 
@@ -4947,6 +5534,17 @@ exports["default"] = Home;
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Properties.tsx":
+/*!*******************************************!*\
+  !*** ./resources/js/Pages/Properties.tsx ***!
+  \*******************************************/
+/***/ (() => {
+
+"use strict";
+
+
+/***/ }),
+
 /***/ "./resources/js/createGlobalStyles.ts":
 /*!********************************************!*\
   !*** ./resources/js/createGlobalStyles.ts ***!
@@ -5062,24 +5660,27 @@ var Div = function Div(_ref) {
       style = _ref.style;
   return react_1["default"].createElement("div", {
     id: id,
-    className: className,
+    className: className + " reveal",
     style: style
   }, children);
 };
 
 exports.Div = Div;
-var Container = (0, styled_components_1["default"])(exports.Div)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    position: ", ";\n    top: 0;\n    max-width: 1318px;\n    margin-right: auto;\n    margin-left: auto;\n    padding-right: 24px;\n    padding-left: 24px;\n    z-index: ", ";\n"])), function (_ref2) {
+var Container = (0, styled_components_1["default"])(exports.Div)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    position: ", ";\n    top: 0;\n    max-width: ", ";\n    margin-right: auto;\n    margin-left: auto;\n    padding-right: 24px;\n    padding-left: 24px;\n    z-index: ", ";\n"])), function (_ref2) {
   var position = _ref2.position;
   return position;
 }, function (_ref3) {
-  var zIndex = _ref3.zIndex;
+  var width = _ref3.width;
+  return width ? width : "1318px";
+}, function (_ref4) {
+  var zIndex = _ref4.zIndex;
   return zIndex;
 });
-exports.SmallContainer = (0, styled_components_1["default"])(exports.Div)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    max-width: ", ";\n    margin-right: auto;\n    margin-left: auto;\n    padding-right: 24px;\n    padding-left: 24px;\n    margin-bottom: ", ";\n"])), function (_ref4) {
-  var width = _ref4.width;
+exports.SmallContainer = (0, styled_components_1["default"])(exports.Div)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    max-width: ", ";\n    margin-right: auto;\n    margin-left: auto;\n    padding-right: 24px;\n    padding-left: 24px;\n    margin-bottom: ", ";\n"])), function (_ref5) {
+  var width = _ref5.width;
   return width ? width : "580px";
-}, function (_ref5) {
-  var small = _ref5.small;
+}, function (_ref6) {
+  var small = _ref6.small;
   return small ? "48px" : "82px";
 });
 exports["default"] = Container;
@@ -5116,9 +5717,11 @@ var styled_components_1 = __importDefault(__webpack_require__(/*! styled-compone
 
 var Div = function Div(_ref) {
   var children = _ref.children,
-      className = _ref.className;
+      className = _ref.className,
+      style = _ref.style;
   return react_1["default"].createElement("div", {
-    className: className
+    className: className,
+    style: style
   }, children);
 };
 
@@ -5229,17 +5832,21 @@ var styled_components_1 = __importDefault(__webpack_require__(/*! styled-compone
 
 var H1 = function H1(_ref) {
   var className = _ref.className,
-      children = _ref.children;
+      children = _ref.children,
+      style = _ref.style;
   return react_1["default"].createElement("h1", {
+    style: style,
     className: className + " reveal"
   }, children);
 };
 
 var H2 = function H2(_ref2) {
   var className = _ref2.className,
-      children = _ref2.children;
+      children = _ref2.children,
+      style = _ref2.style;
   return react_1["default"].createElement("h2", {
-    className: className + " reveal"
+    className: className + " reveal",
+    style: style
   }, children);
 };
 
@@ -5300,19 +5907,22 @@ var SH5 = (0, styled_components_1["default"])(H4)(_templateObject3 || (_template
 exports.SH5 = SH5;
 var SH2 = (0, styled_components_1["default"])(H2)(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    margin-top: 0px;\n    margin-bottom: 16px;\n    color: #222223;\n    font-size: 32px;\n    line-height: 1.375em;\n    font-weight: 700;\n"])));
 exports.SH2 = SH2;
-var SH3 = (0, styled_components_1["default"])(H3)(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    margin-top: 0px;\n    margin-bottom: 16px;\n    color: rgb(34, 34, 35);\n    font-size: 22px;\n    line-height: 1.364em;\n    font-weight: 700;\n"])));
+var SH3 = (0, styled_components_1["default"])(H3)(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    margin-top: 0px;\n    margin-bottom: ", ";\n    color: rgb(34, 34, 35);\n    font-size: 22px;\n    line-height: 1.364em;\n    font-weight: 700;\n"])), function (_ref12) {
+  var margin = _ref12.margin;
+  return margin ? margin : margin === "" ? margin : "16px";
+});
 exports.SH3 = SH3;
-var Subtitle = (0, styled_components_1["default"])(P)(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n    text-align: ", ";\n    font-size: 18px;\n    font-weight: 500;\n    line-height: 1.667em;\n    margin-bottom: ", ";\n    color: #8d8d91;\n    position: relative;\n    transform: ", ";\n    opacity: ", ";\n    transition: all 0.8s ease 0.2s;\n    &.active {\n        transform: translateY(0);\n        opacity: 1;\n    }\n"])), function (_ref12) {
-  var align = _ref12.align;
+var Subtitle = (0, styled_components_1["default"])(P)(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n    text-align: ", ";\n    font-size: 18px;\n    font-weight: 500;\n    line-height: 1.667em;\n    margin-bottom: ", ";\n    color: #8d8d91;\n    position: relative;\n    transform: ", ";\n    opacity: ", ";\n    transition: all 0.8s ease 0.2s;\n    &.active {\n        transform: translateY(0);\n        opacity: 1;\n    }\n"])), function (_ref13) {
+  var align = _ref13.align;
   return align;
-}, function (_ref13) {
-  var margin = _ref13.margin;
-  return margin ? margin : margin === "" ? margin : "40px";
 }, function (_ref14) {
-  var transform = _ref14.transform;
-  return transform ? "" : "translateY(100px)";
+  var margin = _ref14.margin;
+  return margin ? margin : margin === "" ? margin : "40px";
 }, function (_ref15) {
   var transform = _ref15.transform;
+  return transform ? "" : "translateY(100px)";
+}, function (_ref16) {
+  var transform = _ref16.transform;
   return transform ? 1 : 0;
 });
 exports.Subtitle = Subtitle;
@@ -40775,8 +41385,12 @@ function v(){return(v=Object.assign||function(e){for(var t=1;t<arguments.length;
 var map = {
 	"./About": "./resources/js/Pages/About.tsx",
 	"./About.tsx": "./resources/js/Pages/About.tsx",
+	"./Contact": "./resources/js/Pages/Contact.tsx",
+	"./Contact.tsx": "./resources/js/Pages/Contact.tsx",
 	"./Home": "./resources/js/Pages/Home.tsx",
-	"./Home.tsx": "./resources/js/Pages/Home.tsx"
+	"./Home.tsx": "./resources/js/Pages/Home.tsx",
+	"./Properties": "./resources/js/Pages/Properties.tsx",
+	"./Properties.tsx": "./resources/js/Pages/Properties.tsx"
 };
 
 
