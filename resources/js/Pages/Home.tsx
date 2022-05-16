@@ -355,7 +355,7 @@ const ContactSection: React.FC<{ className?: string; mobile: boolean }> = ({
     ];
     const phone = "(414)807-0196";
     const email = "contact@britproperties.ng";
-    const isDesktop = useMediaQuery("(min-width: 900px");
+    const isDesktop = useMediaQuery("(min-width: 960px");
     const isMiniMobile = useMediaQuery("(max-width: 500px");
     return (
         <div className={className}>
@@ -621,7 +621,7 @@ const Contact = styled(ContactSection)`
 const Home = () => {
     document.addEventListener("scroll", homescroll);
     const isMiniMobile = useMediaQuery("(max-width: 500px)");
-    const isDesktop = useMediaQuery("(min-width: 900px)");
+    const isDesktop = useMediaQuery("(min-width: 960px)");
     const PropertiesRef = useRef(null);
     const isTinyMobile = useMediaQuery("(max-width: 374px)");
     return (

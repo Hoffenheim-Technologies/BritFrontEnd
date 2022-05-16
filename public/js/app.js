@@ -3346,7 +3346,7 @@ var SFeatured = (0, styled_components_1["default"])(Featured)(_templateObject3 |
 
 var Foot = function Foot(_ref13) {
   var className = _ref13.className;
-  var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 900px)");
+  var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 960px)");
   var isMiniMobile = (0, useMediaQuery_1["default"])("(max-width: 500px)");
   var theme = (0, styled_components_1.useTheme)();
   var appYear = (0, inertia_react_1.usePage)().props.appYear;
@@ -3655,7 +3655,7 @@ var Search = function Search(_ref6) {
   var wrapperRef = (0, react_1.useRef)(null);
   useOutsideAlerter(wrapperRef); // if (active) {
 
-  var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 900px)");
+  var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 960px)");
   var isMini = (0, useMediaQuery_1["default"])("(max-width: 500px)");
   return react_1["default"].createElement("div", {
     ref: wrapperRef
@@ -3742,7 +3742,7 @@ var Toggle = (0, styled_components_1["default"])(NavToggle)(_templateObject7 || 
 
 var Header = function Header(_ref19) {
   var style = _ref19.style;
-  var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 900px)");
+  var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 960px)");
   var isMiniMobile = (0, useMediaQuery_1["default"])("(max-width: 500px)");
   var isTall = (0, useMediaQuery_1["default"])("(min-height: 800px");
 
@@ -4153,7 +4153,7 @@ var SCard = (0, styled_components_1["default"])(Card_1["default"])(_templateObje
 
 var About = function About() {
   var isMiniMobile = (0, useMediaQuery_1["default"])("(max-width: 500px)");
-  var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 900px)");
+  var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 960px)");
   var isTinyMobile = (0, useMediaQuery_1["default"])("(max-width: 374px)");
   var isTablet = (0, useMediaQuery_1["default"])("(max-width: 767px)");
   var agents = [{
@@ -5042,7 +5042,7 @@ var ContactSection = function ContactSection(_ref7) {
   }];
   var phone = "(414)807-0196";
   var email = "contact@britproperties.ng";
-  var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 900px");
+  var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 960px");
   var isMiniMobile = (0, useMediaQuery_1["default"])("(max-width: 500px");
   return react_1["default"].createElement("div", {
     className: className
@@ -5220,7 +5220,7 @@ var Contact = (0, styled_components_1["default"])(ContactSection)(_templateObjec
 var Home = function Home() {
   document.addEventListener("scroll", homescroll);
   var isMiniMobile = (0, useMediaQuery_1["default"])("(max-width: 500px)");
-  var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 900px)");
+  var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 960px)");
   var PropertiesRef = (0, react_1.useRef)(null);
   var isTinyMobile = (0, useMediaQuery_1["default"])("(max-width: 374px)");
   return react_1["default"].createElement("main", null, react_1["default"].createElement("section", {
@@ -5638,6 +5638,8 @@ Object.defineProperty(exports, "__esModule", ({
 
 var outline_1 = __webpack_require__(/*! @heroicons/react/outline */ "./node_modules/@heroicons/react/outline/esm/index.js");
 
+var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+
 var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
 var Buttons_1 = __webpack_require__(/*! ../Components/Buttons */ "./resources/js/Components/Buttons.tsx");
@@ -5654,16 +5656,109 @@ var Container_1 = __importStar(__webpack_require__(/*! ../shared/Container */ ".
 
 var Flex_1 = __webpack_require__(/*! ../shared/Flex */ "./resources/js/shared/Flex.tsx");
 
+var Badges_1 = __webpack_require__(/*! ../Components/Badges */ "./resources/js/Components/Badges.tsx");
+
 var Text_1 = __webpack_require__(/*! ../shared/Text */ "./resources/js/shared/Text.tsx");
 
-var Filter = function Filter(_ref) {
-  var maxWidth = _ref.maxWidth,
-      icon = _ref.icon,
-      filter = _ref.filter,
-      active = _ref.active,
-      _onMouseEnter = _ref.onMouseEnter,
-      _onMouseLeave = _ref.onMouseLeave,
-      _onClick = _ref.onClick;
+var Grid_1 = __webpack_require__(/*! ../shared/Grid */ "./resources/js/shared/Grid.tsx");
+
+var Property = function Property(_ref) {
+  var property = _ref.property,
+      isMiniMobile = _ref.isMiniMobile,
+      isSmall = _ref.isSmall;
+  return react_1["default"].createElement("div", null, react_1["default"].createElement(inertia_react_1.Link, {
+    href: property.link,
+    style: {
+      display: "flex",
+      minHeight: "100%",
+      padding: "0px",
+      flexDirection: "column",
+      transition: "box-shadow 300ms ease, transform 300ms ease",
+      overflow: "hidden",
+      borderRadius: "24px",
+      backgroundColor: "#fff",
+      boxShadow: "0 3px 20px 0 rgba(8, 15, 52, 0.06)",
+      color: "#8d8d91",
+      textDecoration: "none"
+    }
+  }, react_1["default"].createElement("div", {
+    style: {
+      display: "flex",
+      overflow: "hidden",
+      alignItems: "center",
+      transform: "translate(0px, 0px)",
+      position: "relative"
+    }
+  }, react_1["default"].createElement("img", {
+    src: property.image.src,
+    loading: "eager",
+    alt: property.name,
+    sizes: property.image.sizes,
+    srcSet: property.image.srcSet
+  })), react_1["default"].createElement("div", {
+    style: {
+      padding: "46px 35px 38px"
+    }
+  }, react_1["default"].createElement("div", {
+    style: {
+      marginBottom: "14px"
+    }
+  }, react_1["default"].createElement(Flex_1.Flex, {
+    align: "flex-start",
+    direction: "column"
+  }, react_1["default"].createElement("div", null, react_1["default"].createElement(Text_1.SH3, null, "\u20A6", property.price.toLocaleString("en-US"))), react_1["default"].createElement("div", {
+    style: {
+      width: isSmall ? "100%" : ""
+    }
+  }, react_1["default"].createElement(Text_1.SH3, null, property.name)))), react_1["default"].createElement("div", {
+    style: {
+      display: "flex",
+      alignContent: "center"
+    }
+  }, react_1["default"].createElement(outline_1.LocationMarkerIcon, {
+    style: {
+      width: "20px",
+      marginRight: "10px"
+    }
+  }), react_1["default"].createElement("p", null, property.location)), react_1["default"].createElement("div", {
+    style: {
+      marginTop: "auto"
+    }
+  }, react_1["default"].createElement("div", {
+    style: {
+      width: "100%",
+      minHeight: "1px",
+      marginTop: "36px",
+      marginBottom: "36px",
+      backgroundColor: "#e9e9e9"
+    }
+  }), react_1["default"].createElement(Flex_1.Flex, {
+    align: "center",
+    direction: "row"
+  }, react_1["default"].createElement(Badges_1.SBadge, {
+    style: {
+      margin: "0 18px 0 0 "
+    }
+  }, react_1["default"].createElement(outline_1.ArrowsExpandIcon, {
+    style: {
+      width: "20px",
+      marginRight: "5px"
+    }
+  }), property.area, "\xA0sqft"), react_1["default"].createElement(Badges_1.SBadge, {
+    style: {
+      margin: "0 18px 0 0"
+    }
+  }, property.type))))));
+};
+
+var Filter = function Filter(_ref2) {
+  var maxWidth = _ref2.maxWidth,
+      icon = _ref2.icon,
+      filter = _ref2.filter,
+      active = _ref2.active,
+      _onMouseEnter = _ref2.onMouseEnter,
+      _onMouseLeave = _ref2.onMouseLeave,
+      _onClick = _ref2.onClick;
   return react_1["default"].createElement("div", {
     style: {
       width: "100%",
@@ -5676,7 +5771,7 @@ var Filter = function Filter(_ref) {
       return _onMouseLeave(false);
     },
     onClick: function onClick() {
-      return _onClick(!active);
+      _onClick(!active);
     }
   }, react_1["default"].createElement(Flex_1.Flex, {
     style: {
@@ -5715,25 +5810,30 @@ var Filter = function Filter(_ref) {
 
 var Properties = function Properties() {
   var isMiniMobile = (0, useMediaQuery_1["default"])("(max-width: 500px)");
-  var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 900px)");
+  var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 960px)");
   var isTinyMobile = (0, useMediaQuery_1["default"])("(max-width: 374px)");
   var isTablet = (0, useMediaQuery_1["default"])("(max-width: 767px)");
 
-  var _ref2 = (0, react_1.useState)(false),
-      _ref3 = _slicedToArray(_ref2, 2),
-      lactive = _ref3[0],
-      setLactive = _ref3[1];
+  var _ref3 = (0, react_1.useState)(true),
+      _ref4 = _slicedToArray(_ref3, 2),
+      lactive = _ref4[0],
+      setLactive = _ref4[1];
 
-  var _ref4 = (0, react_1.useState)(false),
-      _ref5 = _slicedToArray(_ref4, 2),
-      pactive = _ref5[0],
-      setPactive = _ref5[1];
+  var _ref5 = (0, react_1.useState)(true),
+      _ref6 = _slicedToArray(_ref5, 2),
+      pactive = _ref6[0],
+      setPactive = _ref6[1];
 
-  var _ref6 = (0, react_1.useState)(false),
-      _ref7 = _slicedToArray(_ref6, 2),
-      tactive = _ref7[0],
-      setTactive = _ref7[1];
+  var _ref7 = (0, react_1.useState)(true),
+      _ref8 = _slicedToArray(_ref7, 2),
+      tactive = _ref8[0],
+      setTactive = _ref8[1];
 
+  (0, react_1.useEffect)(function () {
+    setLactive(false);
+    setPactive(false);
+    setTactive(false);
+  }, []);
   var filters = [{
     name: "location",
     icon: react_1["default"].createElement(outline_1.LocationMarkerIcon, null),
@@ -5755,6 +5855,79 @@ var Properties = function Properties() {
       name: tactive,
       action: setTactive
     }
+  }];
+  var properties = [{
+    image: {
+      src: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template.jpg",
+      sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px",
+      srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template-p-500.jpeg 500w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template.jpg 1832w"
+    },
+    price: 650000,
+    name: "Valerie Phase 1",
+    location: "Imo, Nigeria",
+    area: 550,
+    type: "Land",
+    link: ""
+  }, {
+    image: {
+      src: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template.jpg",
+      sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px",
+      srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template.jpg 1832w"
+    },
+    price: 5000000,
+    name: "Britwook Park 1",
+    location: "CrossRiver, Nigeria",
+    area: 400,
+    type: "Residential",
+    link: ""
+  }, {
+    image: {
+      src: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template.jpg",
+      sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px",
+      srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template.jpg 1832w"
+    },
+    price: 1200000,
+    name: "Bethel Home Phase 3",
+    location: "Lagos, Nigeria",
+    area: 550,
+    type: "Dry Land",
+    link: ""
+  }, {
+    image: {
+      src: "https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template.jpg",
+      sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px",
+      srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template.jpg 1832w"
+    },
+    price: 34000000,
+    name: "Bethel Home Phase 2",
+    location: "Warri, Nigeria",
+    area: 550,
+    type: "Industrial",
+    link: ""
+  }, {
+    image: {
+      src: "https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template.jpg",
+      sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px",
+      srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template.jpg 1832w"
+    },
+    price: 34000000,
+    name: "Bethel Home Phase 1",
+    location: "Jigawa, Nigeria",
+    area: 550,
+    type: "Industrial",
+    link: ""
+  }, {
+    image: {
+      src: "https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template.jpg",
+      sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px",
+      srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template.jpg 1832w"
+    },
+    price: 34000000,
+    name: "Bethel Home Phase 3",
+    location: "Lagos, Nigeria",
+    area: 550,
+    type: "Industrial",
+    link: ""
   }];
   return react_1["default"].createElement("main", null, react_1["default"].createElement("section", {
     style: {
@@ -5841,7 +6014,18 @@ var Properties = function Properties() {
       onMouseLeave: filter.state.action,
       onClick: filter.state.action
     });
-  })))))))));
+  })))))), react_1["default"].createElement("div", null, react_1["default"].createElement("div", null, react_1["default"].createElement(Grid_1.Grid, {
+    columns: isDesktop ? 3 : isTablet ? 1 : 2,
+    columnGap: "26px",
+    rowGap: "45px"
+  }, properties.map(function (property, index) {
+    return react_1["default"].createElement(Property, {
+      key: index,
+      property: property,
+      isSmall: isTablet,
+      isMiniMobile: isMiniMobile
+    });
+  })))))));
 };
 
 Properties.layout = function (page) {
@@ -5874,7 +6058,7 @@ Object.defineProperty(exports, "__esModule", ({
 
 var styled_components_1 = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 
-var GlobalStyle = (0, styled_components_1.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Regular.otf') format(\"opentype\");\n        font-weight: 400;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Light.otf') format(\"opentype\");\n        font-weight: 300;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Thin.otf') format(\"opentype\");\n        font-weight: 200;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Ultralight.otf') format(\"opentype\");\n        font-weight: 100;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('fonts/SF/SF-Pro-Display-Bold.otf') format(\"opentype\");\n        font-weight: 700;\n    }\n    body {\n        margin: 0;\n        display: block;\n        font-size: 18px;\n    }\n    html {\n        scroll-behaviour: smooth;\n    }\n    * {\n        font-family: 'SF Pro', sans-serif;\n        font-weight: 400;\n        margin: 0;\n        padding: 0;\n        box-sizing: border-box;\n    }\n    ul {\n        list-style: none;\n    }\n    a {\n        text-decoration: none;\n        color: black;\n    }\n    button {\n        border: 0;\n    }\n    section {\n        padding: 160px 0;\n        position: relative;\n    }\n    @media screen and (max-width: 900px) {\n        section {\n            padding: 40px 0\n        }\n    }\n    img {\n        max-width: 100%;\n        vertical-align: middle;\n        display: inline-block;\n        border: 0;\n    }\n"])));
+var GlobalStyle = (0, styled_components_1.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Regular.otf') format(\"opentype\");\n        font-weight: 400;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Light.otf') format(\"opentype\");\n        font-weight: 300;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Thin.otf') format(\"opentype\");\n        font-weight: 200;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('/fonts/SF/SF-Pro-Display-Ultralight.otf') format(\"opentype\");\n        font-weight: 100;\n    }\n    @font-face {\n        font-family: 'SF Pro';\n        src: url('fonts/SF/SF-Pro-Display-Bold.otf') format(\"opentype\");\n        font-weight: 700;\n    }\n    body {\n        margin: 0;\n        display: block;\n        font-size: 18px;\n    }\n    html {\n        scroll-behaviour: smooth;\n    }\n    * {\n        font-family: 'SF Pro', sans-serif;\n        font-weight: 400;\n        margin: 0;\n        padding: 0;\n        box-sizing: border-box;\n    }\n    ul {\n        list-style: none;\n    }\n    a {\n        text-decoration: none;\n        color: black;\n    }\n    button {\n        border: 0;\n    }\n    section {\n        padding: 160px 0;\n        position: relative;\n    }\n    @media screen and (max-width: 960px) {\n        section {\n            padding: 40px 0\n        }\n    }\n    img {\n        max-width: 100%;\n        vertical-align: middle;\n        display: inline-block;\n        border: 0;\n    }\n"])));
 exports["default"] = GlobalStyle;
 
 /***/ }),

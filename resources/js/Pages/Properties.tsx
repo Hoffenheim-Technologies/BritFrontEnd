@@ -1,11 +1,13 @@
 import {
+    ArrowsExpandIcon,
     CashIcon,
     ChevronDownIcon,
     HomeIcon,
     LocationMarkerIcon,
     SearchIcon,
 } from "@heroicons/react/outline";
-import React, { useState } from "react";
+import { Link } from "@inertiajs/inertia-react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { SecondaryButton } from "../Components/Buttons";
 import { SearchBar } from "../Components/Header";
@@ -14,13 +16,125 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import Layout from "../Layouts/Layout";
 import Container, { SmallContainer } from "../shared/Container";
 import { Flex } from "../shared/Flex";
-import { SH2, Subtitle } from "../shared/Text";
+import { SBadge as Badge } from "../Components/Badges";
+import { SH2, SH3, Subtitle } from "../shared/Text";
+import { Grid } from "../shared/Grid";
 
+interface Prop {
+    image: {
+        src: string;
+        sizes: string;
+        srcSet: string;
+    };
+    price: number;
+    name: string;
+    location: string;
+    area: number;
+    type: string;
+    link: string;
+}
+const Property: React.FC<{
+    property: Prop;
+    isMiniMobile?: boolean;
+    isSmall?: boolean;
+}> = ({ property, isMiniMobile, isSmall }) => (
+    <div>
+        <Link
+            href={property.link}
+            style={{
+                display: "flex",
+                minHeight: "100%",
+                padding: "0px",
+                flexDirection: "column",
+                transition: "box-shadow 300ms ease, transform 300ms ease",
+                overflow: "hidden",
+                borderRadius: "24px",
+                backgroundColor: "#fff",
+                boxShadow: "0 3px 20px 0 rgba(8, 15, 52, 0.06)",
+                color: "#8d8d91",
+                textDecoration: "none",
+            }}
+        >
+            <div
+                style={{
+                    display: "flex",
+                    overflow: "hidden",
+                    alignItems: "center",
+                    transform: "translate(0px, 0px)",
+                    position: "relative",
+                }}
+            >
+                <img
+                    src={property.image.src}
+                    loading="eager"
+                    alt={property.name}
+                    sizes={property.image.sizes}
+                    srcSet={property.image.srcSet}
+                />
+            </div>
+            <div style={{ padding: "46px 35px 38px" }}>
+                <div style={{ marginBottom: "14px" }}>
+                    <Flex align="flex-start" direction={"column"}>
+                        <div>
+                            <SH3>
+                                &#8358;
+                                {property.price.toLocaleString("en-US")}
+                            </SH3>
+                        </div>
+                        <div
+                            style={{
+                                width: isSmall ? "100%" : "",
+                            }}
+                        >
+                            <SH3>{property.name}</SH3>
+                        </div>
+                    </Flex>
+                </div>
+                <div style={{ display: "flex", alignContent: "center" }}>
+                    <LocationMarkerIcon
+                        style={{ width: "20px", marginRight: "10px" }}
+                    />
+                    <p>{property.location}</p>
+                </div>
+
+                <div style={{ marginTop: "auto" }}>
+                    <div
+                        style={{
+                            width: "100%",
+                            minHeight: "1px",
+                            marginTop: "36px",
+                            marginBottom: "36px",
+                            backgroundColor: "#e9e9e9",
+                        }}
+                    ></div>
+                    <Flex align="center" direction="row">
+                        <Badge
+                            style={{
+                                margin: "0 18px 0 0 ",
+                            }}
+                        >
+                            <ArrowsExpandIcon
+                                style={{
+                                    width: "20px",
+                                    marginRight: "5px",
+                                }}
+                            />
+                            {property.area}&nbsp;sqft
+                        </Badge>
+                        <Badge style={{ margin: "0 18px 0 0" }}>
+                            {property.type}
+                        </Badge>
+                    </Flex>
+                </div>
+            </div>
+        </Link>
+    </div>
+);
 const Filter: React.FC<{
     maxWidth?: string;
     icon: React.ReactNode;
     filter: string;
-    active?: boolean;
+    active: boolean;
     onMouseEnter?: any;
     onMouseLeave?: any;
     onClick?: any;
@@ -38,7 +152,9 @@ const Filter: React.FC<{
             style={{ width: "100%", maxWidth: maxWidth }}
             onMouseEnter={() => onMouseEnter(true)}
             onMouseLeave={() => onMouseLeave(false)}
-            onClick={() => onClick(!active)}
+            onClick={() => {
+                onClick(!active);
+            }}
         >
             <Flex
                 style={{
@@ -75,12 +191,18 @@ const Filter: React.FC<{
 };
 const Properties = () => {
     const isMiniMobile = useMediaQuery("(max-width: 500px)");
-    const isDesktop = useMediaQuery("(min-width: 900px)");
+    const isDesktop = useMediaQuery("(min-width: 960px)");
     const isTinyMobile = useMediaQuery("(max-width: 374px)");
     const isTablet = useMediaQuery("(max-width: 767px)");
-    const [lactive, setLactive] = useState(false);
-    const [pactive, setPactive] = useState(false);
-    const [tactive, setTactive] = useState(false);
+    const [lactive, setLactive] = useState(true);
+    const [pactive, setPactive] = useState(true);
+    const [tactive, setTactive] = useState(true);
+    useEffect(() => {
+        setLactive(false);
+        setPactive(false);
+        setTactive(false);
+    }, []);
+
     const filters = [
         {
             name: "location",
@@ -96,6 +218,86 @@ const Properties = () => {
             name: "type",
             icon: <CashIcon />,
             state: { name: tactive, action: setTactive },
+        },
+    ];
+    const properties: Prop[] = [
+        {
+            image: {
+                src: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template.jpg",
+                sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px",
+                srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template-p-500.jpeg 500w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template.jpg 1832w",
+            },
+            price: 650000,
+            name: "Valerie Phase 1",
+            location: "Imo, Nigeria",
+            area: 550,
+            type: "Land",
+            link: "",
+        },
+        {
+            image: {
+                src: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template.jpg",
+                sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px",
+                srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template.jpg 1832w",
+            },
+            price: 5000000,
+            name: "Britwook Park 1",
+            location: "CrossRiver, Nigeria",
+            area: 400,
+            type: "Residential",
+            link: "",
+        },
+        {
+            image: {
+                src: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template.jpg",
+                sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px",
+                srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template.jpg 1832w",
+            },
+            price: 1200000,
+            name: "Bethel Home Phase 3",
+            location: "Lagos, Nigeria",
+            area: 550,
+            type: "Dry Land",
+            link: "",
+        },
+        {
+            image: {
+                src: "https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template.jpg",
+                sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px",
+                srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template.jpg 1832w",
+            },
+            price: 34000000,
+            name: "Bethel Home Phase 2",
+            location: "Warri, Nigeria",
+            area: 550,
+            type: "Industrial",
+            link: "",
+        },
+        {
+            image: {
+                src: "https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template.jpg",
+                sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px",
+                srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template.jpg 1832w",
+            },
+            price: 34000000,
+            name: "Bethel Home Phase 1",
+            location: "Jigawa, Nigeria",
+            area: 550,
+            type: "Industrial",
+            link: "",
+        },
+        {
+            image: {
+                src: "https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template.jpg",
+                sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px",
+                srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template.jpg 1832w",
+            },
+            price: 34000000,
+            name: "Bethel Home Phase 3",
+            location: "Lagos, Nigeria",
+            area: 550,
+            type: "Industrial",
+            link: "",
         },
     ];
 
@@ -240,6 +442,24 @@ const Properties = () => {
                                     </Flex>
                                 </Flex>
                             </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <Grid
+                                columns={isDesktop ? 3 : isTablet ? 1 : 2}
+                                columnGap="26px"
+                                rowGap="45px"
+                            >
+                                {properties.map((property, index) => (
+                                    <Property
+                                        key={index}
+                                        property={property}
+                                        isSmall={isTablet}
+                                        isMiniMobile={isMiniMobile}
+                                    />
+                                ))}
+                            </Grid>
                         </div>
                     </div>
                 </Container>

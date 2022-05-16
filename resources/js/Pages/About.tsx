@@ -58,7 +58,7 @@ const SCard = styled(Card)`
 
 const About = () => {
     const isMiniMobile = useMediaQuery("(max-width: 500px)");
-    const isDesktop = useMediaQuery("(min-width: 900px)");
+    const isDesktop = useMediaQuery("(min-width: 960px)");
     const isTinyMobile = useMediaQuery("(max-width: 374px)");
     const isTablet = useMediaQuery("(max-width: 767px)");
 

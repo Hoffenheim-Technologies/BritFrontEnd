@@ -55,7 +55,7 @@ const GlobalStyle = createGlobalStyle`
         padding: 160px 0;
         position: relative;
     }
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 960px) {
         section {
             padding: 40px 0
         }

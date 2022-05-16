@@ -116,7 +116,7 @@ const Search: React.FC<{
     const wrapperRef = useRef(null);
     useOutsideAlerter(wrapperRef);
     // if (active) {
-    const isDesktop = useMediaQuery("(min-width: 900px)");
+    const isDesktop = useMediaQuery("(min-width: 960px)");
     const isMini = useMediaQuery("(max-width: 500px)");
     return (
         <div ref={wrapperRef}>
@@ -292,7 +292,7 @@ const Toggle = styled(NavToggle)`
     }
 `;
 const Header: React.FC<{ style?: any }> = ({ style }) => {
-    const isDesktop = useMediaQuery("(min-width: 900px)");
+    const isDesktop = useMediaQuery("(min-width: 960px)");
     const isMiniMobile = useMediaQuery("(max-width: 500px)");
     const isTall = useMediaQuery("(min-height: 800px");
     const [searchActive, setSearchActive] = useState(false);

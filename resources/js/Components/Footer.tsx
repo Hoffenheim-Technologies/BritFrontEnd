@@ -234,7 +234,7 @@ const SFeatured = styled(Featured)`
 `;
 
 const Foot: React.FC<{ className?: string }> = ({ className }) => {
-    const isDesktop = useMediaQuery("(min-width: 900px)");
+    const isDesktop = useMediaQuery("(min-width: 960px)");
     const isMiniMobile = useMediaQuery("(max-width: 500px)");
     const theme = useTheme();
     const { appYear } = usePage().props;
