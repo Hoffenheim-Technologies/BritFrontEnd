@@ -10,10 +10,13 @@ interface Props {
     children?: React.ReactNode;
     gap?: string;
     className?: string;
+    style?: any;
 }
 
-const Div = ({ children, className }: Props) => (
-    <div className={className}>{children}</div>
+const Div = ({ children, className, style }: Props) => (
+    <div className={className} style={style}>
+        {children}
+    </div>
 );
 const Flex = styled(Div)`
     display: flex;

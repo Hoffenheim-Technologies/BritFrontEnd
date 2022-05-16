@@ -12,7 +12,7 @@ interface Props {
     style?: any;
 }
 export const Div = ({ className, children, id, style }: Props) => (
-    <div id={id} className={className} style={style}>
+    <div id={id} className={className + " reveal"} style={style}>
         {children}
     </div>
 );
@@ -20,7 +20,7 @@ export const Div = ({ className, children, id, style }: Props) => (
 const Container = styled(Div)`
     position: ${({ position }) => position};
     top: 0;
-    max-width: 1318px;
+    max-width: ${({ width }) => (width ? width : "1318px")};
     margin-right: auto;
     margin-left: auto;
     padding-right: 24px;

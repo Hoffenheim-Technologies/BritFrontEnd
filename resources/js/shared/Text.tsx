@@ -10,12 +10,16 @@ interface Props {
     hover?: boolean;
     style?: any;
 }
-const H1 = ({ className, children }: Props) => (
-    <h1 className={className + " reveal"}>{children}</h1>
+const H1 = ({ className, children, style }: Props) => (
+    <h1 style={style} className={className + " reveal"}>
+        {children}
+    </h1>
 );
 
-const H2 = ({ className, children }: Props) => (
-    <h2 className={className + " reveal"}>{children}</h2>
+const H2 = ({ className, children, style }: Props) => (
+    <h2 className={className + " reveal"} style={style}>
+        {children}
+    </h2>
 );
 
 const H3 = ({ className, children, style }: Props) => (
@@ -77,7 +81,8 @@ const SH2 = styled(H2)`
 
 const SH3 = styled(H3)`
     margin-top: 0px;
-    margin-bottom: 16px;
+    margin-bottom: ${({ margin }) =>
+        margin ? margin : margin === "" ? margin : "16px"};
     color: rgb(34, 34, 35);
     font-size: 22px;
     line-height: 1.364em;

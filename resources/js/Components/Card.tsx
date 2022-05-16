@@ -7,8 +7,9 @@ const Card: React.FC<{
     heading?: string;
     children: React.ReactNode;
     padding?: string;
-}> = ({ className, heading, children }) => (
-    <div className={className}>
+    style?: any;
+}> = ({ className, heading, children, style }) => (
+    <div className={className} style={style}>
         <SH3>{heading}</SH3>
         {children}
     </div>
