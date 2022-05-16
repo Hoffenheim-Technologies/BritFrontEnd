@@ -12,7 +12,7 @@ interface Props {
     style?: any;
 }
 export const Div = ({ className, children, id, style }: Props) => (
-    <div id={id} className={className + " reveal"} style={style}>
+    <div id={id} className={className} style={style}>
         {children}
     </div>
 );

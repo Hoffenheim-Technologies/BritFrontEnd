@@ -15,7 +15,7 @@ import { Grid } from "../shared/Grid";
 import { Image } from "./Image";
 import { ArrowRightIcon } from "@heroicons/react/outline";
 
-const SMHandles = [
+export const SMHandles = [
     {
         name: "facebook",
         icon: <LineIcon name="facebook-filled" />,
@@ -45,6 +45,7 @@ const SMLink: React.FC<{
     path: string;
     icon: React.ReactElement;
     fill?: string;
+    height?: string;
 }> = ({ className, path, icon }) => (
     <Link href={path} className={className}>
         {icon}
@@ -61,10 +62,10 @@ export const SM = styled(SMLink)`
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 34px;
-    min-width: 34px;
-    max-height: 34px;
-    max-width: 34px;
+    min-height: ${({ height }) => (height ? height : "34px")};
+    min-width: ${({ height }) => (height ? height : "34px")};
+    max-height: ${({ height }) => (height ? height : "34px")};
+    max-width: ${({ height }) => (height ? height : "34px")};
     font-size: 16px;
     transition: background 300ms ease;
     svg {

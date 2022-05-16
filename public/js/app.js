@@ -3157,7 +3157,7 @@ var __importDefault = this && this.__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.SM = void 0;
+exports.SM = exports.SMHandles = void 0;
 
 var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
@@ -3189,7 +3189,7 @@ var Image_1 = __webpack_require__(/*! ./Image */ "./resources/js/Components/Imag
 
 var outline_2 = __webpack_require__(/*! @heroicons/react/outline */ "./node_modules/@heroicons/react/outline/esm/index.js");
 
-var SMHandles = [{
+exports.SMHandles = [{
   name: "facebook",
   icon: react_1["default"].createElement(react_lineicons_1["default"], {
     name: "facebook-filled"
@@ -3237,16 +3237,28 @@ var SMLink = function SMLink(_ref) {
   }, icon);
 };
 
-exports.SM = (0, styled_components_1["default"])(SMLink)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    background-color: ", ";\n    &:hover {\n        background-color: ", ";\n    }\n    color: #fff;\n    border-radius: 1000000px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    min-height: 34px;\n    min-width: 34px;\n    max-height: 34px;\n    max-width: 34px;\n    font-size: 16px;\n    transition: background 300ms ease;\n    svg {\n        height: 16px;\n    }\n"])), function (_ref2) {
+exports.SM = (0, styled_components_1["default"])(SMLink)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    background-color: ", ";\n    &:hover {\n        background-color: ", ";\n    }\n    color: #fff;\n    border-radius: 1000000px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    min-height: ", ";\n    min-width: ", ";\n    max-height: ", ";\n    max-width: ", ";\n    font-size: 16px;\n    transition: background 300ms ease;\n    svg {\n        height: 16px;\n    }\n"])), function (_ref2) {
   var theme = _ref2.theme;
   return theme.primaryColor;
 }, function (_ref3) {
   var theme = _ref3.theme;
   return theme.secondaryColor;
+}, function (_ref4) {
+  var height = _ref4.height;
+  return height ? height : "34px";
+}, function (_ref5) {
+  var height = _ref5.height;
+  return height ? height : "34px";
+}, function (_ref6) {
+  var height = _ref6.height;
+  return height ? height : "34px";
+}, function (_ref7) {
+  var height = _ref7.height;
+  return height ? height : "34px";
 });
 
-var SubscribeForm = function SubscribeForm(_ref4) {
-  var className = _ref4.className;
+var SubscribeForm = function SubscribeForm(_ref8) {
+  var className = _ref8.className;
   return react_1["default"].createElement("form", {
     className: className
   }, react_1["default"].createElement(Flex_1.Flex, {
@@ -3276,10 +3288,10 @@ var featured = [{
   description: "Lorem ipsum dolor sit amet cons ectetur adipiscing elit mag"
 }];
 
-var Featured = function Featured(_ref5) {
-  var property = _ref5.property,
-      className = _ref5.className,
-      small = _ref5.small;
+var Featured = function Featured(_ref9) {
+  var property = _ref9.property,
+      className = _ref9.className,
+      small = _ref9.small;
   return react_1["default"].createElement(inertia_react_1.Link, {
     href: property.path,
     className: className
@@ -3321,31 +3333,31 @@ var Featured = function Featured(_ref5) {
   }, property.description))));
 };
 
-var SFeatured = (0, styled_components_1["default"])(Featured)(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    &>div>div: first-of-type {\n        height: ", ";\n        width: ", ";\n        max-height: ", ";\n        min-height: ", ";\n        max-width: ", ";\n        min-width: ", ";\n        background: rgba(248, 87, 87, 0.2);\n        border-radius: 10px;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        margin-right: 36px;\n    }\n    h5 {\n        color: #222223;\n        font-size: 18px;\n        line-height: 1.333em;\n        font-weight: 700;\n    }\n    svg {\n        height: 15px;\n    }\n    &:hover {\n        h5,\n        svg {\n            color: ", ";\n        }\n        img {\n            transform: scale(1.1);\n        }\n        svg {\n            transform: translateX(10px);\n            transition: transform 0.5s ease;\n        }\n    }\n"])), function (_ref6) {
-  var small = _ref6.small;
-  return small ? "80px" : "137px";
-}, function (_ref7) {
-  var small = _ref7.small;
-  return small ? "80px" : "137px";
-}, function (_ref8) {
-  var small = _ref8.small;
-  return small ? "80px" : "137px";
-}, function (_ref9) {
-  var small = _ref9.small;
-  return small ? "80px" : "137px";
-}, function (_ref10) {
+var SFeatured = (0, styled_components_1["default"])(Featured)(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    &>div>div: first-of-type {\n        height: ", ";\n        width: ", ";\n        max-height: ", ";\n        min-height: ", ";\n        max-width: ", ";\n        min-width: ", ";\n        background: rgba(248, 87, 87, 0.2);\n        border-radius: 10px;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        margin-right: 36px;\n    }\n    h5 {\n        color: #222223;\n        font-size: 18px;\n        line-height: 1.333em;\n        font-weight: 700;\n    }\n    svg {\n        height: 15px;\n    }\n    &:hover {\n        h5,\n        svg {\n            color: ", ";\n        }\n        img {\n            transform: scale(1.1);\n        }\n        svg {\n            transform: translateX(10px);\n            transition: transform 0.5s ease;\n        }\n    }\n"])), function (_ref10) {
   var small = _ref10.small;
   return small ? "80px" : "137px";
 }, function (_ref11) {
   var small = _ref11.small;
   return small ? "80px" : "137px";
 }, function (_ref12) {
-  var theme = _ref12.theme;
+  var small = _ref12.small;
+  return small ? "80px" : "137px";
+}, function (_ref13) {
+  var small = _ref13.small;
+  return small ? "80px" : "137px";
+}, function (_ref14) {
+  var small = _ref14.small;
+  return small ? "80px" : "137px";
+}, function (_ref15) {
+  var small = _ref15.small;
+  return small ? "80px" : "137px";
+}, function (_ref16) {
+  var theme = _ref16.theme;
   return theme.secondaryColor;
 });
 
-var Foot = function Foot(_ref13) {
-  var className = _ref13.className;
+var Foot = function Foot(_ref17) {
+  var className = _ref17.className;
   var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 960px)");
   var isMiniMobile = (0, useMediaQuery_1["default"])("(max-width: 500px)");
   var theme = (0, styled_components_1.useTheme)();
@@ -3366,7 +3378,7 @@ var Foot = function Foot(_ref13) {
   }, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna sed tortor nullam vel velit quis enim et amet."), react_1["default"].createElement(Flex_1.Flex, {
     direction: "row",
     gap: "16px"
-  }, SMHandles.map(function (handle, index) {
+  }, exports.SMHandles.map(function (handle, index) {
     return react_1["default"].createElement(exports.SM, {
       key: index,
       path: handle.url,
@@ -3463,8 +3475,8 @@ var Foot = function Foot(_ref13) {
   }, "Hoffenheim Technologies")))))))));
 };
 
-var Footer = (0, styled_components_1["default"])(Foot)(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    overflow: hidden;\n    padding-top: 80px;\n    padding-bottom: 32px;\n    border-top: 1px solid #e9e9e9;\n    background-attachment: scroll;\n\n    img {\n        margin-bottom: 16px;\n        cursor: pointer;\n    }\n    // p {\n    //     margin: 0;\n    // }\n\n    ul a {\n        display: block;\n        margin-bottom: 24px;\n        color: #616066;\n        font-size: 16px;\n        line-height: 1.125em;\n        transition: color 300ms ease;\n        &:hover {\n            color: ", ";\n        }\n    }\n"])), function (_ref14) {
-  var theme = _ref14.theme;
+var Footer = (0, styled_components_1["default"])(Foot)(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    overflow: hidden;\n    padding-top: 80px;\n    padding-bottom: 32px;\n    border-top: 1px solid #e9e9e9;\n    background-attachment: scroll;\n\n    img {\n        margin-bottom: 16px;\n        cursor: pointer;\n    }\n    // p {\n    //     margin: 0;\n    // }\n\n    ul a {\n        display: block;\n        margin-bottom: 24px;\n        color: #616066;\n        font-size: 16px;\n        line-height: 1.125em;\n        transition: color 300ms ease;\n        &:hover {\n            color: ", ";\n        }\n    }\n"])), function (_ref18) {
+  var theme = _ref18.theme;
   return theme.secondaryColor;
 });
 exports["default"] = Footer;
@@ -3891,7 +3903,7 @@ var Input = function Input(_ref) {
 };
 
 exports.Input = Input;
-var SInput = (0, styled_components_1["default"])(Input)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    &::-webkit-search-decoration,\n    &::-webkit-search-cancel-button,\n    &::-webkit-search-results-button,\n    &::-webkit-search-results-decoration {\n        appearance: none;\n    }\n    appearance: none;\n    width: ", ";\n    max-width: min(80vw, 450px);\n    margin: ", ";\n    padding: 8px 12px;\n    height: 3em;\n    font-size: 20px;\n    color: #222223;\n    line-height: calc(10 / 7);\n    border-radius: 12px;\n    border: 1px solid #cccccc;\n    background-color: ", ";\n\n    &:focus,\n    &:hover {\n        outline: 1px solid ", ";\n    }\n"])), function (_ref2) {
+var SInput = (0, styled_components_1["default"])(Input)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    &::-webkit-search-decoration,\n    &::-webkit-search-cancel-button,\n    &::-webkit-search-results-button,\n    &::-webkit-search-results-decoration {\n        appearance: none;\n    }\n    &::placeholder {\n        color: #373737;\n        opacity: 0.7;\n    }\n    appearance: none;\n    width: ", ";\n    max-width: min(80vw, 450px);\n    margin: ", ";\n    padding: 8px 12px;\n    height: 3em;\n    font-size: 20px;\n    color: #222223;\n    line-height: calc(10 / 7);\n    border-radius: 12px;\n    border: 1px solid ", ";\n    background-color: ", ";\n\n    &:focus,\n    &:hover {\n        outline: 1px solid ", ";\n    }\n"])), function (_ref2) {
   var width = _ref2.width;
   return width ? width : width === "" ? width : "100%";
 }, function (_ref3) {
@@ -3902,15 +3914,20 @@ var SInput = (0, styled_components_1["default"])(Input)(_templateObject || (_tem
   return theme.backgroundColor;
 }, function (_ref5) {
   var theme = _ref5.theme;
+  return theme.backgroundColor;
+}, function (_ref6) {
+  var theme = _ref6.theme;
   return theme.secondaryColor;
 });
 exports.SInput = SInput;
 
-var TextArea = function TextArea(_ref6) {
-  var className = _ref6.className,
-      placeholder = _ref6.placeholder,
-      maxLength = _ref6.maxLength;
+var TextArea = function TextArea(_ref7) {
+  var className = _ref7.className,
+      placeholder = _ref7.placeholder,
+      maxLength = _ref7.maxLength,
+      style = _ref7.style;
   return react_1["default"].createElement("textarea", {
+    style: style,
     placeholder: placeholder,
     maxLength: maxLength,
     className: className
@@ -3918,8 +3935,8 @@ var TextArea = function TextArea(_ref6) {
 };
 
 exports.TextArea = TextArea;
-var STextArea = (0, styled_components_1["default"])(TextArea)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    max-height: 250px;\n    max-width: 100%;\n    min-height: 182px;\n    min-width: 100%;\n    margin-bottom: 0px;\n    padding: 18px 24px;\n    border-style: solid;\n    border-width: 1px;\n    border-color: #f6f6f6;\n    border-radius: 12px;\n    background-color: #f6f6f6;\n    -webkit-transition: border-color 300ms ease, color 300ms ease;\n    transition: border-color 300ms ease, color 300ms ease;\n    color: #222223;\n    font-size: 18px;\n\n    &:focus,\n    &:hover {\n        outline: 1px solid ", ";\n    }\n"])), function (_ref7) {
-  var theme = _ref7.theme;
+var STextArea = (0, styled_components_1["default"])(TextArea)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    max-height: 250px;\n    max-width: 100%;\n    min-height: 182px;\n    min-width: 100%;\n    margin-bottom: 0px;\n    padding: 18px 24px;\n    border-style: solid;\n    border-width: 1px;\n    border-color: #f6f6f6;\n    border-radius: 12px;\n    background-color: #f6f6f6;\n    -webkit-transition: border-color 300ms ease, color 300ms ease;\n    transition: border-color 300ms ease, color 300ms ease;\n    color: #222223;\n    font-size: 20px;\n\n    &:focus,\n    &:hover {\n        outline: 1px solid ", ";\n    }\n"])), function (_ref8) {
+  var theme = _ref8.theme;
   return theme.secondaryColor;
 });
 exports.STextArea = STextArea;
@@ -4712,6 +4729,46 @@ exports["default"] = About;
 "use strict";
 
 
+var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
+} : function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  o[k2] = m[k];
+});
+
+var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
+  Object.defineProperty(o, "default", {
+    enumerable: true,
+    value: v
+  });
+} : function (o, v) {
+  o["default"] = v;
+});
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+  }
+
+  __setModuleDefault(result, mod);
+
+  return result;
+};
+
 var __importDefault = this && this.__importDefault || function (mod) {
   return mod && mod.__esModule ? mod : {
     "default": mod
@@ -4722,12 +4779,517 @@ Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 
+var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+
 var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var styled_components_1 = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+
+var Buttons_1 = __webpack_require__(/*! ../Components/Buttons */ "./resources/js/Components/Buttons.tsx");
+
+var Card_1 = __importDefault(__webpack_require__(/*! ../Components/Card */ "./resources/js/Components/Card.tsx"));
+
+var Footer_1 = __webpack_require__(/*! ../Components/Footer */ "./resources/js/Components/Footer.tsx");
+
+var Input_1 = __webpack_require__(/*! ../Components/Input */ "./resources/js/Components/Input.tsx");
+
+var useMediaQuery_1 = __importDefault(__webpack_require__(/*! ../hooks/useMediaQuery */ "./resources/js/hooks/useMediaQuery.tsx"));
 
 var Layout_1 = __importDefault(__webpack_require__(/*! ../Layouts/Layout */ "./resources/js/Layouts/Layout.tsx"));
 
+var Container_1 = __importStar(__webpack_require__(/*! ../shared/Container */ "./resources/js/shared/Container.tsx"));
+
+var Flex_1 = __webpack_require__(/*! ../shared/Flex */ "./resources/js/shared/Flex.tsx");
+
+var Grid_1 = __webpack_require__(/*! ../shared/Grid */ "./resources/js/shared/Grid.tsx");
+
+var Text_1 = __webpack_require__(/*! ../shared/Text */ "./resources/js/shared/Text.tsx");
+
 var Contact = function Contact() {
-  return react_1["default"].createElement("main", null);
+  var isMiniMobile = (0, useMediaQuery_1["default"])("(max-width: 500px)");
+  var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 960px)");
+  var isTinyMobile = (0, useMediaQuery_1["default"])("(max-width: 374px)");
+  var isTablet = (0, useMediaQuery_1["default"])("(max-width: 767px)");
+  var phone = "(414)807-0196";
+  var email = "contact@britproperties.ng";
+  var theme = (0, styled_components_1.useTheme)();
+  return react_1["default"].createElement("main", null, react_1["default"].createElement("section", {
+    style: isDesktop ? {
+      paddingTop: "106px",
+      paddingBottom: 0
+    } : isTablet ? {
+      paddingTop: "54px",
+      paddingBottom: 0
+    } : {
+      paddingTop: "85px",
+      paddingBottom: 0
+    }
+  }, react_1["default"].createElement("div", {
+    style: {
+      position: "relative",
+      zIndex: 1,
+      textAlign: "center"
+    }
+  }, react_1["default"].createElement(Container_1.SmallContainer, {
+    width: "510px",
+    style: {
+      color: "#fff"
+    }
+  }, react_1["default"].createElement(Text_1.BoldContent, null, "Get in Touch"), react_1["default"].createElement(Text_1.Subtitle, {
+    style: {
+      color: "#fff"
+    },
+    transform: true
+  }, "We are always ready and available to serve your needs, or answer your questions")), react_1["default"].createElement(Container_1["default"], {
+    width: "1132px",
+    style: {
+      position: "relative",
+      zIndex: 1
+    }
+  }, react_1["default"].createElement("div", {
+    style: isDesktop ? {} : {
+      maxWidth: "660px",
+      margin: "auto"
+    }
+  }, react_1["default"].createElement(Grid_1.Grid, {
+    columns: isDesktop ? 3 : 1,
+    columnGap: "26px",
+    rowGap: "45px"
+  }, react_1["default"].createElement("div", {
+    style: {
+      width: "100%"
+    }
+  }, react_1["default"].createElement(inertia_react_1.Link, {
+    href: "tel: ".concat(phone),
+    style: {
+      width: "inherit"
+    }
+  }, react_1["default"].createElement(Card_1["default"], null, react_1["default"].createElement(Flex_1.Flex, {
+    direction: "column",
+    align: "center",
+    width: "100%"
+  }, react_1["default"].createElement("div", {
+    style: {
+      width: "84px",
+      maxHeight: "84px",
+      minHeight: "84px",
+      minWidth: "84px",
+      marginRight: "20px",
+      marginBottom: "15px",
+      borderRadius: "10000000px",
+      display: "flex",
+      overflow: "hidden",
+      alignItems: "center"
+    }
+  }, react_1["default"].createElement("img", {
+    src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/6196b065ab885f467883135d_icon-1-contact-link-realtor-template.svg",
+    loading: "eager",
+    alt: "Phone Icon - Realtor X Webflow Template"
+  })), react_1["default"].createElement("div", {
+    style: {
+      width: "100%",
+      maxWidth: "220px",
+      marginBottom: "15px"
+    }
+  }, react_1["default"].createElement(Text_1.SH3, {
+    margin: "6px"
+  }, "Give us a call"), react_1["default"].createElement(Text_1.Subtitle, {
+    transform: true
+  }, "Our dedicated call agents will be happy to receive your call"), react_1["default"].createElement("div", {
+    style: {
+      marginTop: "26px",
+      marginBottom: "26px",
+      width: "100%",
+      minHeight: "1px",
+      backgroundColor: "#e9e9e9"
+    }
+  }), react_1["default"].createElement(Text_1.SH3, {
+    style: {
+      color: theme.secondaryColor
+    },
+    margin: ""
+  }, phone)))))), react_1["default"].createElement("div", {
+    style: {
+      width: "100%"
+    }
+  }, react_1["default"].createElement(inertia_react_1.Link, {
+    href: "mailto: ".concat(email),
+    style: {
+      width: "inherit"
+    }
+  }, react_1["default"].createElement(Card_1["default"], null, react_1["default"].createElement(Flex_1.Flex, {
+    direction: "column",
+    align: "center",
+    width: "100%"
+  }, react_1["default"].createElement("div", {
+    style: {
+      width: "84px",
+      maxHeight: "84px",
+      minHeight: "84px",
+      minWidth: "84px",
+      marginRight: "20px",
+      marginBottom: "15px",
+      borderRadius: "10000000px",
+      display: "flex",
+      overflow: "hidden",
+      alignItems: "center"
+    }
+  }, react_1["default"].createElement("img", {
+    src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/6196b065ab885f0e8883135e_icon-2-contact-link-realtor-template.svg",
+    loading: "eager",
+    alt: "Email Icon - Realtor X Webflow Template"
+  })), react_1["default"].createElement("div", {
+    style: {
+      width: "100%",
+      maxWidth: "220px",
+      marginBottom: "15px"
+    }
+  }, react_1["default"].createElement(Text_1.SH3, {
+    margin: "6px"
+  }, "Send us an email"), react_1["default"].createElement(Text_1.Subtitle, {
+    transform: true
+  }, "We will respond to your email quickly and meaningfully"), react_1["default"].createElement("div", {
+    style: {
+      marginTop: "26px",
+      marginBottom: "26px",
+      width: "100%",
+      minHeight: "1px",
+      backgroundColor: "#e9e9e9"
+    }
+  }), react_1["default"].createElement(Text_1.SH3, {
+    style: {
+      color: theme.secondaryColor,
+      width: "fit-content",
+      position: "relative",
+      margin: "auto auto auto -15px"
+    },
+    margin: "auto"
+  }, email)))))), react_1["default"].createElement("div", {
+    style: {
+      width: "100%"
+    }
+  }, react_1["default"].createElement(inertia_react_1.Link, {
+    href: "tel: ".concat(phone),
+    style: {
+      width: "inherit"
+    }
+  }, react_1["default"].createElement(Card_1["default"], null, react_1["default"].createElement(Flex_1.Flex, {
+    direction: "column",
+    align: "center",
+    width: "100%"
+  }, react_1["default"].createElement("div", {
+    style: {
+      width: "84px",
+      maxHeight: "84px",
+      minHeight: "84px",
+      minWidth: "84px",
+      marginRight: "20px",
+      marginBottom: "15px",
+      borderRadius: "10000000px",
+      display: "flex",
+      overflow: "hidden",
+      alignItems: "center"
+    }
+  }, react_1["default"].createElement("img", {
+    src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/6196b065ab885f467883135d_icon-1-contact-link-realtor-template.svg",
+    loading: "eager",
+    alt: "Phone Icon - Realtor X Webflow Template"
+  })), react_1["default"].createElement("div", {
+    style: {
+      width: "100%",
+      maxWidth: "220px",
+      marginBottom: "15px"
+    }
+  }, react_1["default"].createElement(Text_1.SH3, {
+    margin: "6px"
+  }, "Chat with us"), react_1["default"].createElement(Text_1.Subtitle, {
+    transform: true
+  }, "Our chat platform is open, so send a message."), react_1["default"].createElement("div", {
+    style: {
+      marginTop: "26px",
+      marginBottom: "26px",
+      width: "100%",
+      minHeight: "1px",
+      backgroundColor: "#e9e9e9"
+    }
+  }), react_1["default"].createElement(Text_1.SH3, {
+    style: {
+      color: theme.secondaryColor
+    },
+    margin: ""
+  }, "Open Live Chat")))))))))), react_1["default"].createElement("div", {
+    style: {
+      left: "0%",
+      top: "0%",
+      right: "0%",
+      bottom: "auto",
+      minHeight: "82%",
+      position: "absolute",
+      backgroundColor: theme.primaryColor
+    }
+  })), react_1["default"].createElement("section", {
+    style: isDesktop ? {
+      padding: "140px 0"
+    } : !isTablet ? {
+      padding: "112px 0"
+    } : !isMiniMobile ? {
+      padding: "90px 0"
+    } : {
+      padding: "72px 0"
+    }
+  }, react_1["default"].createElement(Container_1["default"], {
+    style: isMiniMobile ? {
+      paddingRight: "16px",
+      paddingLeft: "16px"
+    } : {}
+  }, react_1["default"].createElement("div", {
+    style: isDesktop ? {} : {
+      maxWidth: "660px",
+      margin: "auto"
+    }
+  }, react_1["default"].createElement("div", null, react_1["default"].createElement(Flex_1.Flex, {
+    direction: isDesktop ? "row" : "column",
+    gap: isDesktop ? "" : isTablet ? "60px" : "70px"
+  }, react_1["default"].createElement("div", {
+    style: isDesktop ? {} : {
+      textAlign: "center"
+    }
+  }, react_1["default"].createElement(Text_1.SH2, null, "Prefer to leave us a message?"), react_1["default"].createElement(Text_1.Subtitle, {
+    transform: true
+  }, "Feel free to contact us on any of these platforms"), react_1["default"].createElement("div", {
+    style: isMiniMobile ? {
+      maxWidth: "250px",
+      margin: "auto"
+    } : {}
+  }, react_1["default"].createElement("div", {
+    style: {
+      display: "flex",
+      flexWrap: "wrap",
+      marginRight: "-20px",
+      marginBottom: "-20px"
+    }
+  }, react_1["default"].createElement("div", {
+    style: isDesktop ? {} : {
+      marginLeft: "auto",
+      marginRight: "auto"
+    }
+  }, react_1["default"].createElement("div", {
+    style: {
+      display: "flex",
+      flexWrap: "wrap",
+      justifyContent: isDesktop ? "" : "center"
+    }
+  }, Footer_1.SMHandles.map(function (handle, index) {
+    return react_1["default"].createElement("div", {
+      key: index,
+      style: {
+        marginRight: "20px",
+        marginBottom: "20px"
+      }
+    }, react_1["default"].createElement(Footer_1.SM, {
+      path: handle.url,
+      icon: handle.icon,
+      height: "38px"
+    }));
+  })))))), react_1["default"].createElement("div", {
+    style: {
+      width: "100%"
+    }
+  }, react_1["default"].createElement(Card_1["default"], {
+    style: {
+      display: "flex",
+      minHeight: "749px",
+      padding: isDesktop ? "80px 52px" : isTablet ? "51px 25px" : "64px 35px",
+      alignItems: "center"
+    }
+  }, react_1["default"].createElement("div", {
+    style: {
+      marginBottom: "0px",
+      flex: "1"
+    }
+  }, react_1["default"].createElement("form", null, react_1["default"].createElement(Grid_1.Grid, {
+    columns: isTablet ? 1 : 2,
+    columnGap: "24px",
+    rowGap: "33px"
+  }, react_1["default"].createElement("div", {
+    style: {
+      width: "100%"
+    }
+  }, react_1["default"].createElement("label", {
+    style: {
+      display: "block",
+      marginBottom: "16px",
+      color: "#222223",
+      lineHeight: "1.333em",
+      fontWeight: "700"
+    }
+  }, "Full Name"), react_1["default"].createElement(Input_1.SInput, {
+    type: "text",
+    placeholder: "John Carter",
+    style: {
+      paddingLeft: "20px",
+      paddingRight: "20px"
+    }
+  })), react_1["default"].createElement("div", {
+    style: {
+      width: "100%"
+    }
+  }, react_1["default"].createElement("label", {
+    style: {
+      display: "block",
+      marginBottom: "16px",
+      color: "#222223",
+      lineHeight: "1.333em",
+      fontWeight: "700"
+    }
+  }, "Email Address"), react_1["default"].createElement(Input_1.SInput, {
+    type: "email",
+    placeholder: "example@email.com",
+    style: {
+      paddingLeft: "20px",
+      paddingRight: "20px"
+    }
+  })), react_1["default"].createElement("div", {
+    style: {
+      width: "100%"
+    }
+  }, react_1["default"].createElement("label", {
+    style: {
+      display: "block",
+      marginBottom: "16px",
+      color: "#222223",
+      lineHeight: "1.333em",
+      fontWeight: "700"
+    }
+  }, "Full Name"), react_1["default"].createElement(Input_1.SInput, {
+    type: "phone",
+    placeholder: "(123)456 - 789",
+    style: {
+      paddingLeft: "20px",
+      paddingRight: "20px"
+    }
+  })), react_1["default"].createElement("div", {
+    style: {
+      width: "100%"
+    }
+  }, react_1["default"].createElement("label", {
+    style: {
+      display: "block",
+      marginBottom: "16px",
+      color: "#222223",
+      lineHeight: "1.333em",
+      fontWeight: "700"
+    }
+  }, "Subject"), react_1["default"].createElement(Input_1.SInput, {
+    type: "text",
+    placeholder: "ex. Support",
+    style: {
+      paddingLeft: "20px",
+      paddingRight: "20px"
+    }
+  })), react_1["default"].createElement("div", {
+    style: {
+      gridColumn: isMiniMobile ? "" : "1 / span 2",
+      display: "grid",
+      gridAutoColumns: "1fr",
+      justifyContent: "stretch",
+      width: "100%"
+    }
+  }, react_1["default"].createElement("label", {
+    style: {
+      display: "block",
+      marginBottom: "16px",
+      color: "#222223",
+      lineHeight: "1.333em",
+      fontWeight: "700"
+    }
+  }, "Message"), react_1["default"].createElement(Input_1.STextArea, {
+    placeholder: "Please type your message here",
+    style: {
+      paddingLeft: "20px",
+      paddingRight: "20px",
+      width: "100%"
+    },
+    maxLength: 500
+  })), react_1["default"].createElement(Buttons_1.SecondaryButton, {
+    style: {
+      width: isMiniMobile ? "100%" : ""
+    }
+  }, "Send message"))))))))))), react_1["default"].createElement("section", null, react_1["default"].createElement(Container_1["default"], {
+    style: {
+      position: "relative",
+      zIndex: 1
+    }
+  }, react_1["default"].createElement(Flex_1.Flex, null, react_1["default"].createElement("div", {
+    style: {
+      width: "100%",
+      maxWidth: "540px"
+    }
+  }, react_1["default"].createElement(Card_1["default"], {
+    style: {
+      padding: "88px 65px 92px"
+    }
+  }, react_1["default"].createElement("div", {
+    style: {
+      marginBottom: "40px"
+    }
+  }, react_1["default"].createElement(Text_1.SH2, null, "Our Location"), react_1["default"].createElement(Text_1.Subtitle, {
+    margin: "",
+    transform: true
+  }, "We are located in the heart of Lagos State")), react_1["default"].createElement("div", null, react_1["default"].createElement(Flex_1.Flex, {
+    gap: isTablet ? "20px" : "40px",
+    direction: isTablet ? "column" : "row"
+  }, react_1["default"].createElement("div", {
+    style: {
+      width: "90px",
+      maxHeight: "90px",
+      minHeight: "90px",
+      minWidth: "90px",
+      marginRight: "40px",
+      alignSelf: "center",
+      borderRadius: "10000000px",
+      overflow: "hidden"
+    }
+  }, react_1["default"].createElement("img", {
+    style: {
+      width: "100%",
+      height: "100%",
+      transform: "perspective(1000px)",
+      objectFit: "cover"
+    },
+    src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/619e7a7bb3dcf27ccb6cfc0e_icon-1-location-realtor-template.svg",
+    loading: "eager",
+    alt: "San Francisco Icon - Realtor X Webflow Template"
+  })), react_1["default"].createElement("div", null, react_1["default"].createElement(Text_1.SH3, {
+    margin: "4px"
+  }, "Lagos, Nigeria"), react_1["default"].createElement(Text_1.Subtitle, {
+    transform: true,
+    margin: ""
+  }, "Km 24, Lekki Epe-Exp. Way Conoil Mega Filling Station Beside Fidelity Bank Abraham Adesanya")))))))), react_1["default"].createElement("div", {
+    style: {
+      left: "0%",
+      top: "0%",
+      right: "0%",
+      bottom: "0%",
+      position: "absolute",
+      display: "flex",
+      overflow: "hidden",
+      alignItems: "center",
+      transform: "translate(0px, 0px)"
+    }
+  }, react_1["default"].createElement("img", {
+    style: {
+      width: "100%",
+      height: "100%",
+      transform: "perspective(1000px)",
+      objectFit: "cover"
+    },
+    src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/619e9da3080e5b1f1d4b2234_image-bg-location-realtor-template.jpg",
+    loading: "eager",
+    srcSet: "https://assets.website-files.com/6193ce0889184dacb7d96c80/619e9da3080e5b1f1d4b2234_image-bg-location-realtor-template-p-1080.jpeg 1080w, https://assets.website-files.com/6193ce0889184dacb7d96c80/619e9da3080e5b1f1d4b2234_image-bg-location-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184dacb7d96c80/619e9da3080e5b1f1d4b2234_image-bg-location-realtor-template-p-2000.jpeg 2000w, https://assets.website-files.com/6193ce0889184dacb7d96c80/619e9da3080e5b1f1d4b2234_image-bg-location-realtor-template-p-2600.jpeg 2600w, https://assets.website-files.com/6193ce0889184dacb7d96c80/619e9da3080e5b1f1d4b2234_image-bg-location-realtor-template.jpg 2880w",
+    sizes: "100vw",
+    alt: "Location - Realtor X Webflow Template"
+  }))));
 };
 
 Contact.layout = function (page) {
@@ -6154,7 +6716,7 @@ var Div = function Div(_ref) {
       style = _ref.style;
   return react_1["default"].createElement("div", {
     id: id,
-    className: className + " reveal",
+    className: className,
     style: style
   }, children);
 };
@@ -6372,8 +6934,10 @@ var H5 = function H5(_ref5) {
 
 var P = function P(_ref6) {
   var className = _ref6.className,
-      children = _ref6.children;
+      children = _ref6.children,
+      style = _ref6.style;
   return react_1["default"].createElement("p", {
+    style: style,
     className: className + " reveal"
   }, children);
 };
@@ -6399,9 +6963,9 @@ var SH5 = (0, styled_components_1["default"])(H4)(_templateObject3 || (_template
   return margin;
 });
 exports.SH5 = SH5;
-var SH2 = (0, styled_components_1["default"])(H2)(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    margin-top: 0px;\n    margin-bottom: 16px;\n    color: #222223;\n    font-size: 32px;\n    line-height: 1.375em;\n    font-weight: 700;\n"])));
+var SH2 = (0, styled_components_1["default"])(H2)(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    @media screen and (max-width: 500px) {\n        font-size: 23px;\n    }\n    @media screen and (max-width: 768px) {\n        font-size: 28px;\n        margin-bottom: 0;\n    }\n    margin-top: 0px;\n    margin-bottom: 16px;\n    color: #222223;\n    font-size: 32px;\n    line-height: 1.375em;\n    font-weight: 700;\n"])));
 exports.SH2 = SH2;
-var SH3 = (0, styled_components_1["default"])(H3)(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    margin-top: 0px;\n    margin-bottom: ", ";\n    color: rgb(34, 34, 35);\n    font-size: 22px;\n    line-height: 1.364em;\n    font-weight: 700;\n"])), function (_ref12) {
+var SH3 = (0, styled_components_1["default"])(H3)(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    margin-top: 0px;\n    margin-bottom: ", ";\n    color: rgb(34, 34, 35);\n    font-size: 22px;\n    line-height: 1.364em;\n    font-weight: 700;\n    @media screen and (max-width: 374px) {\n        line-break: anywhere;\n    }\n"])), function (_ref12) {
   var margin = _ref12.margin;
   return margin ? margin : margin === "" ? margin : "16px";
 });

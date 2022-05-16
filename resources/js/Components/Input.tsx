@@ -38,6 +38,10 @@ const SInput = styled(Input)`
     &::-webkit-search-results-decoration {
         appearance: none;
     }
+    &::placeholder {
+        color: #373737;
+        opacity: 0.7;
+    }
     appearance: none;
     width: ${({ width }) => (width ? width : width === "" ? width : "100%")};
     max-width: min(80vw, 450px);
@@ -48,7 +52,7 @@ const SInput = styled(Input)`
     color: #222223;
     line-height: calc(10 / 7);
     border-radius: 12px;
-    border: 1px solid #cccccc;
+    border: 1px solid ${({ theme }) => theme.backgroundColor};
     background-color: ${({ theme }) => theme.backgroundColor};
 
     &:focus,
@@ -61,8 +65,10 @@ const TextArea: React.FC<{
     className?: string;
     placeholder?: string;
     maxLength?: number;
-}> = ({ className, placeholder, maxLength }) => (
+    style?: any;
+}> = ({ className, placeholder, maxLength, style }) => (
     <textarea
+        style={style}
         placeholder={placeholder}
         maxLength={maxLength}
         className={className}
@@ -84,7 +90,7 @@ const STextArea = styled(TextArea)`
     -webkit-transition: border-color 300ms ease, color 300ms ease;
     transition: border-color 300ms ease, color 300ms ease;
     color: #222223;
-    font-size: 18px;
+    font-size: 20px;
 
     &:focus,
     &:hover {
