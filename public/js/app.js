@@ -2965,11 +2965,13 @@ var Button = function Button(_ref) {
   var className = _ref.className,
       children = _ref.children,
       onClick = _ref.onClick,
-      disabled = _ref.disabled;
+      disabled = _ref.disabled,
+      style = _ref.style;
   return react_1["default"].createElement("button", {
     onClick: onClick,
     className: className + " reveal",
-    disabled: disabled
+    disabled: disabled,
+    style: style
   }, children);
 };
 
@@ -3543,7 +3545,7 @@ var __importDefault = this && this.__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.routes = exports.SLogo = void 0;
+exports.SearchBar = exports.routes = exports.SLogo = void 0;
 
 var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
@@ -3606,7 +3608,7 @@ var Nav = function Nav(_ref2) {
   }));
 };
 
-var SearchBar = (0, styled_components_1["default"])(Container_2.Div)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    padding: 32px;\n    box-shadow: 0 3px 20px 0 rgb(8 15 52 / 6%);\n"])));
+exports.SearchBar = (0, styled_components_1["default"])(Container_2.Div)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    padding: 32px;\n    box-shadow: 0 3px 20px 0 rgb(8 15 52 / 6%);\n"])));
 var SNav = (0, styled_components_1["default"])(Nav)(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    display: flex;\n    li {\n        &:hover {\n            a {\n                color: ", ";\n            }\n            transform: scale(1.3);\n        }\n        transition: all 0.3s ease;\n    }\n    li:not(:last-of-type) {\n        margin-right: 32px;\n    }\n"])), function (_ref3) {
   var theme = _ref3.theme;
   return theme.secondaryColor;
@@ -3657,7 +3659,7 @@ var Search = function Search(_ref6) {
   var isMini = (0, useMediaQuery_1["default"])("(max-width: 500px)");
   return react_1["default"].createElement("div", {
     ref: wrapperRef
-  }, react_1["default"].createElement(SearchBar, {
+  }, react_1["default"].createElement(exports.SearchBar, {
     className: className
   }, react_1["default"].createElement("form", null, react_1["default"].createElement(Flex_1.Flex, {
     direction: isMini ? "column" : "row",
@@ -3875,21 +3877,23 @@ var Input = function Input(_ref) {
       placeholder = _ref.placeholder,
       maxLength = _ref.maxLength,
       required = _ref.required,
-      disabled = _ref.disabled;
+      disabled = _ref.disabled,
+      style = _ref.style;
   return react_1["default"].createElement("input", {
     className: className,
     type: type ? type : "text",
     maxLength: maxLength,
     placeholder: placeholder,
     required: required,
-    disabled: disabled
+    disabled: disabled,
+    style: style
   });
 };
 
 exports.Input = Input;
-var SInput = (0, styled_components_1["default"])(Input)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    width: ", ";\n    max-width: min(80vw, 450px);\n    margin: ", ";\n    padding: 8px 12px;\n    height: 3em;\n    font-size: 20px;\n    color: #222223;\n    line-height: calc(10 / 7);\n    border-radius: 12px;\n    border: 1px solid #cccccc;\n    background-color: ", ";\n\n    &:focus,\n    &:hover {\n        outline: 1px solid ", ";\n    }\n"])), function (_ref2) {
+var SInput = (0, styled_components_1["default"])(Input)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    &::-webkit-search-decoration,\n    &::-webkit-search-cancel-button,\n    &::-webkit-search-results-button,\n    &::-webkit-search-results-decoration {\n        appearance: none;\n    }\n    appearance: none;\n    width: ", ";\n    max-width: min(80vw, 450px);\n    margin: ", ";\n    padding: 8px 12px;\n    height: 3em;\n    font-size: 20px;\n    color: #222223;\n    line-height: calc(10 / 7);\n    border-radius: 12px;\n    border: 1px solid #cccccc;\n    background-color: ", ";\n\n    &:focus,\n    &:hover {\n        outline: 1px solid ", ";\n    }\n"])), function (_ref2) {
   var width = _ref2.width;
-  return width ? width : "100%";
+  return width ? width : width === "" ? width : "100%";
 }, function (_ref3) {
   var margin = _ref3.margin;
   return margin ? margin : 0;
@@ -4703,10 +4707,37 @@ exports["default"] = About;
 /*!****************************************!*\
   !*** ./resources/js/Pages/Contact.tsx ***!
   \****************************************/
-/***/ (() => {
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
 
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var Layout_1 = __importDefault(__webpack_require__(/*! ../Layouts/Layout */ "./resources/js/Layouts/Layout.tsx"));
+
+var Contact = function Contact() {
+  return react_1["default"].createElement("main", null);
+};
+
+Contact.layout = function (page) {
+  return react_1["default"].createElement(Layout_1["default"], {
+    children: page,
+    title: "Contact"
+  });
+};
+
+exports["default"] = Contact;
 
 /***/ }),
 
@@ -5538,10 +5569,289 @@ exports["default"] = Home;
 /*!*******************************************!*\
   !*** ./resources/js/Pages/Properties.tsx ***!
   \*******************************************/
-/***/ (() => {
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
 
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
+} : function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  o[k2] = m[k];
+});
+
+var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
+  Object.defineProperty(o, "default", {
+    enumerable: true,
+    value: v
+  });
+} : function (o, v) {
+  o["default"] = v;
+});
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+  }
+
+  __setModuleDefault(result, mod);
+
+  return result;
+};
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var outline_1 = __webpack_require__(/*! @heroicons/react/outline */ "./node_modules/@heroicons/react/outline/esm/index.js");
+
+var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var Buttons_1 = __webpack_require__(/*! ../Components/Buttons */ "./resources/js/Components/Buttons.tsx");
+
+var Header_1 = __webpack_require__(/*! ../Components/Header */ "./resources/js/Components/Header.tsx");
+
+var Input_1 = __webpack_require__(/*! ../Components/Input */ "./resources/js/Components/Input.tsx");
+
+var useMediaQuery_1 = __importDefault(__webpack_require__(/*! ../hooks/useMediaQuery */ "./resources/js/hooks/useMediaQuery.tsx"));
+
+var Layout_1 = __importDefault(__webpack_require__(/*! ../Layouts/Layout */ "./resources/js/Layouts/Layout.tsx"));
+
+var Container_1 = __importStar(__webpack_require__(/*! ../shared/Container */ "./resources/js/shared/Container.tsx"));
+
+var Flex_1 = __webpack_require__(/*! ../shared/Flex */ "./resources/js/shared/Flex.tsx");
+
+var Text_1 = __webpack_require__(/*! ../shared/Text */ "./resources/js/shared/Text.tsx");
+
+var Filter = function Filter(_ref) {
+  var maxWidth = _ref.maxWidth,
+      icon = _ref.icon,
+      filter = _ref.filter,
+      active = _ref.active,
+      _onMouseEnter = _ref.onMouseEnter,
+      _onMouseLeave = _ref.onMouseLeave,
+      _onClick = _ref.onClick;
+  return react_1["default"].createElement("div", {
+    style: {
+      width: "100%",
+      maxWidth: maxWidth
+    },
+    onMouseEnter: function onMouseEnter() {
+      return _onMouseEnter(true);
+    },
+    onMouseLeave: function onMouseLeave() {
+      return _onMouseLeave(false);
+    },
+    onClick: function onClick() {
+      return _onClick(!active);
+    }
+  }, react_1["default"].createElement(Flex_1.Flex, {
+    style: {
+      padding: "31px 18px",
+      boxShadow: "0 3px 20px 0 rgba(8, 15, 52, 0.06)",
+      borderRadius: "12px",
+      borderColor: active ? "#f85757" : "",
+      color: active ? "#f85757" : "#8d8d91"
+    },
+    gap: "10px",
+    justify: "space-between"
+  }, react_1["default"].createElement(Flex_1.Flex, {
+    gap: "10px"
+  }, react_1["default"].createElement("div", {
+    style: {
+      width: "21px"
+    }
+  }, icon), react_1["default"].createElement("span", {
+    style: {
+      textTransform: "capitalize"
+    }
+  }, filter)), react_1["default"].createElement("div", {
+    style: {
+      width: "21px",
+      justifySelf: "self-end"
+    }
+  }, react_1["default"].createElement(outline_1.ChevronDownIcon, {
+    style: active ? {
+      transform: "rotate(-180deg)",
+      transition: "transform ease .3s"
+    } : {
+      transition: "transform ease .3s"
+    }
+  }))));
+};
+
+var Properties = function Properties() {
+  var isMiniMobile = (0, useMediaQuery_1["default"])("(max-width: 500px)");
+  var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 900px)");
+  var isTinyMobile = (0, useMediaQuery_1["default"])("(max-width: 374px)");
+  var isTablet = (0, useMediaQuery_1["default"])("(max-width: 767px)");
+
+  var _ref2 = (0, react_1.useState)(false),
+      _ref3 = _slicedToArray(_ref2, 2),
+      lactive = _ref3[0],
+      setLactive = _ref3[1];
+
+  var _ref4 = (0, react_1.useState)(false),
+      _ref5 = _slicedToArray(_ref4, 2),
+      pactive = _ref5[0],
+      setPactive = _ref5[1];
+
+  var _ref6 = (0, react_1.useState)(false),
+      _ref7 = _slicedToArray(_ref6, 2),
+      tactive = _ref7[0],
+      setTactive = _ref7[1];
+
+  var filters = [{
+    name: "location",
+    icon: react_1["default"].createElement(outline_1.LocationMarkerIcon, null),
+    state: {
+      name: lactive,
+      action: setLactive
+    }
+  }, {
+    name: "property",
+    icon: react_1["default"].createElement(outline_1.HomeIcon, null),
+    state: {
+      name: pactive,
+      action: setPactive
+    }
+  }, {
+    name: "type",
+    icon: react_1["default"].createElement(outline_1.CashIcon, null),
+    state: {
+      name: tactive,
+      action: setTactive
+    }
+  }];
+  return react_1["default"].createElement("main", null, react_1["default"].createElement("section", {
+    style: {
+      paddingTop: "58px"
+    }
+  }, react_1["default"].createElement(Container_1.SmallContainer, {
+    width: "601px"
+  }, react_1["default"].createElement("div", {
+    style: {
+      margin: "auto",
+      maxWidth: "486px",
+      textAlign: "center"
+    }
+  }, react_1["default"].createElement("div", null, react_1["default"].createElement(Text_1.SH2, null, "Browse Properties")), react_1["default"].createElement(Text_1.Subtitle, null, "Lorem ipsum dolor sit amet consectetur adipiscing elit odio massa eget posuere at proin lectus proin morbi"))), react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("div", {
+    style: {
+      position: "relative",
+      zIndex: 1
+    }
+  }, react_1["default"].createElement("div", {
+    style: {
+      marginBottom: "82px"
+    }
+  }, react_1["default"].createElement("div", {
+    style: !isDesktop ? {
+      maxWidth: "660px",
+      margin: "auto"
+    } : {}
+  }, react_1["default"].createElement(Flex_1.Flex, {
+    direction: isDesktop ? "row" : "column",
+    gap: isDesktop ? "40px" : "50px"
+  }, react_1["default"].createElement("div", {
+    style: isDesktop ? {
+      maxWidth: "499px",
+      width: "100%"
+    } : {
+      maxWidth: "100%",
+      width: "100%"
+    }
+  }, react_1["default"].createElement(Header_1.SearchBar, {
+    style: {
+      padding: "12px 20px",
+      borderRadius: "12px"
+    }
+  }, react_1["default"].createElement("form", null, react_1["default"].createElement(Flex_1.Flex, {
+    direction: isTablet ? "column" : "row",
+    align: "center",
+    justify: "space-between"
+  }, react_1["default"].createElement("div", {
+    style: {
+      display: "flex"
+    }
+  }, react_1["default"].createElement(outline_1.SearchIcon, {
+    style: {
+      width: "24px"
+    }
+  }), react_1["default"].createElement(Input_1.SInput, {
+    type: "search",
+    maxLength: 256,
+    placeholder: "Search for properties",
+    required: true,
+    width: isTablet ? "calc(100vw - 200px)" : "100%",
+    margin: isTablet ? "15px 0" : "0 20px 0 0",
+    style: {
+      backgroundColor: "transparent",
+      border: 0,
+      outline: "none"
+    }
+  })), react_1["default"].createElement(Buttons_1.SecondaryButton, {
+    width: isTablet ? "100%" : "",
+    style: isDesktop ? {
+      position: "absolute",
+      right: 0
+    } : {}
+  }, "Search"))))), react_1["default"].createElement(Flex_1.Flex, {
+    direction: isTablet ? "column" : "row",
+    gap: "20px"
+  }, filters.map(function (filter, index) {
+    return react_1["default"].createElement(Filter, {
+      key: index,
+      icon: filter.icon,
+      filter: filter.name,
+      active: filter.state.name,
+      onMouseEnter: filter.state.action,
+      onMouseLeave: filter.state.action,
+      onClick: filter.state.action
+    });
+  })))))))));
+};
+
+Properties.layout = function (page) {
+  return react_1["default"].createElement(Layout_1["default"], {
+    children: page,
+    title: "Properties"
+  });
+};
+
+exports["default"] = Properties;
 
 /***/ }),
 
