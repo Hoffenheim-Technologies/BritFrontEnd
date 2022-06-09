@@ -19,25 +19,33 @@ export const SMHandles = [
     {
         name: "facebook",
         icon: <LineIcon name="facebook-filled" />,
-        url: "",
+        url: "https://facebook.com/britpropertyng",
     },
     {
         name: "twitter",
         icon: <LineIcon name="twitter-filled" />,
-        url: "",
+        url: "https://twitter.com/BritPropertyng",
     },
     {
         name: "instagram",
         icon: <LineIcon name="instagram-original" />,
-        url: "",
+        url: "https://www.instagram.com/britpropertyng_/",
     },
     {
         name: "linkedin",
         icon: <LineIcon name="linkedin-original" />,
         url: "",
     },
-    { name: "youtube", icon: <LineIcon name="youtube" />, url: "" },
-    { name: "instagram", icon: <LineIcon name="whatsapp" />, url: "" },
+    {
+        name: "youtube",
+        icon: <LineIcon name="youtube" />,
+        url: "https://www.youtube.com/channel/UCVxDf7_sOyLiAEiv6IMmxWw/videos",
+    },
+    {
+        name: "whatsapp",
+        icon: <LineIcon name="whatsapp" />,
+        url: "https://wa.me/2348112427496",
+    },
 ];
 
 const SMLink: React.FC<{
@@ -123,22 +131,22 @@ interface Property {
 const featured: Property[] = [
     {
         path: "",
-        image: "",
-        location: "San Diego, CA",
+        image: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template.jpg",
+        location: "Imo, Nigeria",
         description:
             "Lorem ipsum dolor sit amet cons ectetur adipiscing elit mag",
     },
     {
         path: "",
-        image: "",
-        location: "San Diego, CA",
+        image: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template.jpg",
+        location: "Warri, Nigeria",
         description:
             "Lorem ipsum dolor sit amet cons ectetur adipiscing elit mag",
     },
     {
         path: "",
-        image: "",
-        location: "San Diego, CA",
+        image: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template.jpg",
+        location: "Lagos, Nigeria",
         description:
             "Lorem ipsum dolor sit amet cons ectetur adipiscing elit mag",
     },
@@ -259,9 +267,7 @@ const Foot: React.FC<{ className?: string }> = ({ className }) => {
                                     <SLogo />
                                 </Suspense>
                                 <Subtitle transform={true}>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Magna sed tortor nullam vel
-                                    velit quis enim et amet.
+                                    Turning your dream home into reality
                                 </Subtitle>
                                 <Flex direction="row" gap="16px">
                                     {SMHandles.map((handle, index) => (

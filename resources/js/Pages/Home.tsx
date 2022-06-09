@@ -52,10 +52,10 @@ const ImageSection: React.FC<{ className?: string }> = ({ className }) => {
             <Flex>
                 <div className="image-wrapper first" style={{}}>
                     <img
-                        src="https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1410cffb1c0b026536_image-1-hero-v2-realtor-template.jpg"
+                        src="/assets/home-hero.jpg"
                         loading="eager"
-                        sizes="100vw"
-                        srcSet="https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1410cffb1c0b026536_image-1-hero-v2-realtor-template-p-500.jpeg 500w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1410cffb1c0b026536_image-1-hero-v2-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1410cffb1c0b026536_image-1-hero-v2-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1410cffb1c0b026536_image-1-hero-v2-realtor-template.jpg 2258w"
+                        // sizes="100vw"
+                        // srcSet="https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1410cffb1c0b026536_image-1-hero-v2-realtor-template-p-500.jpeg 500w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1410cffb1c0b026536_image-1-hero-v2-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1410cffb1c0b026536_image-1-hero-v2-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1410cffb1c0b026536_image-1-hero-v2-realtor-template.jpg 2258w"
                         alt="Real Agent - Realtor X Webflow Template"
                     />
                 </div>
@@ -63,8 +63,8 @@ const ImageSection: React.FC<{ className?: string }> = ({ className }) => {
                     <img
                         src="https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1421cb1a6f711390c7_image-2-hero-v2-realtor-template.jpg"
                         loading="eager"
-                        sizes="100vw"
-                        srcSet="https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1421cb1a6f711390c7_image-2-hero-v2-realtor-template-p-500.jpeg 500w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1421cb1a6f711390c7_image-2-hero-v2-realtor-template-p-1080.jpeg 1080w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1421cb1a6f711390c7_image-2-hero-v2-realtor-template.jpg 1312w"
+                        // sizes="100vw"
+                        // srcSet="https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1421cb1a6f711390c7_image-2-hero-v2-realtor-template-p-500.jpeg 500w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1421cb1a6f711390c7_image-2-hero-v2-realtor-template-p-1080.jpeg 1080w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1421cb1a6f711390c7_image-2-hero-v2-realtor-template.jpg 1312w"
                         alt="Real Estate - Realtor X Webflow Template"
                     />
                 </div>
@@ -379,8 +379,7 @@ const ContactSection: React.FC<{ className?: string; mobile: boolean }> = ({
                     </div>
                     <div style={{ marginBottom: "26px" }}>
                         <Subtitle>
-                            Lorem ipsum dolor sit amet consectetur adipiscing
-                            elit dui ornare lectus in suscipit tellus ac purus.
+                            We're eagerly looking forward to hearing from you
                         </Subtitle>
                     </div>
                     <Grid columns={1} rowGap={"16px"} width="100%">
@@ -420,7 +419,7 @@ const ContactSection: React.FC<{ className?: string; mobile: boolean }> = ({
                                             marginBottom: "15px",
                                         }}
                                     >
-                                        <Subtitle margin="6px">
+                                        <Subtitle margin="6px" transform={true}>
                                             Give us a call
                                         </Subtitle>
                                         <SH3>{phone}</SH3>
@@ -464,7 +463,7 @@ const ContactSection: React.FC<{ className?: string; mobile: boolean }> = ({
                                             marginBottom: "15px",
                                         }}
                                     >
-                                        <Subtitle margin="6px">
+                                        <Subtitle margin="6px" transform={true}>
                                             Send us an email
                                         </Subtitle>
                                         <SH3 style={{ lineBreak: "anywhere" }}>
@@ -633,9 +632,10 @@ const Home = () => {
                             Your Dream Home is a Click Away
                         </BoldContent>
                         <Subtitle align="center">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Placeat modi officia, fugit hic rem qui iure
-                            quaerat omnis
+                            Nigeria's premier Property firm, offers Land and
+                            Estate services in various states in Nigeria.
+                            Contact us for free advice &amp; counseling on
+                            purchasing a property or any land related issues.
                         </Subtitle>
                         <Flex
                             justify="center"
@@ -692,9 +692,11 @@ const Home = () => {
                             </SH2>
                         </div>
                         <Subtitle>
-                            Lorem ipsum dolor sit amet consectetur adipiscing
-                            elit odio massa eget posuere at proin lectus proin
-                            morbi
+                            Brit Properties is a property services company that
+                            offers land and estate services in various states in
+                            Nigeria including Abuja. We are a family owned
+                            business with over twenty years' experience in the
+                            real estate industry.
                         </Subtitle>
                     </div>
                 </SmallContainer>
@@ -737,11 +739,10 @@ const Home = () => {
                             >
                                 <SH2>Why Purchase with Us?</SH2>
                                 <Subtitle style={{ marginBottom: "34px" }}>
-                                    Turpis massa tincidunt dui ut ornare lectus
-                                    sit amet mi eget mauris pharetra et euismod
-                                    in pellentesque massa placerat duis
-                                    ultricies condimentum lacinia quis vel eros
-                                    donec ac odio
+                                    BritProperties is one of the fastest growing
+                                    land and estate agencies that provides
+                                    exclusive and professional land and real
+                                    estate services to its clients in Nigeria.
                                 </Subtitle>
                                 <Grid
                                     columns={1}
@@ -773,7 +774,7 @@ const Home = () => {
                                                 color: "#616066",
                                             }}
                                         >
-                                            Move in 30 days or less
+                                            Excellent service
                                         </div>
                                     </Flex>
                                     <Flex>
@@ -800,7 +801,7 @@ const Home = () => {
                                                 color: "#616066",
                                             }}
                                         >
-                                            Move in 30 days or less
+                                            Prompt responses
                                         </div>
                                     </Flex>
                                     <Flex>
@@ -827,7 +828,7 @@ const Home = () => {
                                                 color: "#616066",
                                             }}
                                         >
-                                            Move in 30 days or less
+                                            Confidence and Quality Assurance
                                         </div>
                                     </Flex>
                                     <Flex>
@@ -854,7 +855,7 @@ const Home = () => {
                                                 color: "#616066",
                                             }}
                                         >
-                                            Move in 30 days or less
+                                            Reliable and Trustworthy
                                         </div>
                                     </Flex>
                                 </Grid>
@@ -917,9 +918,11 @@ const Home = () => {
                             >
                                 <SH2>About Brit Properties</SH2>
                                 <Subtitle style={{ marginBottom: "34px" }}>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipiscing elit odio massa eget posuere at
-                                    proin lectus proin morbi.
+                                    BritProperties provides land, estate and
+                                    related real estate services. We handle Land
+                                    Acquisition and Preparation of Title Deeds,
+                                    Mortgage and Conveyancing, Property
+                                    Management & Development in Lagos and Abuja.
                                 </Subtitle>
                                 <div style={{ marginBottom: "54px" }}>
                                     <div style={{ maxWidth: "476px" }}>

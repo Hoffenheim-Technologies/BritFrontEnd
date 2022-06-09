@@ -3194,19 +3194,19 @@ exports.SMHandles = [{
   icon: react_1["default"].createElement(react_lineicons_1["default"], {
     name: "facebook-filled"
   }),
-  url: ""
+  url: "https://facebook.com/britpropertyng"
 }, {
   name: "twitter",
   icon: react_1["default"].createElement(react_lineicons_1["default"], {
     name: "twitter-filled"
   }),
-  url: ""
+  url: "https://twitter.com/BritPropertyng"
 }, {
   name: "instagram",
   icon: react_1["default"].createElement(react_lineicons_1["default"], {
     name: "instagram-original"
   }),
-  url: ""
+  url: "https://www.instagram.com/britpropertyng_/"
 }, {
   name: "linkedin",
   icon: react_1["default"].createElement(react_lineicons_1["default"], {
@@ -3218,13 +3218,13 @@ exports.SMHandles = [{
   icon: react_1["default"].createElement(react_lineicons_1["default"], {
     name: "youtube"
   }),
-  url: ""
+  url: "https://www.youtube.com/channel/UCVxDf7_sOyLiAEiv6IMmxWw/videos"
 }, {
-  name: "instagram",
+  name: "whatsapp",
   icon: react_1["default"].createElement(react_lineicons_1["default"], {
     name: "whatsapp"
   }),
-  url: ""
+  url: "https://wa.me/2348112427496"
 }];
 
 var SMLink = function SMLink(_ref) {
@@ -3273,18 +3273,18 @@ var SubscribeForm = function SubscribeForm(_ref8) {
 var SSubscribe = (0, styled_components_1["default"])(SubscribeForm)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    margin-top: 22px;\n    position: relative;\n    input {\n        padding-right: 50px;\n        max-width: 100%;\n        &:hover,\n        &:focus {\n            & ~ svg {\n                color: inherit;\n            }\n        }\n    }\n    svg {\n        position: absolute;\n        width: 32px;\n        color: #8d8d91;\n        top: calc(1.5em + 4px);\n        right: 20px;\n        transform: translateY(-50%);\n        stroke-width: 1px;\n    }\n"])));
 var featured = [{
   path: "",
-  image: "",
-  location: "San Diego, CA",
+  image: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template.jpg",
+  location: "Imo, Nigeria",
   description: "Lorem ipsum dolor sit amet cons ectetur adipiscing elit mag"
 }, {
   path: "",
-  image: "",
-  location: "San Diego, CA",
+  image: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template.jpg",
+  location: "Warri, Nigeria",
   description: "Lorem ipsum dolor sit amet cons ectetur adipiscing elit mag"
 }, {
   path: "",
-  image: "",
-  location: "San Diego, CA",
+  image: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template.jpg",
+  location: "Lagos, Nigeria",
   description: "Lorem ipsum dolor sit amet cons ectetur adipiscing elit mag"
 }];
 
@@ -3375,7 +3375,7 @@ var Foot = function Foot(_ref17) {
     }
   }, react_1["default"].createElement(react_1.Suspense, null, react_1["default"].createElement(Header_1.SLogo, null)), react_1["default"].createElement(Text_1.Subtitle, {
     transform: true
-  }, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna sed tortor nullam vel velit quis enim et amet."), react_1["default"].createElement(Flex_1.Flex, {
+  }, "Turning your dream home into reality"), react_1["default"].createElement(Flex_1.Flex, {
     direction: "row",
     gap: "16px"
   }, exports.SMHandles.map(function (handle, index) {
@@ -4115,6 +4115,46 @@ var _templateObject;
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
+var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
+} : function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  o[k2] = m[k];
+});
+
+var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
+  Object.defineProperty(o, "default", {
+    enumerable: true,
+    value: v
+  });
+} : function (o, v) {
+  o["default"] = v;
+});
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+  }
+
+  __setModuleDefault(result, mod);
+
+  return result;
+};
+
 var __importDefault = this && this.__importDefault || function (mod) {
   return mod && mod.__esModule ? mod : {
     "default": mod
@@ -4141,7 +4181,7 @@ var Text_1 = __webpack_require__(/*! ../shared/Text */ "./resources/js/shared/Te
 
 var Card_1 = __importDefault(__webpack_require__(/*! ../Components/Card */ "./resources/js/Components/Card.tsx"));
 
-var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
+var styled_components_1 = __importStar(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
 
 var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 
@@ -4173,6 +4213,16 @@ var About = function About() {
   var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 960px)");
   var isTinyMobile = (0, useMediaQuery_1["default"])("(max-width: 374px)");
   var isTablet = (0, useMediaQuery_1["default"])("(max-width: 767px)");
+  var theme = (0, styled_components_1.useTheme)();
+  var badgeStyle = {
+    position: "absolute",
+    top: "20px",
+    right: "20px",
+    background: theme.altBackgroundColor,
+    padding: "12px 22px",
+    boxShadow: "0 1px 6px 0 rgba(20, 20, 43, 0.09)",
+    color: "#fff"
+  };
   var agents = [{
     name: "John Carter",
     description: "Blandit massa enim nec dui morbi enim nunc faucibus a pellent.",
@@ -4182,27 +4232,30 @@ var About = function About() {
       src: "https://assets.website-files.com/6193ce0889184df85cd96c91/619458f159ee9149d326b898_image-1-agents-realtor-template.jpg",
       srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/619458f159ee9149d326b898_image-1-agents-realtor-template-p-500.jpeg 500w, https://assets.website-files.com/6193ce0889184df85cd96c91/619458f159ee9149d326b898_image-1-agents-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/619458f159ee9149d326b898_image-1-agents-realtor-template-p-1080.jpeg 1080w, https://assets.website-files.com/6193ce0889184df85cd96c91/619458f159ee9149d326b898_image-1-agents-realtor-template.jpg 1160w",
       sizes: "(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 660px, (max-width: 1919px) 31vw, 406px"
-    }
+    },
+    role: "CEO"
   }, {
-    name: "Sophie Moore",
+    name: "Martins Chukwu",
     description: "Blandit massa enim nec dui morbi enim nunc faucibus a pellent.",
     phone: "(414) 325-427",
-    email: "sophie@britproperties.ng",
+    email: "martins.chukwu@britproperties.ng",
     picture: {
       src: "https://assets.website-files.com/6193ce0889184df85cd96c91/619458cd5b21d6434837e15d_image-3-agents-realtor-template.jpg",
       srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/619458cd5b21d6434837e15d_image-3-agents-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/619458cd5b21d6434837e15d_image-3-agents-realtor-template-p-1080.jpeg 1080w, https://assets.website-files.com/6193ce0889184df85cd96c91/619458cd5b21d6434837e15d_image-3-agents-realtor-template.jpg 1160w",
       sizes: "(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 660px, (max-width: 1919px) 31vw, 406px"
-    }
+    },
+    role: "Head Corporate"
   }, {
-    name: "Andi Smith",
+    name: "Binta Suleiman",
     description: "Blandit massa enim nec dui morbi enim nunc faucibus a pellent.",
     phone: "(414) 325-427",
-    email: "andi@britproperties.ng",
+    email: "binta.suleiman@britproperties.ng",
     picture: {
       src: "https://assets.website-files.com/6193ce0889184df85cd96c91/619458a393e1e343176067b5_image-2-agents-realtor-template.jpg",
       srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/619458a393e1e343176067b5_image-2-agents-realtor-template-p-500.jpeg 500w, https://assets.website-files.com/6193ce0889184df85cd96c91/619458a393e1e343176067b5_image-2-agents-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/619458a393e1e343176067b5_image-2-agents-realtor-template-p-1080.jpeg 1080w, https://assets.website-files.com/6193ce0889184df85cd96c91/619458a393e1e343176067b5_image-2-agents-realtor-template.jpg 1160w",
       sizes: "(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 660px, (max-width: 1919px) 31vw, 406px"
-    }
+    },
+    role: "Investment Officer"
   }];
   return react_1["default"].createElement("main", null, react_1["default"].createElement("section", {
     style: {
@@ -4239,7 +4292,7 @@ var About = function About() {
   }, "About our real estate firm"), react_1["default"].createElement(Text_1.Subtitle, {
     margin: "",
     transform: true
-  }, "Lorem ipsum dolor sit amet consectetur adipiscing eli quis sed ac curabitur bibendum blandit nisl morbi tellus tincidunt condimentum facilisi rhoncus ut cursus placerat facilisis dui posuere.")), react_1["default"].createElement("div", {
+  }, "Brit Properties is a trustworthy and reliable real estate brokerage company based in Nigeria. Our mission is to provide unmatched estate agency, property management and consultancy services to the public through our network of offices nationwide.")), react_1["default"].createElement("div", {
     style: {
       marginTop: "auto",
       textAlign: isDesktop ? "left" : "center"
@@ -4247,7 +4300,7 @@ var About = function About() {
   }, react_1["default"].createElement(Text_1.Subtitle, {
     margin: "",
     transform: true
-  }, "Blandit massa enim nec dui morbi enim nunc faucibus a pellentesque sit amet porttitor eget non enim praesent elementum facilisis aliquet enim tortor at auctor urna ullamcorper a lacus.")))), react_1["default"].createElement(Grid_1.Grid, {
+  }, "We have an exciting selection of Projects to suit your lifestyle and requirements. We have over 250 handpicked estates with services in the various states including Lagos, Ogun, Kaduna, Osun, etc.")))), react_1["default"].createElement(Grid_1.Grid, {
     columns: 3,
     columnGap: "21px"
   }, react_1["default"].createElement(Flex_1.Flex, {
@@ -4338,7 +4391,7 @@ var About = function About() {
     style: {
       marginBottom: "34px"
     }
-  }, "Lorem ipsum dolor sit amet consectetur adipiscing elit augue sit nunc amet posuere amet mauris maecenas facilisi eu nunc sapien eget volutpat mauris hac ipsum arcu praesent tristique scelerisque volutpat non vitae dolor vestibulum tortor nibh molestie odio rhoncus.")), react_1["default"].createElement("div", {
+  }, "BritProperties: We are a real estate agent, an estate agent. Our philosophy is simple - it's all about you. We help you find the right home, office or land and make the whole experience easy and straightforward.")), react_1["default"].createElement("div", {
     style: {
       position: "relative",
       width: "100%",
@@ -4404,7 +4457,7 @@ var About = function About() {
     style: {
       marginBottom: "34px"
     }
-  }, "Lorem ipsum dolor sit amet consectetur adipiscing elit augue sit nunc amet posuere amet mauris maecenas facilisi eu nunc sapien eget volutpat mauris hac ipsum arcu praesent tristique scelerisque volutpat non vitae dolor vestibulum tortor nibh molestie odio rhoncus.")))))), react_1["default"].createElement("section", null, react_1["default"].createElement(Container_1["default"], {
+  }, "Britproperties.ng offers the best property solutions in Nigeria and we deliver satisfaction guaranteed! Contact us now to own a dream home you always wanted!")))))), react_1["default"].createElement("section", null, react_1["default"].createElement(Container_1["default"], {
     style: {
       textAlign: "center"
     },
@@ -4434,13 +4487,28 @@ var About = function About() {
         boxShadow: "0 3px 20px 0 rgba(8, 15, 52, 0.06)",
         transition: "box-shadow 300ms ease, transform 300ms ease, -webkit-transform 300ms ease"
       }
-    }, react_1["default"].createElement("div", null, react_1["default"].createElement("img", {
+    }, react_1["default"].createElement("div", {
+      style: {
+        position: "relative"
+      }
+    }, react_1["default"].createElement("img", {
       src: agent.picture.src,
       loading: "eager",
       alt: agent.name,
       sizes: agent.picture.sizes,
       srcSet: agent.picture.srcSet
-    })), react_1["default"].createElement("div", {
+    }), react_1["default"].createElement("div", {
+      style: {
+        position: "absolute",
+        bottom: "20px",
+        right: "20px",
+        background: theme.secondaryColor,
+        borderRadius: "60px",
+        padding: "12px 22px",
+        boxShadow: "0 1px 6px 0 rgba(20, 20, 43, 0.09)",
+        color: "#fff"
+      }
+    }, agent.role)), react_1["default"].createElement("div", {
       style: {
         padding: "36px 40px 55px"
       }
@@ -5432,18 +5500,18 @@ var ImageSection = function ImageSection(_ref) {
     className: "image-wrapper first",
     style: {}
   }, react_1["default"].createElement("img", {
-    src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1410cffb1c0b026536_image-1-hero-v2-realtor-template.jpg",
+    src: "/assets/home-hero.jpg",
     loading: "eager",
-    sizes: "100vw",
-    srcSet: "https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1410cffb1c0b026536_image-1-hero-v2-realtor-template-p-500.jpeg 500w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1410cffb1c0b026536_image-1-hero-v2-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1410cffb1c0b026536_image-1-hero-v2-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1410cffb1c0b026536_image-1-hero-v2-realtor-template.jpg 2258w",
+    // sizes="100vw"
+    // srcSet="https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1410cffb1c0b026536_image-1-hero-v2-realtor-template-p-500.jpeg 500w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1410cffb1c0b026536_image-1-hero-v2-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1410cffb1c0b026536_image-1-hero-v2-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1410cffb1c0b026536_image-1-hero-v2-realtor-template.jpg 2258w"
     alt: "Real Agent - Realtor X Webflow Template"
   })), react_1["default"].createElement("div", {
     className: "image-wrapper second"
   }, react_1["default"].createElement("img", {
     src: "https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1421cb1a6f711390c7_image-2-hero-v2-realtor-template.jpg",
     loading: "eager",
-    sizes: "100vw",
-    srcSet: "https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1421cb1a6f711390c7_image-2-hero-v2-realtor-template-p-500.jpeg 500w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1421cb1a6f711390c7_image-2-hero-v2-realtor-template-p-1080.jpeg 1080w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1421cb1a6f711390c7_image-2-hero-v2-realtor-template.jpg 1312w",
+    // sizes="100vw"
+    // srcSet="https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1421cb1a6f711390c7_image-2-hero-v2-realtor-template-p-500.jpeg 500w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1421cb1a6f711390c7_image-2-hero-v2-realtor-template-p-1080.jpeg 1080w, https://assets.website-files.com/6193ce0889184dacb7d96c80/61967f1421cb1a6f711390c7_image-2-hero-v2-realtor-template.jpg 1312w"
     alt: "Real Estate - Realtor X Webflow Template"
   }))));
 };
@@ -5622,7 +5690,7 @@ var ContactSection = function ContactSection(_ref7) {
     style: {
       marginBottom: "26px"
     }
-  }, react_1["default"].createElement(Text_1.Subtitle, null, "Lorem ipsum dolor sit amet consectetur adipiscing elit dui ornare lectus in suscipit tellus ac purus.")), react_1["default"].createElement(Grid_1.Grid, {
+  }, react_1["default"].createElement(Text_1.Subtitle, null, "We're eagerly looking forward to hearing from you")), react_1["default"].createElement(Grid_1.Grid, {
     columns: 1,
     rowGap: "16px",
     width: "100%"
@@ -5660,7 +5728,8 @@ var ContactSection = function ContactSection(_ref7) {
       marginBottom: "15px"
     }
   }, react_1["default"].createElement(Text_1.Subtitle, {
-    margin: "6px"
+    margin: "6px",
+    transform: true
   }, "Give us a call"), react_1["default"].createElement(Text_1.SH3, null, phone))))), react_1["default"].createElement(inertia_react_1.Link, {
     href: "mailto: ".concat(email),
     style: {
@@ -5695,7 +5764,8 @@ var ContactSection = function ContactSection(_ref7) {
       marginBottom: "15px"
     }
   }, react_1["default"].createElement(Text_1.Subtitle, {
-    margin: "6px"
+    margin: "6px",
+    transform: true
   }, "Send us an email"), react_1["default"].createElement(Text_1.SH3, {
     style: {
       lineBreak: "anywhere"
@@ -5801,7 +5871,7 @@ var Home = function Home() {
     align: "center"
   }, "Your Dream Home is a Click Away"), react_1["default"].createElement(Text_1.Subtitle, {
     align: "center"
-  }, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat modi officia, fugit hic rem qui iure quaerat omnis"), react_1["default"].createElement(Flex_1.Flex, {
+  }, "Nigeria's premier Property firm, offers Land and Estate services in various states in Nigeria. Contact us for free advice & counseling on purchasing a property or any land related issues."), react_1["default"].createElement(Flex_1.Flex, {
     justify: "center",
     direction: isMiniMobile ? "column" : "row",
     align: "center",
@@ -5841,7 +5911,7 @@ var Home = function Home() {
       maxWidth: "486px",
       textAlign: "center"
     }
-  }, react_1["default"].createElement("div", null, react_1["default"].createElement(Text_1.SH2, null, "Browse our four types of properties available")), react_1["default"].createElement(Text_1.Subtitle, null, "Lorem ipsum dolor sit amet consectetur adipiscing elit odio massa eget posuere at proin lectus proin morbi"))), react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("div", {
+  }, react_1["default"].createElement("div", null, react_1["default"].createElement(Text_1.SH2, null, "Browse our four types of properties available")), react_1["default"].createElement(Text_1.Subtitle, null, "Brit Properties is a property services company that offers land and estate services in various states in Nigeria including Abuja. We are a family owned business with over twenty years' experience in the real estate industry."))), react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("div", {
     style: {
       maxWidth: !isDesktop ? "660px" : "",
       margin: !isDesktop ? "0 auto" : ""
@@ -5874,7 +5944,7 @@ var Home = function Home() {
     style: {
       marginBottom: "34px"
     }
-  }, "Turpis massa tincidunt dui ut ornare lectus sit amet mi eget mauris pharetra et euismod in pellentesque massa placerat duis ultricies condimentum lacinia quis vel eros donec ac odio"), react_1["default"].createElement(Grid_1.Grid, {
+  }, "BritProperties is one of the fastest growing land and estate agencies that provides exclusive and professional land and real estate services to its clients in Nigeria."), react_1["default"].createElement(Grid_1.Grid, {
     columns: 1,
     rowGap: "16px",
     rows: "auto",
@@ -5900,7 +5970,7 @@ var Home = function Home() {
       fontWeight: "500",
       color: "#616066"
     }
-  }, "Move in 30 days or less")), react_1["default"].createElement(Flex_1.Flex, null, react_1["default"].createElement("img", {
+  }, "Excellent service")), react_1["default"].createElement(Flex_1.Flex, null, react_1["default"].createElement("img", {
     style: {
       width: "28px",
       maxHeight: "28px",
@@ -5921,7 +5991,7 @@ var Home = function Home() {
       fontWeight: "500",
       color: "#616066"
     }
-  }, "Move in 30 days or less")), react_1["default"].createElement(Flex_1.Flex, null, react_1["default"].createElement("img", {
+  }, "Prompt responses")), react_1["default"].createElement(Flex_1.Flex, null, react_1["default"].createElement("img", {
     style: {
       width: "28px",
       maxHeight: "28px",
@@ -5942,7 +6012,7 @@ var Home = function Home() {
       fontWeight: "500",
       color: "#616066"
     }
-  }, "Move in 30 days or less")), react_1["default"].createElement(Flex_1.Flex, null, react_1["default"].createElement("img", {
+  }, "Confidence and Quality Assurance")), react_1["default"].createElement(Flex_1.Flex, null, react_1["default"].createElement("img", {
     style: {
       width: "28px",
       maxHeight: "28px",
@@ -5963,7 +6033,7 @@ var Home = function Home() {
       fontWeight: "500",
       color: "#616066"
     }
-  }, "Move in 30 days or less"))))))), react_1["default"].createElement("div", {
+  }, "Reliable and Trustworthy"))))))), react_1["default"].createElement("div", {
     style: {
       top: "0%",
       right: "0%",
@@ -6011,7 +6081,7 @@ var Home = function Home() {
     style: {
       marginBottom: "34px"
     }
-  }, "Lorem ipsum dolor sit amet consectetur adipiscing elit odio massa eget posuere at proin lectus proin morbi."), react_1["default"].createElement("div", {
+  }, "BritProperties provides land, estate and related real estate services. We handle Land Acquisition and Preparation of Title Deeds, Mortgage and Conveyancing, Property Management & Development in Lagos and Abuja."), react_1["default"].createElement("div", {
     style: {
       marginBottom: "54px"
     }

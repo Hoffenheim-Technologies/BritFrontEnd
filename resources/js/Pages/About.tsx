@@ -6,7 +6,7 @@ import { Flex } from "../shared/Flex";
 import { Grid } from "../shared/Grid";
 import { BoldContent, SH2, SH3, Subtitle } from "../shared/Text";
 import Card from "../Components/Card";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { Link } from "@inertiajs/inertia-react";
 
 const AboutShow: React.FC<{ children: React.ReactNode; header: string }> = ({
@@ -61,7 +61,16 @@ const About = () => {
     const isDesktop = useMediaQuery("(min-width: 960px)");
     const isTinyMobile = useMediaQuery("(max-width: 374px)");
     const isTablet = useMediaQuery("(max-width: 767px)");
-
+    const theme = useTheme();
+    const badgeStyle = {
+        position: "absolute",
+        top: "20px",
+        right: "20px",
+        background: theme.altBackgroundColor,
+        padding: "12px 22px",
+        boxShadow: "0 1px 6px 0 rgba(20, 20, 43, 0.09)",
+        color: "#fff",
+    };
     const agents = [
         {
             name: "John Carter",
@@ -74,30 +83,33 @@ const About = () => {
                 srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/619458f159ee9149d326b898_image-1-agents-realtor-template-p-500.jpeg 500w, https://assets.website-files.com/6193ce0889184df85cd96c91/619458f159ee9149d326b898_image-1-agents-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/619458f159ee9149d326b898_image-1-agents-realtor-template-p-1080.jpeg 1080w, https://assets.website-files.com/6193ce0889184df85cd96c91/619458f159ee9149d326b898_image-1-agents-realtor-template.jpg 1160w",
                 sizes: "(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 660px, (max-width: 1919px) 31vw, 406px",
             },
+            role: "CEO",
         },
         {
-            name: "Sophie Moore",
+            name: "Martins Chukwu",
             description:
                 "Blandit massa enim nec dui morbi enim nunc faucibus a pellent.",
             phone: "(414) 325-427",
-            email: "sophie@britproperties.ng",
+            email: "martins.chukwu@britproperties.ng",
             picture: {
                 src: "https://assets.website-files.com/6193ce0889184df85cd96c91/619458cd5b21d6434837e15d_image-3-agents-realtor-template.jpg",
                 srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/619458cd5b21d6434837e15d_image-3-agents-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/619458cd5b21d6434837e15d_image-3-agents-realtor-template-p-1080.jpeg 1080w, https://assets.website-files.com/6193ce0889184df85cd96c91/619458cd5b21d6434837e15d_image-3-agents-realtor-template.jpg 1160w",
                 sizes: "(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 660px, (max-width: 1919px) 31vw, 406px",
             },
+            role: "Head Corporate",
         },
         {
-            name: "Andi Smith",
+            name: "Binta Suleiman",
             description:
                 "Blandit massa enim nec dui morbi enim nunc faucibus a pellent.",
             phone: "(414) 325-427",
-            email: "andi@britproperties.ng",
+            email: "binta.suleiman@britproperties.ng",
             picture: {
                 src: "https://assets.website-files.com/6193ce0889184df85cd96c91/619458a393e1e343176067b5_image-2-agents-realtor-template.jpg",
                 srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/619458a393e1e343176067b5_image-2-agents-realtor-template-p-500.jpeg 500w, https://assets.website-files.com/6193ce0889184df85cd96c91/619458a393e1e343176067b5_image-2-agents-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/619458a393e1e343176067b5_image-2-agents-realtor-template-p-1080.jpeg 1080w, https://assets.website-files.com/6193ce0889184df85cd96c91/619458a393e1e343176067b5_image-2-agents-realtor-template.jpg 1160w",
                 sizes: "(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 660px, (max-width: 1919px) 31vw, 406px",
             },
+            role: "Investment Officer",
         },
     ];
     return (
@@ -147,11 +159,12 @@ const About = () => {
                                     About our real estate firm
                                 </BoldContent>
                                 <Subtitle margin="" transform={true}>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipiscing eli quis sed ac curabitur
-                                    bibendum blandit nisl morbi tellus tincidunt
-                                    condimentum facilisi rhoncus ut cursus
-                                    placerat facilisis dui posuere.
+                                    Brit Properties is a trustworthy and
+                                    reliable real estate brokerage company based
+                                    in Nigeria. Our mission is to provide
+                                    unmatched estate agency, property management
+                                    and consultancy services to the public
+                                    through our network of offices nationwide.
                                 </Subtitle>
                             </div>
                             <div
@@ -161,11 +174,11 @@ const About = () => {
                                 }}
                             >
                                 <Subtitle margin="" transform={true}>
-                                    Blandit massa enim nec dui morbi enim nunc
-                                    faucibus a pellentesque sit amet porttitor
-                                    eget non enim praesent elementum facilisis
-                                    aliquet enim tortor at auctor urna
-                                    ullamcorper a lacus.
+                                    We have an exciting selection of Projects to
+                                    suit your lifestyle and requirements. We
+                                    have over 250 handpicked estates with
+                                    services in the various states including
+                                    Lagos, Ogun, Kaduna, Osun, etc.
                                 </Subtitle>
                             </div>
                         </Flex>
@@ -284,13 +297,11 @@ const About = () => {
                                     dream home
                                 </SH2>
                                 <Subtitle style={{ marginBottom: "34px" }}>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipiscing elit augue sit nunc amet posuere
-                                    amet mauris maecenas facilisi eu nunc sapien
-                                    eget volutpat mauris hac ipsum arcu praesent
-                                    tristique scelerisque volutpat non vitae
-                                    dolor vestibulum tortor nibh molestie odio
-                                    rhoncus.
+                                    BritProperties: We are a real estate agent,
+                                    an estate agent. Our philosophy is simple -
+                                    it's all about you. We help you find the
+                                    right home, office or land and make the
+                                    whole experience easy and straightforward.
                                 </Subtitle>
                             </div>
                             <div
@@ -393,13 +404,10 @@ const About = () => {
                                     We have helped over a thousand clients
                                 </SH2>
                                 <Subtitle style={{ marginBottom: "34px" }}>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipiscing elit augue sit nunc amet posuere
-                                    amet mauris maecenas facilisi eu nunc sapien
-                                    eget volutpat mauris hac ipsum arcu praesent
-                                    tristique scelerisque volutpat non vitae
-                                    dolor vestibulum tortor nibh molestie odio
-                                    rhoncus.
+                                    Britproperties.ng offers the best property
+                                    solutions in Nigeria and we deliver
+                                    satisfaction guaranteed! Contact us now to
+                                    own a dream home you always wanted!
                                 </Subtitle>
                             </div>
                         </Flex>
@@ -442,7 +450,9 @@ const About = () => {
                                                     "box-shadow 300ms ease, transform 300ms ease, -webkit-transform 300ms ease",
                                             }}
                                         >
-                                            <div>
+                                            <div
+                                                style={{ position: "relative" }}
+                                            >
                                                 <img
                                                     src={agent.picture.src}
                                                     loading="eager"
@@ -452,6 +462,22 @@ const About = () => {
                                                         agent.picture.srcSet
                                                     }
                                                 />
+                                                <div
+                                                    style={{
+                                                        position: "absolute",
+                                                        bottom: "20px",
+                                                        right: "20px",
+                                                        background:
+                                                            theme.secondaryColor,
+                                                        borderRadius: "60px",
+                                                        padding: "12px 22px",
+                                                        boxShadow:
+                                                            "0 1px 6px 0 rgba(20, 20, 43, 0.09)",
+                                                        color: "#fff",
+                                                    }}
+                                                >
+                                                    {agent.role}
+                                                </div>
                                             </div>
                                             <div
                                                 style={{
