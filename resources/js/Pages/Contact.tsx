@@ -18,7 +18,7 @@ const Contact = () => {
     const isTinyMobile = useMediaQuery("(max-width: 374px)");
     const isTablet = useMediaQuery("(max-width: 767px)");
     const phone = "(+234)8077789898";
-    const email = "contact@britproperties.ng";
+    const email = "info@britproperties.ng";
     const theme = useTheme();
     return (
         <main>
@@ -62,7 +62,7 @@ const Contact = () => {
                                 rowGap="45px"
                             >
                                 <div style={{ width: "100%" }}>
-                                    <Link
+                                    <a
                                         href={`tel: ${phone}`}
                                         style={{ width: "inherit" }}
                                     >
@@ -130,10 +130,10 @@ const Contact = () => {
                                                 </div>
                                             </Flex>
                                         </Card>
-                                    </Link>
+                                    </a>
                                 </div>
                                 <div style={{ width: "100%" }}>
-                                    <Link
+                                    <a
                                         href={`mailto: ${email}`}
                                         style={{ width: "inherit" }}
                                     >
@@ -205,10 +205,10 @@ const Contact = () => {
                                                 </div>
                                             </Flex>
                                         </Card>
-                                    </Link>
+                                    </a>
                                 </div>
                                 <div style={{ width: "100%" }}>
-                                    <Link
+                                    <a
                                         href={`tel: ${phone}`}
                                         style={{ width: "inherit" }}
                                     >
@@ -275,7 +275,7 @@ const Contact = () => {
                                                 </div>
                                             </Flex>
                                         </Card>
-                                    </Link>
+                                    </a>
                                 </div>
                             </Grid>
                         </div>

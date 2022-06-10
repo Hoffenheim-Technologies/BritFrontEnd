@@ -354,7 +354,7 @@ const ContactSection: React.FC<{ className?: string; mobile: boolean }> = ({
         { name: "whatsapp", icon: <LineIcon name="whatsapp" />, url: "" },
     ];
     const phone = "(+234)8077789898";
-    const email = "contact@britproperties.ng";
+    const email = "info@britproperties.ng";
     const isDesktop = useMediaQuery("(min-width: 960px");
     const isMiniMobile = useMediaQuery("(max-width: 500px");
     return (
@@ -383,10 +383,7 @@ const ContactSection: React.FC<{ className?: string; mobile: boolean }> = ({
                         </Subtitle>
                     </div>
                     <Grid columns={1} rowGap={"16px"} width="100%">
-                        <Link
-                            href={`tel: ${phone}`}
-                            style={{ width: "inherit" }}
-                        >
+                        <a href={`tel: ${phone}`} style={{ width: "inherit" }}>
                             <Card padding="18px">
                                 <Flex
                                     direction={isMiniMobile ? "column" : "row"}
@@ -426,8 +423,8 @@ const ContactSection: React.FC<{ className?: string; mobile: boolean }> = ({
                                     </div>
                                 </Flex>
                             </Card>
-                        </Link>
-                        <Link
+                        </a>
+                        <a
                             href={`mailto: ${email}`}
                             style={{ width: "inherit" }}
                         >
@@ -472,7 +469,7 @@ const ContactSection: React.FC<{ className?: string; mobile: boolean }> = ({
                                     </div>
                                 </Flex>
                             </Card>
-                        </Link>
+                        </a>
                     </Grid>
                 </div>
                 <div

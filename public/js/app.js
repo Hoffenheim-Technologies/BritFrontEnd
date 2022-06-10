@@ -4847,8 +4847,6 @@ Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 
-var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-
 var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
 var styled_components_1 = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
@@ -4879,7 +4877,7 @@ var Contact = function Contact() {
   var isTinyMobile = (0, useMediaQuery_1["default"])("(max-width: 374px)");
   var isTablet = (0, useMediaQuery_1["default"])("(max-width: 767px)");
   var phone = "(+234)8077789898";
-  var email = "contact@britproperties.ng";
+  var email = "info@britproperties.ng";
   var theme = (0, styled_components_1.useTheme)();
   return react_1["default"].createElement("main", null, react_1["default"].createElement("section", {
     style: isDesktop ? {
@@ -4927,7 +4925,7 @@ var Contact = function Contact() {
     style: {
       width: "100%"
     }
-  }, react_1["default"].createElement(inertia_react_1.Link, {
+  }, react_1["default"].createElement("a", {
     href: "tel: ".concat(phone),
     style: {
       width: "inherit"
@@ -4980,7 +4978,7 @@ var Contact = function Contact() {
     style: {
       width: "100%"
     }
-  }, react_1["default"].createElement(inertia_react_1.Link, {
+  }, react_1["default"].createElement("a", {
     href: "mailto: ".concat(email),
     style: {
       width: "inherit"
@@ -5036,7 +5034,7 @@ var Contact = function Contact() {
     style: {
       width: "100%"
     }
-  }, react_1["default"].createElement(inertia_react_1.Link, {
+  }, react_1["default"].createElement("a", {
     href: "tel: ".concat(phone),
     style: {
       width: "inherit"
@@ -5670,7 +5668,7 @@ var ContactSection = function ContactSection(_ref7) {
     url: ""
   }];
   var phone = "(+234)8077789898";
-  var email = "contact@britproperties.ng";
+  var email = "info@britproperties.ng";
   var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 960px");
   var isMiniMobile = (0, useMediaQuery_1["default"])("(max-width: 500px");
   return react_1["default"].createElement("div", {
@@ -5693,7 +5691,7 @@ var ContactSection = function ContactSection(_ref7) {
     columns: 1,
     rowGap: "16px",
     width: "100%"
-  }, react_1["default"].createElement(inertia_react_1.Link, {
+  }, react_1["default"].createElement("a", {
     href: "tel: ".concat(phone),
     style: {
       width: "inherit"
@@ -5729,7 +5727,7 @@ var ContactSection = function ContactSection(_ref7) {
   }, react_1["default"].createElement(Text_1.Subtitle, {
     margin: "6px",
     transform: true
-  }, "Give us a call"), react_1["default"].createElement(Text_1.SH3, null, phone))))), react_1["default"].createElement(inertia_react_1.Link, {
+  }, "Give us a call"), react_1["default"].createElement(Text_1.SH3, null, phone))))), react_1["default"].createElement("a", {
     href: "mailto: ".concat(email),
     style: {
       width: "inherit"
