@@ -17,7 +17,7 @@ const Contact = () => {
     const isDesktop = useMediaQuery("(min-width: 960px)");
     const isTinyMobile = useMediaQuery("(max-width: 374px)");
     const isTablet = useMediaQuery("(max-width: 767px)");
-    const phone = "(414)807-0196";
+    const phone = "(+234)8077789898";
     const email = "contact@britproperties.ng";
     const theme = useTheme();
     return (

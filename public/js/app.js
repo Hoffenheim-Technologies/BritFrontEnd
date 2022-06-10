@@ -4237,7 +4237,7 @@ var About = function About() {
   }, {
     name: "Martins Chukwu",
     description: "Blandit massa enim nec dui morbi enim nunc faucibus a pellent.",
-    phone: "(414) 325-427",
+    phone: "(+234) 812 996 6272",
     email: "martins.chukwu@britproperties.ng",
     picture: {
       src: "https://assets.website-files.com/6193ce0889184df85cd96c91/619458cd5b21d6434837e15d_image-3-agents-realtor-template.jpg",
@@ -4248,7 +4248,7 @@ var About = function About() {
   }, {
     name: "Binta Suleiman",
     description: "Blandit massa enim nec dui morbi enim nunc faucibus a pellent.",
-    phone: "(414) 325-427",
+    phone: "(+234) 818 165 6401",
     email: "binta.suleiman@britproperties.ng",
     picture: {
       src: "https://assets.website-files.com/6193ce0889184df85cd96c91/619458a393e1e343176067b5_image-2-agents-realtor-template.jpg",
@@ -4878,7 +4878,7 @@ var Contact = function Contact() {
   var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 960px)");
   var isTinyMobile = (0, useMediaQuery_1["default"])("(max-width: 374px)");
   var isTablet = (0, useMediaQuery_1["default"])("(max-width: 767px)");
-  var phone = "(414)807-0196";
+  var phone = "(+234)8077789898";
   var email = "contact@britproperties.ng";
   var theme = (0, styled_components_1.useTheme)();
   return react_1["default"].createElement("main", null, react_1["default"].createElement("section", {
@@ -5522,9 +5522,9 @@ var Props = function Props(_ref2) {
   var isMiniMobile = (0, useMediaQuery_1["default"])("(max-width: 374px)");
   var properties = [{
     image: {
-      src: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template.jpg",
-      sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px",
-      srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template-p-500.jpeg 500w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template.jpg 1832w"
+      src: "/assets/valerie1.jpg",
+      sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px" // srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template-p-500.jpeg 500w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template.jpg 1832w",
+
     },
     price: 650000,
     name: "Valerie Phase 1",
@@ -5533,9 +5533,9 @@ var Props = function Props(_ref2) {
     type: "Land"
   }, {
     image: {
-      src: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template.jpg",
-      sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px",
-      srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template.jpg 1832w"
+      src: "/assets/valerie1.jpg",
+      sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px" // srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template.jpg 1832w",
+
     },
     price: 5000000,
     name: "Britwook Park 1",
@@ -5544,9 +5544,9 @@ var Props = function Props(_ref2) {
     type: "Residential"
   }, {
     image: {
-      src: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template.jpg",
-      sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px",
-      srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template.jpg 1832w"
+      src: "/assets/valerie2.jpg",
+      sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px" // srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template.jpg 1832w",
+
     },
     price: 1200000,
     name: "Bethel Home Phase 3",
@@ -5555,9 +5555,9 @@ var Props = function Props(_ref2) {
     type: "Dry Land"
   }, {
     image: {
-      src: "https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template.jpg",
-      sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px",
-      srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template.jpg 1832w"
+      src: "/assets/valerie3.jpg",
+      sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px" // srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template.jpg 1832w",
+
     },
     price: 34000000,
     name: "Bethel Home Phase 2",
@@ -5576,8 +5576,7 @@ var Props = function Props(_ref2) {
       src: property.image.src,
       loading: "eager",
       alt: property.name,
-      sizes: property.image.sizes,
-      srcSet: property.image.srcSet
+      sizes: property.image.sizes
     })), react_1["default"].createElement("div", null, react_1["default"].createElement("div", {
       style: {
         marginBottom: "14px"
@@ -5670,7 +5669,7 @@ var ContactSection = function ContactSection(_ref7) {
     }),
     url: ""
   }];
-  var phone = "(414)807-0196";
+  var phone = "(+234)8077789898";
   var email = "contact@britproperties.ng";
   var isDesktop = (0, useMediaQuery_1["default"])("(min-width: 960px");
   var isMiniMobile = (0, useMediaQuery_1["default"])("(max-width: 500px");
@@ -6297,7 +6296,8 @@ var Grid_1 = __webpack_require__(/*! ../shared/Grid */ "./resources/js/shared/Gr
 var Property = function Property(_ref) {
   var property = _ref.property,
       isMiniMobile = _ref.isMiniMobile,
-      isSmall = _ref.isSmall;
+      isSmall = _ref.isSmall,
+      isDesktop = _ref.isDesktop;
   return react_1["default"].createElement("div", null, react_1["default"].createElement(inertia_react_1.Link, {
     href: property.link,
     style: {
@@ -6326,7 +6326,12 @@ var Property = function Property(_ref) {
     loading: "eager",
     alt: property.name,
     sizes: property.image.sizes,
-    srcSet: property.image.srcSet
+    style: isDesktop ? {
+      height: "222.43px",
+      minWidth: "28vw"
+    } : !isSmall ? {
+      height: "222.43px"
+    } : {}
   })), react_1["default"].createElement("div", {
     style: {
       padding: "46px 35px 38px"
@@ -6490,7 +6495,7 @@ var Properties = function Properties() {
   }];
   var properties = [{
     image: {
-      src: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template.jpg",
+      src: "/assets/valerie1.jpg",
       sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px",
       srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template-p-500.jpeg 500w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template.jpg 1832w"
     },
@@ -6502,7 +6507,7 @@ var Properties = function Properties() {
     link: ""
   }, {
     image: {
-      src: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template.jpg",
+      src: "/assets/valerie2.jpg",
       sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px",
       srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template.jpg 1832w"
     },
@@ -6514,7 +6519,7 @@ var Properties = function Properties() {
     link: ""
   }, {
     image: {
-      src: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953a33476cd4f4b3161c1c_image-thumbnail-6-property-posts-realtor-template.jpg",
+      src: "/assets/valerie3.jpg",
       sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px",
       srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/61953924b3ead41ff043a5ed_image-thumbnail-4-property-posts-realtor-template.jpg 1832w"
     },
@@ -6526,7 +6531,7 @@ var Properties = function Properties() {
     link: ""
   }, {
     image: {
-      src: "https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template.jpg",
+      src: "/assets/valerie5.jpg",
       sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px",
       srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template.jpg 1832w"
     },
@@ -6538,7 +6543,7 @@ var Properties = function Properties() {
     link: ""
   }, {
     image: {
-      src: "https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template.jpg",
+      src: "/assets/valerie1.jpg",
       sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px",
       srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template.jpg 1832w"
     },
@@ -6550,7 +6555,7 @@ var Properties = function Properties() {
     link: ""
   }, {
     image: {
-      src: "https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template.jpg",
+      src: "/assets/valerie1.jpg",
       sizes: "(max-width: 767px) 90vw, (max-width: 991px) 86vw, (max-width: 1919px) 46vw, 607.5px",
       srcSet: "https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template-p-800.jpeg 800w, https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template-p-1600.jpeg 1600w, https://assets.website-files.com/6193ce0889184df85cd96c91/619538b1f22c8819e89bc594_image-thumbnail-3-property-posts-realtor-template.jpg 1832w"
     },
@@ -6573,7 +6578,7 @@ var Properties = function Properties() {
       maxWidth: "486px",
       textAlign: "center"
     }
-  }, react_1["default"].createElement("div", null, react_1["default"].createElement(Text_1.SH2, null, "Browse Properties")), react_1["default"].createElement(Text_1.Subtitle, null, "Lorem ipsum dolor sit amet consectetur adipiscing elit odio massa eget posuere at proin lectus proin morbi"))), react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("div", {
+  }, react_1["default"].createElement("div", null, react_1["default"].createElement(Text_1.SH2, null, "Browse Properties")), react_1["default"].createElement(Text_1.Subtitle, null, "Brit Properties is a property services company that offers land and estate services in various states in Nigeria including Abuja. We are a family owned business with over twenty years' experience in the real estate industry."))), react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("div", {
     style: {
       position: "relative",
       zIndex: 1
@@ -6655,6 +6660,7 @@ var Properties = function Properties() {
       key: index,
       property: property,
       isSmall: isTablet,
+      isDesktop: isDesktop,
       isMiniMobile: isMiniMobile
     });
   })))))));

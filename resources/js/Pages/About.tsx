@@ -89,7 +89,7 @@ const About = () => {
             name: "Martins Chukwu",
             description:
                 "Blandit massa enim nec dui morbi enim nunc faucibus a pellent.",
-            phone: "(414) 325-427",
+            phone: "(+234) 812 996 6272",
             email: "martins.chukwu@britproperties.ng",
             picture: {
                 src: "https://assets.website-files.com/6193ce0889184df85cd96c91/619458cd5b21d6434837e15d_image-3-agents-realtor-template.jpg",
@@ -102,7 +102,7 @@ const About = () => {
             name: "Binta Suleiman",
             description:
                 "Blandit massa enim nec dui morbi enim nunc faucibus a pellent.",
-            phone: "(414) 325-427",
+            phone: "(+234) 818 165 6401",
             email: "binta.suleiman@britproperties.ng",
             picture: {
                 src: "https://assets.website-files.com/6193ce0889184df85cd96c91/619458a393e1e343176067b5_image-2-agents-realtor-template.jpg",
